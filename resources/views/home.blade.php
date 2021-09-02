@@ -2,22 +2,40 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <a href="#" class="d-block" style="border: 1px dashed #d2e5ff; background-color: #fbfdff; text-decoration: none;">
+                <div class="p-5 text-center">
+                    <i class="fa fa-plus" style="font-size: 4rem;"></i>
+                    <h4 class="h4-responsive mt-3">Add New pitch</h4>
+                </div>
+            </a>
+        </div>
+        @for ($i = 0; $i < 10; $i++) <div class="col-md-4 mb-4">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
+                <img src="https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                    <h5 class="card-title">Big Data SaaS Platform</h5>
+                    <p class="card-text">Hurree Labs; Bringing data together to allow the most tailored experience for the audience; EIS Approved; Took part in Techstars; Silicon Valley Investors; huge growth.</p>
+                    <div class="d-flex justify-content-between my-3">
+                        <div>
+                            <strong style="font-size: 1.1rem;">$11000</strong>
+                            <div>Minimum</div>
                         </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+                        <div>
+                            <strong style="font-size: 1.1rem;">$19000</strong>
+                            <div>Maximun</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary btn-sm py-2">Manage my pitch</a>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
+    {{-- End of columns --}}
+    @endfor
+
+</div>
 </div>
 @endsection
