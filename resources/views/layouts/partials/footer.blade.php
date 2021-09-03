@@ -38,7 +38,7 @@
                 <div class="quick-links">
                     <h4>Entrepreneurs Pages</h4>
                     <ul>
-                        <li><a href="">Add a pitch</a></li>
+                        <li><a href="{{ route('pitches.create.step-one') }}">Add a pitch</a></li>
                         <li><a href="">Entrepreneur FAQs</a></li>
                         <li><a href="">Services</a></li>
                     </ul>

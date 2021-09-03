@@ -14,8 +14,12 @@ class CreatePitchesTable extends Migration
     public function up()
     {
         Schema::create('pitches', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
+            $table->integer('current_step')->nullable();
+            $table->boolean('is_verified')->default(false);
+
             $table->string('website')->nullable();
             $table->string('company_country')->nullable();
             $table->string('mobile')->nullable();
@@ -27,14 +31,18 @@ class CreatePitchesTable extends Migration
             $table->string('capital')->nullable();
             $table->string('min_investment')->nullable();
             $table->string('tax_relief_type')->nullable();
+
             $table->text('short_summary')->nullable();
             $table->text('the_business')->nullable();
             $table->text('the_market')->nullable();
             $table->text('progress')->nullable();
             $table->text('objectives')->nullable();
+
             $table->text('team_overview')->nullable();
+            
             $table->string('logo')->nullable();
             $table->string('cover_image')->nullable();
+            
             $table->timestamps();
         });
     }
