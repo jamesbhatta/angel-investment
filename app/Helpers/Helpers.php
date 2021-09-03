@@ -49,6 +49,7 @@ if (!function_exists('setActive')) {
 if (!function_exists('siteName')) {
     function siteName()
     {
+        return config('app.name');
         return appSettings('site_name', config('app.name'));
     }
 }
@@ -63,9 +64,9 @@ if (!function_exists('siteName')) {
 if (!function_exists('siteLogoUrl')) {
     function siteLogoUrl()
     {
-        if (appSettings()->get('site_logo')) {
-            return asset('storage/' . appSettings()->get('site_logo'));
-        }
+        // if (appSettings()->get('site_logo')) {
+        //     return asset('storage/' . appSettings()->get('site_logo'));
+        // }
         return asset('assets/images/logo.png');
     }
 }
@@ -83,6 +84,7 @@ if (!function_exists('faviconUrl')) {
 if (!function_exists('priceUnit')) {
     function priceUnit()
     {
+        return '$';
         return appSettings()->get('price_unit', 'Rs.');
     }
 }

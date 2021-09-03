@@ -25,10 +25,12 @@
                     <h4>Quicks Link</h4>
                     <ul>
                         <li><a href="">About Us</a></li>
-                        <li><a href="">Investments</a></li>
+                        <li><a href="{{ route('business-proposals.index') }}">Investments</a></li>
                         <li><a href="">Services</a></li>
-                        <li><a href="">Login</a></li>
-                        <li><a href="">Sign Up</a></li>
+                        @guest
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Sign Up</a></li>
+                        @endguest
                         <li><a href="">Contact Us</a></li>
 
                     </ul>
@@ -48,8 +50,8 @@
                 <div class="quick-links">
                     <h4>Investor Pages</h4>
                     <ul>
-                        <li><a href="">Register</a></li>
-                        <li><a href="">Business Proposal</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                        <li><a href="{{ route('business-proposals.index') }}">Business Proposal</a></li>
                         <li><a href="">Investor in Impact</a></li>
                         <li><a href="">Investor FAQs</a></li>
                     </ul>

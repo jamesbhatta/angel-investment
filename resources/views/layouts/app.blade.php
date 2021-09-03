@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <a href="" class="navbrand"> <img src="https://zero-kamal.github.io/Angel/img/logo.png" width="150px" height="90px" alt=""></a>
+                        <a href="/" class="navbrand"> <img src="https://zero-kamal.github.io/Angel/img/logo.png" width="150px" height="90px" alt=""></a>
                     </div>
                     <div class="col-md-6">
                         <div class="wrapper-nav">
@@ -40,7 +40,7 @@
                                 <nav class="overlay-menu">
                                     <ul>
                                         <li><a href=""><i class="fas fa-info-circle me-2"></i>About Us</a></li>
-                                        <li><a href=""><i class="fas fa-landmark me-2"></i>Investments</a></li>
+                                        <li><a href="{{ route('business-proposals.index') }}"><i class="fas fa-landmark me-2"></i>Investments</a></li>
                                         <li><a href=""><i class="fas fa-hands-helping me-2"></i>Services</a></li>
                                         @guest
                                         @if (Route::has('login'))
@@ -72,7 +72,7 @@
 
         @auth
         {{-- TODO::Not to show in homepage --}}
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm mb-3">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <ul class="navbar-nav">
                     <li class="nav-item">

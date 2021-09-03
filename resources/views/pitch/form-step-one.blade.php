@@ -17,7 +17,7 @@
                         <label class="form-label">Website (Optional)</label>
                         <div class="input-group">
                             <span class="input-group-text">https://</span>
-                            <input type="text" name="website" aria-label="https://" class="form-control {{ invalid_class('website') }}"  value="{{ old('website', $pitch->website) }}">
+                            <input type="text" name="website" aria-label="https://" class="form-control {{ invalid_class('website') }}" value="{{ old('website', $pitch->website) }}">
                         </div>
                         <x-invalid-feedback field="website"></x-invalid-feedback>
                     </x-form-group>
@@ -29,8 +29,8 @@
                             <option value="USA">USA</option>
                             <option value="India">India</option>
                             <option value="Indonesia">Indonesia</option>
-                            <option value="4">Quatar</option>
-                            <option value="4">UAE</option>
+                            <option value="Quatar">Quatar</option>
+                            <option value="UAE">UAE</option>
                         </select>
                         <x-invalid-feedback field="name"></x-invalid-feedback>
                     </x-form-group>
@@ -41,26 +41,26 @@
                         <label class="form-label">Industry</label>
                         <select name="industry" class="form-select {{ invalid_class('industry') }}">
                             <option>Please select</option>
-                            <option value="5">Agriculture</option>
-                            <option value="12">Business Services</option>
-                            <option value="1">Education &amp; Training</option>
-                            <option value="15">Energy &amp; Natural Resources</option>
-                            <option value="28">Entertainment &amp; Leisure</option>
-                            <option value="21">Fashion &amp; Beauty</option>
-                            <option value="13">Finance</option>
-                            <option value="23">Food &amp; Beverage</option>
-                            <option value="17">Hospitality, Restaurants &amp; Bars</option>
-                            <option value="14">Manufacturing &amp; Engineering</option>
-                            <option value="11">Media</option>
-                            <option value="2">Medical &amp; Sciences</option>
-                            <option value="29">Personal Services</option>
-                            <option value="18">Products &amp; Inventions</option>
-                            <option value="16">Property </option>
-                            <option value="19">Retail</option>
-                            <option value="20">Sales &amp; Marketing</option>
-                            <option value="8">Software</option>
-                            <option value="22">Technology</option>
-                            <option value="4">Transportation</option>
+                            <option value="Agriculture">Agriculture</option>
+                            <option value="Business Services">Business Services</option>
+                            <option value="Education & Training">Education & Training</option>
+                            <option value="Energy & Natural Resources">Energy & Natural Resources</option>
+                            <option value="Entertainment & Leisure">Entertainment & Leisure</option>
+                            <option value="Fashion & Beauty">Fashion & Beauty</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Food & Beverage">Food & Beverage</option>
+                            <option value="Hospitality, Restaurants & Bars">Hospitality, Restaurants & Bars</option>
+                            <option value="Manufacturing & Engineering">Manufacturing & Engineering</option>
+                            <option value="Media">Media</option>
+                            <option value="Medical & Sciences">Medical & Sciences</option>
+                            <option value="Personal Services">Personal Services</option>
+                            <option value="Products & Inventions">Products & Inventions</option>
+                            <option value="Property">Property </option>
+                            <option value="Retail">Retail</option>
+                            <option value="Sales & Marketing">Sales & Marketing</option>
+                            <option value="Software">Software</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Transportation">Transportation</option>
                         </select>
                         <x-invalid-feedback field="industry"></x-invalid-feedback>
                     </x-form-group>
@@ -68,12 +68,12 @@
                     <x-form-group>
                         <label class="form-label">Stage</label>
                         <select name="stage" class="form-select {{ invalid_class('stage') }}">
-                            <option>Please select</option>
-                            <option value="1">USA</option>
-                            <option value="2">India</option>
-                            <option value="3">Indoesia</option>
-                            <option value="4">Quatar</option>
-                            <option value="4">UAE</option>
+                            <option value="Pre-Startup/R&D">Pre-Startup/R&D</option>
+                            <option value="MVP/Finished Product">MVP/Finished Product</option>
+                            <option value="Achieving Sales">Achieving Sales</option>
+                            <option value="Breaking Even">Breaking Even</option>
+                            <option value="Profitable">Profitable</option>
+                            <option value="Other">Other</option>
                         </select>
                         <x-invalid-feedback field="stage"></x-invalid-feedback>
                     </x-form-group>
@@ -82,77 +82,59 @@
                         <label class="form-label">Ideal Investor Role</label>
                         <select name="investor_role" class="form-select {{ invalid_class('investor_role') }}">
                             <option>Please select</option>
-                            <option value="1">USA</option>
-                            <option value="2">India</option>
-                            <option value="3">Indoesia</option>
-                            <option value="4">Quatar</option>
-                            <option value="4">UAE</option>
+                            <option value="" selected="selected">Investor Role</option>
+                            <option value="Silent">Silent</option>
+                            <option value="Daily Involvement">Daily Involvement</option>
+                            <option value="Weekly Involvement">Weekly Involvement</option>
+                            <option value="Monthly Involvement">Monthly Involvement</option>
+                            <option value="Any">Any</option>
                         </select>
                         <x-invalid-feedback field="investor_role"></x-invalid-feedback>
                     </x-form-group>
 
                     <x-form-group>
                         <label class="form-label">If you did a pervious round, how much did you raise?</label>
-                        <select name="currently_invested" class="form-select {{ invalid_class('currently_invested') }}">
-                            <option>Please select</option>
-                            <option value="1">USA</option>
-                            <option value="2">India</option>
-                            <option value="3">Indoesia</option>
-                            <option value="4">Quatar</option>
-                            <option value="4">UAE</option>
-                        </select>
-                        <x-invalid-feedback field="currently_invested"></x-invalid-feedback>
+                        <div class="input-group">
+                            <span class="input-group-text">{{ priceUnit() }}</span>
+                            <input type="number" name="currently_invested" class="form-control {{ invalid_class('currently_invested') }}" value="{{ old('currently_invested', $pitch->currently_invested) }}">
+                            <x-invalid-feedback field="currently_invested"></x-invalid-feedback>
+                        </div>
                     </x-form-group>
 
 
                     <x-form-group>
                         <label class="form-label"> How are you raising in total?</label>
-                        <select name="max_investment" class="form-select {{ invalid_class('max_investment') }}">
-                            <option>Please select</option>
-                            <option value="1">USA</option>
-                            <option value="2">India</option>
-                            <option value="3">Indoesia</option>
-                            <option value="4">Quatar</option>
-                            <option value="4">UAE</option>
-                        </select>
-                        <x-invalid-feedback field="max_investment"></x-invalid-feedback>
+                        <div class="input-group">
+                            <span class="input-group-text">{{ priceUnit() }}</span>
+                            <input type="number" name="max_investment" class="form-control {{ invalid_class('max_investment') }}" value="{{ old('max_investment', $pitch->max_investment) }}">
+                            <x-invalid-feedback field="max_investment"></x-invalid-feedback>
+                        </div>
                     </x-form-group>
 
                     <x-form-group>
                         <label class="form-label">How much of this total have you raised?</label>
-                        <select name="capital" class="form-select {{ invalid_class('capital') }}">
-                            <option>Please select</option>
-                            <option value="1">USA</option>
-                            <option value="2">India</option>
-                            <option value="3">Indoesia</option>
-                            <option value="4">Quatar</option>
-                            <option value="4">UAE</option>
-                        </select>
-                        <x-invalid-feedback field="capital"></x-invalid-feedback>
+                        <div class="input-group">
+                            <span class="input-group-text">{{ priceUnit() }}</span>
+                            <input type="number" name="capital" class="form-control {{ invalid_class('capital') }}" value="{{ old('capital', $pitch->capital) }}">
+                            <x-invalid-feedback field="capital"></x-invalid-feedback>
+                        </div>
                     </x-form-group>
 
                     <x-form-group>
                         <label class="form-label">What is the minimum Investment per investor?</label>
-                        <select name="min_investment" class="form-select {{ invalid_class('min_investment') }}">
-                            <option>Please select</option>
-                            <option value="1">USA</option>
-                            <option value="2">India</option>
-                            <option value="3">Indoesia</option>
-                            <option value="4">Quatar</option>
-                            <option value="4">UAE</option>
-                        </select>
-                        <x-invalid-feedback field="min_investment"></x-invalid-feedback>
+                        <div class="input-group">
+                            <span class="input-group-text">{{ priceUnit() }}</span>
+                            <input type="number" name="min_investment" class="form-control {{ invalid_class('min_investment') }}" value="{{ old('min_investment', $pitch->min_investment) }}">
+                            <x-invalid-feedback field="min_investment"></x-invalid-feedback>
+                        </div>
                     </x-form-group>
 
                     <x-form-group>
                         <label class="form-label">Do you have any tax relief available in this funding round?</label>
                         <select name="tax_relief_type" class="form-select {{ invalid_class('tax_relief_type') }}">
                             <option>Please select</option>
-                            <option value="1">USA</option>
-                            <option value="2">India</option>
-                            <option value="3">Indoesia</option>
-                            <option value="4">Quatar</option>
-                            <option value="4">UAE</option>
+                            <option value="SEIS">SEIS</option>
+                            <option value="EIS">EIS</option>
                         </select>
                         <x-invalid-feedback field="tax_relief_type"></x-invalid-feedback>
                     </x-form-group>

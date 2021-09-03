@@ -13,4 +13,19 @@ class Pitch extends Model
     protected $keyType = 'string';
     public $incrementing = false;
     protected $guarded = [];
+
+    public function scopeVerified($query, $status = true)
+    {
+        return $query->where('is_verified', $status);
+    }
+
+    public function isVerified()
+    {
+        return $this->is_verified ? true : false;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

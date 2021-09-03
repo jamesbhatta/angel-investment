@@ -36,7 +36,7 @@
     </div>
     {{-- End of columns --}}
         @endforeach
-        @for ($i = 0; $i < 10; $i++) <div class="col-md-4 mb-4">
+        @for ($i = 0; $i < 4; $i++) <div class="col-md-4 mb-4">
             <div class="card">
                 <img src="https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg" class="card-img-top" alt="...">
                 <div class="card-body">

@@ -1,18 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PitchController as AdminPitchController;
+use App\Http\Controllers\BusinessProposalController;
 use App\Http\Controllers\PitchController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,3 +22,11 @@ Route::post('new-pitch/step-two/{pitchForm}', [PitchController::class, 'storeSte
 
 Route::get('new-pitch/step-three/{pitchForm}', [PitchController::class, 'createStepThree'])->name('pitches.create.step-three');
 Route::post('new-pitch/step-three/{pitchForm}', [PitchController::class, 'storeStepThree'])->name('pitches.store.step-three');
+
+Route::get('business-proposals', [BusinessProposalController::class, 'index'])->name('business-proposals.index');
+Route::get('business-proposals/{pitch}', [BusinessProposalController::class, 'show'])->name('business-proposals.show');
+
+Route::group(['middleware' => ['auth', 'role:admin']], function() {
+    Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('admin/pitches', [AdminPitchController::class, 'index'])->name('admin.pitches.listing');
+});
