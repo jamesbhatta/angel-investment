@@ -182,7 +182,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home">
+                            <a class="nav-link" href="{{ route('system.logs') }}" target="_blank">
                                 <span class="nav-icon"></span>
                                 <span>System Logs</span>
                             </a>

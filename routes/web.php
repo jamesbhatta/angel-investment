@@ -33,4 +33,6 @@ Route::group(['middleware' => ['auth', 'role:admin']], function() {
     
     Route::get('approve-pitch/{pitch}', [PitchActionController::class, 'approve'])->name('pitches.approve');
     Route::get('unapprove-pitch/{pitch}', [PitchActionController::class, 'unapprove'])->name('pitches.unapprove');
+
+    Route::get('admin/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('system.logs');
 });
