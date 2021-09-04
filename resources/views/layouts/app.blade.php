@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <a href="/" class="navbrand"> <img src="https://zero-kamal.github.io/Angel/img/logo.png" width="150px" height="90px" alt=""></a>
+                        <a href="/" class="navbrand"> <img src="{{ asset('img/logo.png') }}" width="150px" height="90px" alt="{{ siteName() }}"></a>
                     </div>
                     <div class="col-md-6">
                         <div class="wrapper-nav">

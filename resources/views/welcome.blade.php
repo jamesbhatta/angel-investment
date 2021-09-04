@@ -40,12 +40,11 @@
             <div class="col-md-12">
                 <div class="left-country">
                     <ul>
-                        <li><a href="conntrydetail.html" "> <span class=" overlay"> India</span></a></li>
-                        <li><a href="conntrydetail.html"><span class=" overlay">UAE</span></a></li>
-                        <li><a href="conntrydetail.html"> <span class=" overlay">USA</span></a></li>
-                        <li><a href="conntrydetail.html"> <span class=" overlay">Indoesia</span> </a></li>
-                        <li><a href="conntrydetail.html"> <span class=" overlay"> Qatar</span> </a></li>
-
+                        <li><a href="conntrydetail.html"><span class="overlay">India</span></a></li>
+                        <li><a href="conntrydetail.html"><span class="overlay">UAE</span></a></li>
+                        <li><a href="conntrydetail.html"><span class="overlay">USA</span></a></li>
+                        <li><a href="conntrydetail.html"><span class="overlay">Indoesia</span></a></li>
+                        <li><a href="conntrydetail.html"><span class="overlay"> Qatar</span></a></li>
                     </ul>
                 </div>
 
@@ -340,10 +339,13 @@
                             <div class="row justify-content-center">
                                 <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7">
                                     <div class="card">
-                                        <p class="post"> <span><img class="quote-img" src="./img/i06xx2I.png"></span> <span class="post-txt">I
-                                                upgraded my Dribble account to the Pro version.
-                                                Absolutely loving the super clean look of the Playbook feature
-                                            </span> <span><img class="nice-img" src="./img/l5AkSHd.png"></span> </p>
+                                        <p class="post">
+                                            <span><img class="quote-img" src="./img/i06xx2I.png"></span>
+                                            <span class="post-txt">
+                                                I upgraded my Dribble account to the Pro version.
+                                                Absolutely loving the super clean look of the Playbook feature 👌
+                                            </span>
+                                        </p>
                                     </div>
                                     <div class="arrow-down"></div>
                                     <div class="row d-flex justify-content-center">
@@ -360,8 +362,8 @@
                                     <div class="card">
                                         <p class="post"> <span><img class="quote-img" src="./img/i06xx2I.png"></span> <span class="post-txt">I
                                                 upgraded my Dribble account to the Pro version.
-                                                Absolutely loving the super clean look of the Playbook feature
-                                            </span> <span><img class="nice-img" src="./img/l5AkSHd.png"></span> </p>
+                                                Absolutely loving the super clean look of the Playbook feature 👌
+                                            </span> </p>
                                     </div>
                                     <div class="arrow-down"></div>
                                     <div class="row d-flex justify-content-center">
