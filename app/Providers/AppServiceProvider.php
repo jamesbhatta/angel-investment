@@ -23,6 +23,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \Spatie\Flash\Flash::levels([
+            'info' => 'text-white bg-primary',
+            'success' => 'text-white bg-success',
+            'warning' => 'text-white bg-warning',
+            'error' => 'text-white bg-danger',
+        ]);
     }
 }

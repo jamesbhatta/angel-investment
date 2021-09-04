@@ -23,6 +23,10 @@ class Alert extends Component
      */
     public function render()
     {
-        return view('components.alert');
+        return view('components.alert',[
+            'message' => flash()->message,
+            'level' => flash()->level,
+            'class' => flash()->class,
+        ]);
     }
 }
