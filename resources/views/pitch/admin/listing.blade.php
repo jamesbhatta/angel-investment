@@ -22,7 +22,7 @@
                 <td>{{ $pitch->user->name }}</td>
                 <td>{{ $pitch->isVerified() ? 'approved' : 'Unapproved' }}</td>
                 <td>
-                    <a href="">View Details</a>
+                    <a href="{{ route('business-proposals.show', $pitch) }}">View Details</a>
                 </td>
             </tr>
             @endforeach

@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Cali Doe',
-                'email' => 'entrepreneur@yopretty.com',
+                'email' => 'entrepreneur@test.com',
                 // 'mobile' => '98436135999',
                 'role' => 'entrepreneur',
             ],

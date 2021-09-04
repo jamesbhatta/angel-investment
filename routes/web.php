@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PitchController as AdminPitchController;
 use App\Http\Controllers\BusinessProposalController;
+use App\Http\Controllers\PitchActionController;
 use App\Http\Controllers\PitchController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,7 @@ Route::get('business-proposals/{pitch}', [BusinessProposalController::class, 'sh
 Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('admin/pitches', [AdminPitchController::class, 'index'])->name('admin.pitches.listing');
+    
+    Route::get('approve-pitch/{pitch}', [PitchActionController::class, 'approve'])->name('pitches.approve');
+    Route::get('unapprove-pitch/{pitch}', [PitchActionController::class, 'unapprove'])->name('pitches.unapprove');
 });

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container my-4">
     <div class="row">
         <div class="col-md-4 mb-4">
-            <a href="{{ route('pitches.create.step-one') }}" class="d-block" style="border: 1px dashed #d2e5ff; background-color: #fbfdff; text-decoration: none;">
+            <a href="{{ route('pitches.create.step-one') }}" class="d-flex h-100 align-items-center justify-content-center" style="border: 1px dashed #d2e5ff; background-color: #fbfdff; text-decoration: none;">
                 <div class="p-5 text-center">
                     <i class="fa fa-plus" style="font-size: 4rem;"></i>
                     <h4 class="h4-responsive mt-3">Add New pitch</h4>
@@ -17,6 +17,11 @@
                 <img src="{{ $pitch->cover_image ?? 'https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg' }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $pitch->title }}</h5>
+                    @if($pitch->isVerified())
+                    <div class="badge bg-success">Approved</div>
+                    @else
+                    <div class="badge bg-danger">Not Approved</div>
+                    @endif
                     <p class="card-text">{{ $pitch->short_summary }}</p>
                     <div class="d-flex justify-content-between my-3">
                         <div>
@@ -28,15 +33,16 @@
                             <div>Maximun</div>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary btn-sm py-2">Manage my pitch</a>
+                    <div class="">
+                        {{-- <a href="#" class="btn btn-primary btn-sm py-2">Manage my pitch</a> --}}
+                        <a href="{{ route('business-proposals.show', $pitch) }}" class="btn btn-primary btn-sm py-2">Find Out More</a>
                     </div>
                 </div>
             </div>
-    </div>
-    {{-- End of columns --}}
+        </div>
+        {{-- End of columns --}}
         @endforeach
-        @for ($i = 0; $i < 4; $i++) <div class="col-md-4 mb-4">
+        {{-- @for ($i = 0; $i < 4; $i++) <div class="col-md-4 mb-4">
             <div class="card">
                 <img src="https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -58,8 +64,7 @@
                 </div>
             </div>
     </div>
-    {{-- End of columns --}}
-    @endfor
+    @endfor --}}
 
 </div>
 </div>

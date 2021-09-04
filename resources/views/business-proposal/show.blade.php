@@ -22,6 +22,8 @@
         </div>
     </div>
 
+   <x-pitch-admin-action-bar></x-pitch-admin-action-bar>
+
     <div class="row flex-column-reverse flex-md-row">
         <div class="col-md-8">
             <x-pitch-section-box>
