@@ -30,15 +30,15 @@
                             <option value="{{ $country->id }}" @if(old('company_country_id', $pitch->company_country_id) == $country->id) selected @endif>{{ $country->name }}</option>
                             @endforeach
                         </select>
-                        <x-invalid-feedback field="name"></x-invalid-feedback>
+                        <x-invalid-feedback field="company_country_id"></x-invalid-feedback>
                     </x-form-group>
 
-                    <x-text-field-group name="mobile" label="Mobile Number"></x-text-field-group>
+                    <x-text-field-group name="mobile" label="Mobile Number" value="{{ old('mobile', $pitch->mobile) }}"></x-text-field-group>
 
                     <x-form-group>
                         <label class="form-label">Industry</label>
                         <select name="industry" class="form-select {{ invalid_class('industry') }}">
-                            <option>Please select</option>
+                            <option value="">Please select</option>
                             <option value="Agriculture">Agriculture</option>
                             <option value="Business Services">Business Services</option>
                             <option value="Education & Training">Education & Training</option>
@@ -79,8 +79,7 @@
                     <x-form-group>
                         <label class="form-label">Ideal Investor Role</label>
                         <select name="investor_role" class="form-select {{ invalid_class('investor_role') }}">
-                            <option>Please select</option>
-                            <option value="" selected="selected">Investor Role</option>
+                            <option value="">Please select</option>
                             <option value="Silent">Silent</option>
                             <option value="Daily Involvement">Daily Involvement</option>
                             <option value="Weekly Involvement">Weekly Involvement</option>
@@ -130,9 +129,9 @@
                     <x-form-group>
                         <label class="form-label">Do you have any tax relief available in this funding round?</label>
                         <select name="tax_relief_type" class="form-select {{ invalid_class('tax_relief_type') }}">
-                            <option>Please select</option>
-                            <option value="SEIS">SEIS</option>
-                            <option value="EIS">EIS</option>
+                            <option value="">Please select</option>
+                            <option value="SEIS" @if(old('min_investment', $pitch->min_investment) == 'SEIS') selected @endif>SEIS</option>
+                            <option value="EIS" @if(old('min_investment', $pitch->min_investment) == 'EIS') selected @endif>EIS</option>
                         </select>
                         <x-invalid-feedback field="tax_relief_type"></x-invalid-feedback>
                     </x-form-group>

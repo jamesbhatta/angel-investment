@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        JamesBhatta\AppSettings\AppSettingServiceProvider::class,
 
         /*
          * Application Service Providers...

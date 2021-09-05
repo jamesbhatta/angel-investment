@@ -41,5 +41,11 @@ Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::put('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'update'])->name('backend.countries.update');
     Route::delete('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'destroy'])->name('backend.countries.destroy');
 
+    Route::get('settings/general', [\App\Http\Controllers\Backend\Setting\GeneralSettingController::class, 'index'])->name('backend.settings.general.index');
+    Route::post('settings/general', [\App\Http\Controllers\Backend\Setting\GeneralSettingController::class, 'store'])->name('backend.settings.general.store');
+    
+    // Route::get('settings/page', 'PageSettingController@index')->name('settings.page.index');
+    // Route::post('settings/page', 'PageSettingController@store')->name('settings.page.store');
+    
     Route::get('admin/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('system.logs');
 });

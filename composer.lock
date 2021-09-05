@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe9d5598bc9dc86f7740e6bc5a539061",
+    "content-hash": "56b5301e32979f9b24ff587440a60220",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -941,6 +941,61 @@
                 "source": "https://github.com/guzzle/psr7/tree/2.0.0"
             },
             "time": "2021-06-30T20:03:07+00:00"
+        },
+        {
+            "name": "jamesbhatta/app-settings",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jamesbhatta/app-settings.git",
+                "reference": "7003665140f40c684bd3a21fb302b4c0108299a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jamesbhatta/app-settings/zipball/7003665140f40c684bd3a21fb302b4c0108299a4",
+                "reference": "7003665140f40c684bd3a21fb302b4c0108299a4",
+                "shasum": ""
+            },
+            "require-dev": {
+                "mattiasgeniar/phpunit-query-count-assertions": "^1.1",
+                "orchestra/testbench": "^6.7"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JamesBhatta\\AppSettings\\AppSettingServiceProvider"
+                    ],
+                    "aliases": {
+                        "AppSetting": "JamesBhatta\\AppSettings\\Facades\\AppSetting"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JamesBhatta\\AppSettings\\": "src"
+                },
+                "files": [
+                    "src/Helpers/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "manojbhatta",
+                    "email": "jmsbhatta@gmail.com"
+                }
+            ],
+            "description": "Store application settings on the fly.",
+            "support": {
+                "issues": "https://github.com/jamesbhatta/app-settings/issues",
+                "source": "https://github.com/jamesbhatta/app-settings/tree/main"
+            },
+            "time": "2020-12-30T08:18:47+00:00"
         },
         {
             "name": "laravel/framework",
@@ -8347,7 +8402,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "jamesbhatta/app-settings": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

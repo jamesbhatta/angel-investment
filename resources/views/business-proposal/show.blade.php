@@ -10,7 +10,7 @@
     <div class="container @if(!$pitch->cover_image) mt-4 @endif">
         <div class="d-md-flex">
             <div>
-                <img class="img-thumbnail" src="{{ $pitch->logo ? $pitch->logoUrl() : '' }}" alt="{{ $pitch->title }}" style="height: 150px; width: 150px; @if($pitch->cover_image) margin-top: -30px; @endif">
+                <img class="img-thumbnail" src="{{ $pitch->logo ? $pitch->logoUrl() : asset('img/no-logo.png') }}" alt="{{ $pitch->title }}" style="height: 150px; width: 150px; @if($pitch->cover_image) margin-top: -30px; @endif">
             </div>
             <div class="ms-md-5 py-3 flex-grow-1">
                 <h1 class="fs-4 font-weight-bold"><strong>{{ $pitch->title }}</strong></h1>
@@ -32,10 +32,10 @@
                 <x-pitch-section-box>
                     <x-slot name="title">Short Summary</x-slot>
                     <p>
-                        The Spin-Lock hydraulic jack is a market-changing invention that eliminates the need for axle stands - and will dramatically reduce automotive jacking accidents, injuries and fatalities.
+                        {!! $pitch->short_summary !!}
                     </p>
                 </x-pitch-section-box>
-                <x-pitch-section-box>
+                {{-- <x-pitch-section-box>
                     <x-slot name="title">Highlights</x-slot>
                     <ul class="">
                         <li>
@@ -54,7 +54,7 @@
                             The market audience is concentrated in just a handful of Youtube channels
                         </li>
                     </ul>
-                </x-pitch-section-box>
+                </x-pitch-section-box> --}}
 
                 @if($pitch->the_business)
                 <x-pitch-section-box>
