@@ -4,13 +4,13 @@
 <div id="pitch-{{ $pitch->id }}">
     @if($pitch->cover_image)
     <div>
-        <img class="img-fluid w-100" src="https://cdn.crello.com/common/131653a5-8bb8-4e60-97ca-09e3d219fa51_1024.jpg" alt="{{ $pitch->title }}">
+        <img class="img-fluid w-100" src="{{ $pitch->coverImageUrl() }}" alt="{{ $pitch->title }}">
     </div>
     @endif
     <div class="container @if(!$pitch->cover_image) mt-4 @endif">
         <div class="d-md-flex">
             <div>
-                <img class="img-thumbnail" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/real-estate-company-logo-design-template-e9a0fb00e54013dc1a08c98c9cca3754_screen.jpg?ts=1572812163" alt="{{ $pitch->title }}" style="height: 150px; width: 150px; @if($pitch->cover_image) margin-top: -30px; @endif">
+                <img class="img-thumbnail" src="{{ $pitch->logo ? $pitch->logoUrl() : '' }}" alt="{{ $pitch->title }}" style="height: 150px; width: 150px; @if($pitch->cover_image) margin-top: -30px; @endif">
             </div>
             <div class="ms-md-5 py-3 flex-grow-1">
                 <h1 class="fs-4 font-weight-bold"><strong>{{ $pitch->title }}</strong></h1>

@@ -14,6 +14,16 @@ class Pitch extends Model
     public $incrementing = false;
     protected $guarded = [];
 
+    public function coverImageUrl()
+    {
+        return asset('storage' . $this->cover_image);
+    }
+
+    public function logoUrl()
+    {
+        return asset('storage' . $this->logo);
+    }
+
     public function scopeVerified($query, $status = true)
     {
         return $query->where('is_verified', $status);

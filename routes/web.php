@@ -34,5 +34,12 @@ Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::get('approve-pitch/{pitch}', [PitchActionController::class, 'approve'])->name('pitches.approve');
     Route::get('unapprove-pitch/{pitch}', [PitchActionController::class, 'unapprove'])->name('pitches.unapprove');
 
+    Route::get('backend/countries', [\App\Http\Controllers\Backend\CountryController::class, 'index'])->name('backend.countries.index');
+    Route::get('backend/countries/create', [\App\Http\Controllers\Backend\CountryController::class, 'create'])->name('backend.countries.create');
+    Route::post('backend/countries', [\App\Http\Controllers\Backend\CountryController::class, 'store'])->name('backend.countries.store');
+    Route::get('backend/countries/{country}/edit', [\App\Http\Controllers\Backend\CountryController::class, 'edit'])->name('backend.countries.edit');
+    Route::put('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'update'])->name('backend.countries.update');
+    Route::delete('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'destroy'])->name('backend.countries.destroy');
+
     Route::get('admin/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('system.logs');
 });

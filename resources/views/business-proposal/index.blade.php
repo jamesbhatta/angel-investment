@@ -9,7 +9,7 @@
 
     <div class="row">
         @foreach ($pitches as $pitch)
-        <div class="col-md-4">
+        <div class="col-md-4 mb-4">
               <x-pitch-card :pitch="$pitch"></x-pitch-card>  
         </div>
             @endforeach

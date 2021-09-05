@@ -4,11 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Pitch;
 use App\Models\PitchForm;
+use App\Service\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class PitchController extends Controller
 {
+    protected $imageService;
+    public function __construct(ImageService $imageService)
+    {
+        $this->imageService = $imageService;
+    }
+
     public function createStepOne()
     {
         $userId = auth()->id();
@@ -35,7 +42,7 @@ class PitchController extends Controller
         Validator::make($request->all(), [
             'title' => ['required'],
             'website' => ['nullable'],
-            'company_country' => ['required'],
+            'company_country_id' => ['required'],
             'mobile' => ['required'],
             'industry' => ['required'],
             'stage' => ['required'],
@@ -50,7 +57,7 @@ class PitchController extends Controller
         $pitch = unserialize($pitchForm->data);
         $pitch->title = $request->title;
         $pitch->website = $request->website;
-        $pitch->company_country = $request->company_country;
+        $pitch->company_country_id = $request->company_country_id;
         $pitch->mobile = $request->mobile;
         $pitch->industry = $request->industry;
         $pitch->stage = $request->stage;
@@ -112,13 +119,29 @@ class PitchController extends Controller
 
     public function storeStepThree(Request $request, PitchForm $pitchForm)
     {
+        $request->validate([
+            'cover_image' => 'nullable|image',
+            'logo' => 'nullable|image',
+        ]);
+
         $pitch = $pitchForm->getPitchModel();
-        
+
+        if ($request->hasFile('cover_image')) {
+            // $pitch->addMediaFromRequest('cover_image')->toMediaCollection('cover_image');
+            $pitch->cover_image = $this->imageService->storeImage($request->file('cover_image'));
+        }
+
+        if ($request->hasFile('logo')) {
+            // $pitch->addMediaFromRequest('logo')->toMediaCollection('logo');
+            $pitch->logo = $this->imageService->storeImage($request->file('logo'));
+        }
+
         // save the images
 
         $pitch->save();
         $pitchForm->delete();
 
+        $this->flash()->success('Pitch submitted successfully. It will be soon reviewed for verification.');
         return redirect()->route('home');
     }
 }

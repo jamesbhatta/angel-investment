@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.backend')
 
 @section('content')
 <h4 class="h4-responsive">Pitches</h4>

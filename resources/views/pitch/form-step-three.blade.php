@@ -10,13 +10,13 @@
                 <x-box class="shadow-sm p-4">
                     <x-form-group>
                         <label class="form-label">Cover Image</label>
-                        <input type="file" name="cover_image" class="form-control {{ invalid_class('cover_image') }}">
+                        <input type="file" name="cover_image" class="form-control {{ invalid_class('cover_image') }}" accept="image/*">
                         <x-invalid-feedback field="cover_image"></x-invalid-feedback>
                     </x-form-group>
 
                     <x-form-group>
                         <label class="form-label">Logo</label>
-                        <input type="file" name="logo" class="form-control {{ invalid_class('logo') }}">
+                        <input type="file" name="logo" class="form-control {{ invalid_class('logo') }}" accept="image/*">
                         <x-invalid-feedback field="logo"></x-invalid-feedback>
                     </x-form-group>
 

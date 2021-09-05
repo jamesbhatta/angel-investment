@@ -21,7 +21,7 @@ class CreatePitchesTable extends Migration
             $table->boolean('is_verified')->default(false);
 
             $table->string('website')->nullable();
-            $table->string('company_country')->nullable();
+            $table->unsignedBigInteger('company_country_id')->nullable();
             $table->string('mobile')->nullable();
             $table->string('industry')->nullable();
             $table->string('stage')->nullable();

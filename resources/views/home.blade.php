@@ -14,7 +14,7 @@
         @foreach ($pitches as $pitch)
         <div class="col-md-4 mb-4">
             <div class="card">
-                <img src="{{ $pitch->cover_image ?? 'https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg' }}" class="card-img-top" alt="...">
+                <img src="{{ $pitch->cover_image ? $pitch->coverImageUrl() : 'https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg' }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $pitch->title }}</h5>
                     @if($pitch->isVerified())

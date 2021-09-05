@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Styles -->
     {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
@@ -40,9 +40,14 @@
                             <div id="overlay" class="overlay">
                                 <nav class="overlay-menu">
                                     <ul>
+                                        @hasrole('admin')
+                                        <li><a href="{{ route('admin.dashboard') }}"><i class="fas fa-info-circle me-2"></i>Dashboard</a></li>
+                                        @endhasrole
                                         <li><a href=""><i class="fas fa-info-circle me-2"></i>About Us</a></li>
+                                        <li><a href="/business-proposals"><i class="fas fa-landmark me-2"></i>Business Proposals</a></li>
                                         <li><a href="{{ route('business-proposals.index') }}"><i class="fas fa-landmark me-2"></i>Investments</a></li>
                                         <li><a href=""><i class="fas fa-hands-helping me-2"></i>Services</a></li>
+                                        <li><a href=""><i class="far fa-address-book me-2"></i>Contact Us</a></li>
                                         @guest
                                         @if (Route::has('login'))
                                         <li><a href="{{ route('login') }}"><i class="fas fa-user-circle me-2"></i>Login</a></li>
@@ -60,7 +65,6 @@
                                             </form>
                                         </li>
                                         @endguest
-                                        <li><a href=""><i class="far fa-address-book me-2"></i>Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>

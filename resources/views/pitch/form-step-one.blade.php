@@ -24,13 +24,11 @@
 
                     <x-form-group>
                         <label class="form-label">Where is your company based?</label>
-                        <select name="company_country" class="form-select {{ invalid_class('title') }}">
-                            <option>Please select</option>
-                            <option value="USA">USA</option>
-                            <option value="India">India</option>
-                            <option value="Indonesia">Indonesia</option>
-                            <option value="Quatar">Quatar</option>
-                            <option value="UAE">UAE</option>
+                        <select name="company_country_id" class="form-select {{ invalid_class('company_country_id') }}">
+                            <option value="">Please select</option>
+                            @foreach (\App\Models\Country::active()->orderBy('name')->get() as $country)
+                            <option value="{{ $country->id }}" @if(old('company_country_id', $pitch->company_country_id) == $country->id) selected @endif>{{ $country->name }}</option>
+                            @endforeach
                         </select>
                         <x-invalid-feedback field="name"></x-invalid-feedback>
                     </x-form-group>
