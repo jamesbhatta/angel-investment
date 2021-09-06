@@ -101,7 +101,7 @@
                 <!-- Right Side Of Action bar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">My Profile</a>
+                        <a class="nav-link" href="/my-profile">My Profile</a>
                     </li>
                 </ul>
             </div>

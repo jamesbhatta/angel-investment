@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PitchController as AdminPitchController;
 use App\Http\Controllers\BusinessProposalController;
 use App\Http\Controllers\PitchActionController;
 use App\Http\Controllers\PitchController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -34,6 +35,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('business-proposals', [BusinessProposalController::class, 'index'])->name('business-proposals.index');
     Route::get('business-proposals/{pitch}', [BusinessProposalController::class, 'show'])->name('business-proposals.show');
+
+    Route::get('my-profile', [ProfileController::class, 'index'])->name('my-profile');
 });
 
 
