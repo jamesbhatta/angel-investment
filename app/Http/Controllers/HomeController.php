@@ -39,6 +39,6 @@ class HomeController extends Controller
     {
         $pitches = Pitch::where('user_id', auth()->id())->latest()->simplePaginate();
 
-        return view('home', compact(['pitches']));
+        return view('entrepreneur.home', compact(['pitches']));
     }
 }
