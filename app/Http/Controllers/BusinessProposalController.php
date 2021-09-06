@@ -16,12 +16,8 @@ class BusinessProposalController extends Controller
 
     public function show(Pitch $pitch)
     {
-        if (auth()->check() && (!auth()->user()->hasRole('admin'))) {
-            if ($pitch->user_id != auth()->user()->id) {
-                abort(404);
-            }
-        } else {
-            if (!$pitch->isVerified()) {
+        if (!auth()->user()->hasRole('admin')) {
+            if (!$pitch->isVerified() && $pitch->user_id != auth()->user()->id) {
                 abort(404);
             }
         }

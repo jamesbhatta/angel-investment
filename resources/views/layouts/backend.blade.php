@@ -85,7 +85,8 @@
 
         #sidebar nav .nav-link:hover,
         #sidebar nav .nav-link.active {
-            color: #555555;
+            color: #232a50;
+            background-color: #edf0ff;
             font-weight: 500;
         }
 
@@ -135,8 +136,7 @@
             <div id="sidebar" class="shadow-sm d-flex flex-column opened">
                 <div class="p-3 d-flex justify-content-between">
                     <a href="/" class="btn btn-link brand-wrapper d-flex align-items-center" style="text-decoration: none;">
-                        <img class="brand-logo" src="{{ siteLogoUrl() }}" alt="" height="40px" />
-                        <span class="ml-2 font-weight-bold" style="font-size: 1.2rem">{{ siteName() }}</span>
+                        <img class="brand-logo" src="{{ siteLogoUrl() }}" alt="{{ siteName() }}" height="50px" style="filter: brightness(0);" />
                     </a>
                     <button id="close-sidebar-btn" onclick="closeSidebar()">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -147,21 +147,21 @@
                 <nav class="flex-grow-1">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/admin/dashboard">
+                            <a class="nav-link {{ setActive('admin.dashboard') }}" href="/admin/dashboard">
                                 <span class="nav-icon">
                                 </span>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/admin/pitches">
+                            <a class="nav-link {{ setActive('admin.pitches.*') }}" href="/admin/pitches">
                                 <span class="nav-icon">
                                 </span>
                                 <span>Pitches</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/backend/countries">
+                            <a class="nav-link {{ setActive('backend.countries.*') }}" href="/backend/countries">
                                 <span class="nav-icon">
                                 </span>
                                 <span>Countries</span>
@@ -175,7 +175,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home">
+                            <a class="nav-link {{ setActive('backend.settings.*') }}" href="/backend/settings/general">
                                 <span class="nav-icon">
                                 </span>
                                 <span>Settings</span>
