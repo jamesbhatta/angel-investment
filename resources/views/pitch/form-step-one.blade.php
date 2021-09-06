@@ -5,10 +5,16 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-7">
+            @php
+            $updaMode = isset($updateMode) ? $updateMode : false
+            @endphp
             {{-- <pitch-form></pitch-form> --}}
-            @include('pitch.wizard-head', ['step' => 1])
-            <form action="{{ route('pitches.store.step-one', $pitchForm) }}" method="POST" enctype="multipart/form-data">
+            @include('pitch.wizard-head', ['step' => 1, 'updateMode' => $updateMode])
+            <form action="{{ $updateMode ? route('pitches.update.step-one', $pitch) :  route('pitches.store.step-one', $pitchForm) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @if($updateMode)
+                @method('put')
+                @endif
                 <x-box class="shadow-s p-4" style="background-color: #fbfbfb;">
 
                     <x-text-field-group name="title" label="Title" value="{{ old('title', $pitch->title) }}"></x-text-field-group>

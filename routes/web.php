@@ -16,6 +16,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
+    // Pitch creation
     Route::get('new-pitch/step-one', [PitchController::class, 'createStepOne'])->name('pitches.create.step-one');
     Route::post('pitches/step-one/{pitchForm}', [PitchController::class, 'storeStepOne'])->name('pitches.store.step-one');
 
@@ -24,6 +25,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('new-pitch/step-three/{pitchForm}', [PitchController::class, 'createStepThree'])->name('pitches.create.step-three');
     Route::post('new-pitch/step-three/{pitchForm}', [PitchController::class, 'storeStepThree'])->name('pitches.store.step-three');
+
+    // Pitch Update
+    Route::get('manage-pitch/{pitch}', [PitchController::class, 'edit'])->name('pitches.edit');
+    Route::put('pitches/step-one/{pitch}', [PitchController::class, 'updateStepOne'])->name('pitches.update.step-one');
+    Route::put('pitches/step-two/{pitch}', [PitchController::class, 'updateStepTwo'])->name('pitches.update.step-two');
+    Route::put('pitches/step-three/{pitch}', [PitchController::class, 'updateStepThree'])->name('pitches.update.step-three');
 
     Route::get('business-proposals', [BusinessProposalController::class, 'index'])->name('business-proposals.index');
     Route::get('business-proposals/{pitch}', [BusinessProposalController::class, 'show'])->name('business-proposals.show');
