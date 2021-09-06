@@ -29,30 +29,199 @@
 </section>
 <!-- hero-bg end -->
 
-<!-- our Newtwork -->
-<section class="network">
+<div class="service">
+    <div class="section-title">
+        <h2> Our difference: </h2>
+        <p> <span>Not just funding....</span>we are here to make it happen.</p>
+    </div>
+
     <div class="container">
-        <div class="section-title">
-            <h2> Select your location</h2>
-            <p>Our network</p>
-        </div>
+
         <div class="row">
-            <div class="col-md-12">
-                <div class="left-country">
-                    <ul>
-                        <li><a href="conntrydetail.html"><span class="overlay">India</span></a></li>
-                        <li><a href="conntrydetail.html"><span class="overlay">UAE</span></a></li>
-                        <li><a href="conntrydetail.html"><span class="overlay">USA</span></a></li>
-                        <li><a href="conntrydetail.html"><span class="overlay">Indoesia</span></a></li>
-                        <li><a href="conntrydetail.html"><span class="overlay"> Qatar</span></a></li>
-                    </ul>
+            <div class="col-md-4 mt-3 col-sm-6">
+                <div data-aos="fade-up" data-aos-duration="3000">
+                    <div class="service-box">
+                        <div class="service-box-inner">
+                            <span class="material-icons orange600">history_edu</span>
+                            <!-- school -->
+                            <h5>Education</h5>
+                            <br>
+                            <p">Short courses that equip you with the much needed knowledge.
+                                what does it take to be a great Entrepreneur, tools of trade, importance of
+                                resources, networking.
+
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mt-3  col-sm-6">
+                <div data-aos="fade-up" data-aos-duration="2500">
+                    <div class="service-box">
+                        <div class="service-box-inner">
+                            <span class="material-icons orange600">monitor_heart</span>
+                            <h5>Mentorship for entrepreneurs</h5>
+                            <br>
+                            <p>Can get to choose a mentor to guide you through the journey of enterpreneurship.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4 mt-3  col-sm-6">
+                <div data-aos="fade-up" data-aos-duration="2000">
+                    <div class="service-box">
+                        <div class="service-box-inner">
+
+                            <span class="material-icons orange600">record_voice_over</span>
+                            <h5>Presenters</h5>
+                            <br>
+                            <p>You need a professional presenter over a video call or a face to face meet with the
+                                investors to make the strong impression of your brand and idea who backs your
+                                passion and beliefs in the product.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mt-3  col-sm-6">
+                <div data-aos="fade-up" data-aos-duration="3000">
+                    <div class="service-box">
+                        <div class="service-box-inner">
+
+                            <span class="material-icons orange600">note_alt</span>
+                            <h5>Professional pitch deck writers</h5>
+                            <br>
+                            <p>Not everyone can articulate a eye catching pitch
+                                that the investors want to see the key points and ideas to be centred and focused.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mt-3  col-sm-6">
+                <div data-aos="fade-up" data-aos-duration="2500">
+                    <div class="service-box">
+                        <div class="service-box-inner">
+
+                            <span class="material-icons orange600">account_balance_wallet</span>
+                            <h5>Accountants</h5>
+                            <br>
+                            <p>The need for a skilled accountant can never be underestimated when it comes to
+                                structuring of business cross borders, share holding advice, company constitution
+                                advice, international tax advice etc .
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mt-3  col-sm-6">
+                <div data-aos="fade-up" data-aos-duration="2000">
+                    <div class="service-box">
+                        <div class="service-box-inner">
+
+                            <span class="material-icons orange600">gavel</span>
+                            <h5>Legal professionals</h5>
+                            <br>
+                            <p>Structuring the agreements cross borders, ongoing review and changes, applicable
+                                licenses and laws.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mt-3  col-sm-6">
+                <div data-aos="fade-up" data-aos-duration="3000">
+                    <div class="service-box">
+                        <div class="service-box-inner">
+
+                            <span class="material-icons orange600">campaign</span>
+                            <h5>Influencers</h5>
+                            <br>
+                            <p>You have a great product and need an influencer to create the viral effect?? Let's
+                                talk .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mt-3  col-sm-6">
+                <div data-aos="fade-up" data-aos-duration="2500">
+                    <div class="service-box">
+                        <div class="service-box-inner">
+
+                            <span class="material-icons orange600">developer_mode</span>
+                            <h5>Web Development</h5>
+                            <br>
+                            <p>Website is a business must have in this day and age. Design a professional and
+                                presentable website.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mt-3  col-sm-6">
+                <div data-aos="fade-up" data-aos-duration="2000">
+                    <div class="service-box">
+                        <div class="service-box-inner">
+
+                            <span class="material-icons orange600">devices</span>
+                            <h5>Graphic Designing and Social Media</h5>
+                            <br>
+                            <p>Social Media coverage and Business Branding is key to business success.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-
         </div>
     </div>
+</div>
+<!-- service-end -->
+
+<!-- our Newtwork -->
+<section class="network">
+    <div class="section-title">
+        <h2> Select your location</h2>
+        <p>Our network</p>
+    </div>
+    <setion class="flags">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="left-country">
+                        <ul>
+                            <li><a href="conntrydetail.html" "> <span class=" overlay"> India</span></a></li>
+                            <li><a href="conntrydetail.html"><span class=" overlay">UAE</span></a></li>
+                            <li><a href="conntrydetail.html"> <span class=" overlay">USA</span></a></li>
+                            <li><a href="conntrydetail.html"> <span class=" overlay">Indoesia</span> </a></li>
+                            <li><a href="conntrydetail.html"> <span class=" overlay"> Qatar</span> </a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </setion>
+
 </section>
 <!-- our Newtwork -end -->
 

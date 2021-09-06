@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Merriweather:wght@300;400;700;900&display=swap");
-/* -- Stepped Progress Bar -- */
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.6;
@@ -33,7 +32,7 @@ body {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  color: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
 }
 
 .section-title h2::before {
@@ -63,66 +62,6 @@ body {
   font-size: 1rem !important;
   font-weight: 500;
   color: grey;
-}
-
-.section-title p span {
-  font-style: italic;
-}
-
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-8.jpg") fixed center center;
-  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/banner-8.jpg") fixed center center;
-  background-size: cover;
-  padding: 80px 0;
-  color: white;
-  /* padding: 15px 0;
-background: #f3f5fa;
-min-height: 40px;
-margin-top: 72px; */
-}
-
-.breadcrumbs h2 {
-  font-size: 28px;
-  font-weight: 600;
-  color: white !important;
-}
-
-.breadcrumbs a {
-  color: #121824;
-  font-size: 14px;
-  font-weight: 800 !important;
-}
-
-@media (max-width: 992px) {
-  .breadcrumbs .breadcrumbs {
-    margin-top: 68px;
-  }
-}
-
-.breadcrumbs ol {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  list-style: none;
-  padding: 0 0 10px 0;
-  margin: 0;
-  font-size: 14px;
-}
-
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #4668a2;
-  content: "/";
 }
 
 .header {
@@ -327,7 +266,7 @@ margin-top: 72px; */
 }
 
 .hero-bg .hero-content {
-  margin-top: 120px;
+  margin-top: 100px;
   text-align: center;
   color: white;
 }
@@ -365,8 +304,8 @@ margin-top: 72px; */
 }
 
 .hero-bg .hero-content .getStart {
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   color: #fff;
   font-size: 16px;
   padding: 14px 28px;
@@ -395,16 +334,6 @@ margin-top: 72px; */
 .network {
   margin: 80px 0;
   width: 100%;
-  background-color: #121824;
-  padding: 20px;
-}
-
-.network .section-title {
-  margin-top: 100px;
-}
-
-.network .section-title h2 {
-  color: #ffffff;
 }
 
 .network ul {
@@ -441,11 +370,10 @@ margin-top: 72px; */
 
 .network ul li a {
   text-decoration: none;
-  font-family: "Dosis", sans-serif;
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 18px;
   cursor: pointer;
   z-index: 1;
 }
@@ -462,53 +390,55 @@ margin-top: 72px; */
   right: 0;
   height: 100%;
   width: 100%;
-  background: rgba(54, 39, 39, 0.3);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .network .left-country ul li:nth-child(1) {
-  background: url("../img/Flag-India.jpg");
+  background-image: url("../img/Flag-India.jpg");
+  background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 150px;
 }
 
 .network .left-country ul li:nth-child(2) {
-  background: url("../img/255px-Flag_of_the_United_Arab_Emirates.svg.png");
+  background-image: url("../img/255px-Flag_of_the_United_Arab_Emirates.svg.png");
+  background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 150px;
 }
 
 .network .left-country ul li:nth-child(3) {
   background-image: url("../img/flag-Stars-and-Stripes-May-1-1795.jpg");
-  background-size: 100% 100%;
+  background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   height: 150px;
 }
 
 .network .left-country ul li:nth-child(4) {
   background-image: url("../img/Flag-Indonesia.jpg");
+  background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 150px;
 }
 
 .network .left-country ul li:nth-child(5) {
   background-image: url("../img/qatar.png");
+  background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 150px;
 }
 
 @media (max-width: 768px) {
-  .network {
-    padding: 0px;
-  }
   .network .left-country ul {
     display: inline-block;
     -webkit-box-orient: horizontal;
@@ -558,6 +488,12 @@ margin-top: 72px; */
 @media (max-width: 768px) {
   .featured .cliens .cliens img {
     max-width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured {
+    margin-top: -90px;
   }
 }
 
@@ -612,8 +548,8 @@ margin-top: 72px; */
   color: #fff;
   position: relative;
   z-index: 2;
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   border-radius: 24px;
   top: -18px;
   font-size: 14px;
@@ -644,8 +580,8 @@ margin-top: 72px; */
 
 .joinCommunity .card-view .caption .btn-default:hover {
   color: white;
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
 }
 
 .joinCommunity .card-view .caption i {
@@ -734,8 +670,8 @@ margin-top: 72px; */
 .testimonial .card {
   border: solid 1px #212121;
   padding: 45px 50px 25px 60px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   border-radius: 10px;
   border: none;
   color: #fff;
@@ -801,8 +737,8 @@ margin-top: 72px; */
 }
 
 .country-details .country-inner .left-align button {
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   padding: 8px 55px;
   color: white;
   font-size: 1rem;
@@ -887,8 +823,8 @@ footer .social-wrap .social-links a::after {
   top: -80px;
   left: -0px;
   background: #000;
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   position: absolute;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -1013,8 +949,8 @@ footer .copyright-text:hover {
 }
 
 .login .company__info {
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1090,8 +1026,8 @@ footer .copyright-text:hover {
   font-weight: 600;
   background-color: #fff;
   margin: auto;
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
 }
 
 .register {
@@ -1109,7 +1045,7 @@ footer .copyright-text:hover {
 
 .register a {
   text-decoration: none;
-  color: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  color: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
@@ -1152,14 +1088,14 @@ footer .copyright-text:hover {
 }
 
 .register .tab-group li a:hover {
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   color: #ffffff;
 }
 
 .register .tab-group .active a {
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   color: #ffffff;
 }
 
@@ -1188,7 +1124,7 @@ footer .copyright-text:hover {
 
 .register label .req {
   margin: 2px;
-  color: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  color: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
 }
 
 .register label.active {
@@ -1265,8 +1201,8 @@ footer .copyright-text:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   color: white;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -1360,8 +1296,8 @@ footer .copyright-text:hover {
 }
 
 .pitch .nav .active {
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
 }
 
 .pitch .form-group .file {
@@ -1369,53 +1305,86 @@ footer .copyright-text:hover {
   overflow: hidden;
 }
 
-.contact {
-  margin: 80px 0;
+/*--------------------------------------------------------------
+# Cta
+--------------------------------------------------------------*/
+.cta {
+  background: -webkit-gradient(linear, left top, right top, from(#018ee3), color-stop(58%), color-stop(150%, rgba(0, 0, 0, 0.2))), url("../img/hero-bgg.webp") fixed center center;
+  background: linear-gradient(90deg, #018ee3, 58%, rgba(0, 0, 0, 0.2) 150%), url("../img/hero-bgg.webp") fixed center center;
+  background-size: cover;
+  padding: 80px 0;
+  margin-bottom: 60px;
 }
 
-.contact .contact-box {
-  margin-bottom: 80px;
-  -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  border-radius: 5px;
-  background: #fff;
+.cta h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+}
+
+.cta h3::before {
+  position: absolute;
+  content: "";
+  bottom: -8px;
+  margin: auto;
+  left: 0%;
+  right: 0%;
+  width: 80px;
+  height: 3px;
+  background-color: #121824;
+}
+
+.cta p {
+  color: #fff;
+}
+
+.cta .cta-btn {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
-.contact .contact-box:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+.cta .cta-btn:hover {
+  background: #47b2e4;
+  border: 2px solid #47b2e4;
 }
 
-.contact .contact-box:hover i {
-  background-color: #018ee3 !important;
-  color: #ffffff !important;
+.cta .cta-content h3 {
+  color: #37517e;
 }
 
-.contact .contact-box .contact-box-inner {
-  text-align: center;
+.cta .cta-content p {
+  line-height: 1.8;
 }
 
-.contact .contact-box .contact-box-inner i {
-  color: #018ee3;
-  padding: 20px;
-  background: #f7fafd;
-  border-radius: 50%;
+@media (max-width: 1024px) {
+  .cta .cta {
+    background-attachment: scroll;
+  }
 }
 
-.contact .contact-box .contact-box-inner h5 {
-  margin-top: 20px;
-  font-size: 1rem;
-}
-
-.contact .contact-box .contact-box-inner h6 {
-  font-size: 14px;
-}
-
-.contact .contact-box .contact-box-inner .phone-number {
-  margin-top: 15px !important;
+@media (min-width: 769px) {
+  .cta .cta .cta-btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 }
 
 .contact input[type="text"],
@@ -1433,8 +1402,8 @@ footer .copyright-text:hover {
 }
 
 .contact input[type="submit"] {
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   color: white;
   padding: 12px 20px;
   border: none;
@@ -1456,213 +1425,18 @@ footer .copyright-text:hover {
   padding: 20px;
 }
 
-.contact-banner .breadcrumbs {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-3.jpg") fixed center center;
-  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/banner-3.jpg") fixed center center;
-  background-size: cover;
-  padding: 80px 0;
-  color: white;
-}
-
-.aboutUs {
-  margin: 80px 0;
-}
-
-.aboutUs .about-section p {
-  font-size: 1rem;
-  text-align: center;
+.aboutUs h2 {
+  font-weight: 600;
+  border-bottom: 1px solid #c1bdba;
+  margin-bottom: 35px;
 }
 
 .aboutUs .card button {
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(150%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 150%);
   border: 1px solid transparent;
   color: white;
   padding: 6px 20px;
   border-radius: 3px;
-}
-
-.service {
-  margin: 80px 0;
-}
-
-.service .service-box {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-          box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-  padding: 30px;
-  border-radius: 5px;
-  background: #fff;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-
-.service .service-box:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-}
-
-.service .service-box .service-box-inner {
-  text-align: center;
-}
-
-.service .service-box .service-box-inner span {
-  color: #ffffff;
-  padding: 20px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
-  border-radius: 50%;
-  font-size: 50px;
-}
-
-.service .service-box .service-box-inner h5 {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #018ee3;
-}
-
-.service .service-box .service-box-inner p {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.8em;
-  text-align: justify !important;
-}
-
-.service .service-box .service-box-inner .phone-number {
-  margin-top: 15px !important;
-}
-
-.process-banner .breadcrumbs {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-5.jpg") fixed center center;
-  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/banner-5.jpg") fixed center center;
-  background-size: cover;
-  padding: 80px 0;
-  color: white;
-  /* padding: 15px 0;
-  background: #f3f5fa;
-  min-height: 40px;
-  margin-top: 72px; */
-}
-
-.process {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  position: relative;
-}
-
-.process .section-title h2 {
-  margin-top: 40px;
-  color: #018ee3;
-}
-
-.process .timeline {
-  width: 85%;
-  height: auto;
-  margin: auto;
-}
-
-.process .timeline ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.process .timeline ul li {
-  padding: 15px;
-  background-color: #121824;
-  color: #ffffff !important;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.process .timeline ul li:last-child {
-  margin-bottom: 0;
-}
-
-.process .timeline .timeline-content p {
-  font-size: 16px;
-  line-height: 30px;
-  font-weight: 300;
-}
-
-.process .timeline .timeline-content .date {
-  font-size: 12px;
-  font-weight: 300;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-@media only screen and (min-width: 768px) {
-  .process .investor {
-    position: relative;
-  }
-  .process .enterpernur {
-    position: relative;
-  }
-  .process .timeline::before {
-    content: "";
-    position: absolute;
-    bottom: 0%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background-color: gray;
-  }
-  .process .timeline ul li {
-    width: 50%;
-    position: relative;
-    margin-bottom: 40px;
-  }
-  .process .timeline ul li::before {
-    content: "";
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background-color: gray;
-    top: -6px;
-  }
-  .process .timeline ul li:nth-child(odd) {
-    float: left;
-    clear: right;
-    -webkit-transform: translateX(-30px);
-            transform: translateX(-30px);
-    border-radius: 20px 0px 20px 20px;
-  }
-  .process .timeline ul li:nth-child(odd)::before {
-    -webkit-transform: translate(50%, -50%);
-            transform: translate(50%, -50%);
-    right: -30px;
-  }
-  .process .timeline ul li:nth-child(even) {
-    float: right;
-    clear: left;
-    -webkit-transform: translateX(30px);
-            transform: translateX(30px);
-    border-radius: 0px 20px 20px 20px;
-  }
-  .process .timeline ul li:nth-child(even)::before {
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    left: -30px;
-  }
-  .process .timeline .timeline-content .date {
-    position: absolute;
-    top: -30px;
-  }
-  .process .timeline ul li:hover::before {
-    background-color: #018ee3;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .process .timeline {
-    width: 100%;
-    margin-left: auto;
-  }
 }
 /*# sourceMappingURL=index.css.map */

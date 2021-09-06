@@ -62,3 +62,6 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
     Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('system.logs');
 });
+
+
+Route::view('the-process', 'page.the-procecss');
