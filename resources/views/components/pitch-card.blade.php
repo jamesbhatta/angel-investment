@@ -1,7 +1,9 @@
 <div class="card">
     <img src="{{ $pitch->cover_image ? $pitch->coverImageUrl() : 'https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg' }}" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">{{ $pitch->title }}</h5>
+        <h5 class="card-title">
+            <a href="{{ route('business-proposals.show', $pitch) }}" style="text-decoration: none; color: inherit;">{{ $pitch->title }}</a>
+        </h5>
         <p class="card-text">{{ $pitch->short_summary }}</p>
         <div class="d-flex justify-content-between my-3">
             <div>

@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-7">
             @php
-            $updaMode = isset($updateMode) ? $updateMode : false
+            $updateMode = isset($updateMode) ? $updateMode : false
             @endphp
             @include('pitch.wizard-head', ['step' => 2, 'updateMode' => $updateMode])
             <form action="{{ $updateMode ? route('pitches.update.step-two', $pitch) : route('pitches.store.step-two', $pitchForm) }}" method="POST" enctype="multipart/form-data">

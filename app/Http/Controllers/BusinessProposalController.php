@@ -9,7 +9,7 @@ class BusinessProposalController extends Controller
 {
     public function index()
     {
-        $pitches = Pitch::verified()->latest()->get();
+        $pitches = Pitch::verified()->latest()->paginate(15);
 
         return view('business-proposal.index', compact(['pitches']));
     }

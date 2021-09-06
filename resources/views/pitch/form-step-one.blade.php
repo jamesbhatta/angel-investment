@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-7">
             @php
-            $updaMode = isset($updateMode) ? $updateMode : false
+            $updateMode = isset($updateMode) ? $updateMode : false
             @endphp
             {{-- <pitch-form></pitch-form> --}}
             @include('pitch.wizard-head', ['step' => 1, 'updateMode' => $updateMode])

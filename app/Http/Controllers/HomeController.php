@@ -24,7 +24,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pitches = Pitch::where('user_id', auth()->id())->latest()->get();
+        if (auth()->user()->hasrole('investor')) {
+            return $this->investorHome();
+        }
+        return $this->entrepreneurHome();
+    }
+
+    private function investorHome()
+    {
+        return redirect()->route('business-proposals.index');
+    }
+
+    private function entrepreneurHome()
+    {
+        $pitches = Pitch::where('user_id', auth()->id())->latest()->simplePaginate();
 
         return view('home', compact(['pitches']));
     }

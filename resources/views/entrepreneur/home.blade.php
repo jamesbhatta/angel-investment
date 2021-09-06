@@ -42,30 +42,12 @@
         </div>
         {{-- End of columns --}}
         @endforeach
-        {{-- @for ($i = 0; $i < 4; $i++) <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Big Data SaaS Platform</h5>
-                    <p class="card-text">Hurree Labs; Bringing data together to allow the most tailored experience for the audience; EIS Approved; Took part in Techstars; Silicon Valley Investors; huge growth.</p>
-                    <div class="d-flex justify-content-between my-3">
-                        <div>
-                            <strong style="font-size: 1.1rem;">$11000</strong>
-                            <div>Minimum</div>
-                        </div>
-                        <div>
-                            <strong style="font-size: 1.1rem;">$19000</strong>
-                            <div>Maximun</div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary btn-sm py-2">Manage my pitch</a>
-                    </div>
-                </div>
-            </div>
     </div>
-    @endfor --}}
-
-</div>
+    
+    @if($pitches->hasPages())
+    <div class="d-flex justify-content-center">
+        {{ $pitches->links() }}
+    </div>
+    @endif
 </div>
 @endsection

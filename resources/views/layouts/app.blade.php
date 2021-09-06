@@ -80,9 +80,16 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <ul class="navbar-nav">
+                    @hasrole('investor')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">My Home</a>
+                    </li>
+                    @endhasrole
+                    @hasrole('entrepreneur')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">My Pitches</a>
                     </li>
+                    @endhasrole
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">My Investors</a>
                     </li>
