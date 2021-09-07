@@ -46,9 +46,8 @@
                                         @endhasrole
                                         <li><a href=""><i class="fas fa-info-circle me-2"></i>About Us</a></li>
                                         <li><a href="/business-proposals"><i class="fas fa-landmark me-2"></i>Business Proposals</a></li>
-                                        <li><a href="{{ route('business-proposals.index') }}"><i class="fas fa-landmark me-2"></i>Investments</a></li>
-                                        <li><a href=""><i class="fas fa-hands-helping me-2"></i>Services</a></li>
-                                        <li><a href=""><i class="far fa-address-book me-2"></i>Contact Us</a></li>
+                                        <li><a href="{{ route('business-proposals.index') }}"><i class="fas fa-landmark me-2"></i>The Process</a></li>
+                                        <li><a href="contact-us"><i class="far fa-address-book me-2"></i>Contact Us</a></li>
                                         @guest
                                         @if (Route::has('login'))
                                         <li><a href="{{ route('login') }}"><i class="fas fa-user-circle me-2"></i>Login</a></li>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Country;
+use App\Service\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -30,16 +31,22 @@ class CountryController extends Controller
         return view('country.form', compact(['country', 'updateMode']));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, ImageService $imageService)
     {
         $request->validate([
             'name' => 'required',
+            'image' => 'nullable',
         ]);
 
-        Country::create([
+        $country = Country::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name, '-')
         ]);
+
+        if($request->hasFile('image')) {
+            $country->image = $imageService->storeImage($request->file('image'));
+            $country->save();
+        }
 
         $this->flash()->success('Country added successfully.');
 
@@ -51,17 +58,23 @@ class CountryController extends Controller
         return $this->showForm($country);
     }
 
-    public function update(Request $request, Country $country)
+    public function update(Request $request, Country $country, ImageService $imageService)
     {
         $request->validate([
             'name' => 'required',
-            'slug' => 'required'
+            'slug' => 'required',
+            'image' => 'nullable',
         ]);
 
         $country->update([
             'name' => $request->name,
             'slug' => Str::slug($request->slug, '-')
         ]);
+
+        if($request->hasFile('image')) {
+            $country->image = $imageService->swapImage($country->image, $request->file('image'));
+            $country->save();
+        }
 
         $this->flash()->success('Country updated successfully.');
 

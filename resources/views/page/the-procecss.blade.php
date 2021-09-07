@@ -84,27 +84,20 @@
 
             <h4 class=" text-center mt-5 mb-5" style="color: #018ee3; font-size: 24px; font-weight: 500;">Another
                 Success story begins...</h4>
-
             <!-- joinNow buttton -->
-            <button class="getStart d-flex justify-content-center m-auto mb-4">Join us now</button>
+            <a href="/register" class="btn getStart d-flex justify-content-center m-auto mb-4">Join us now</a>
             <hr>
 
             <div class="section-title ">
                 <h2>For Entrepreneur:</h2>
             </div>
 
-
-
             <div class="enterpernur">
-
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="timeline">
                                 <ul>
-
-
-
                                     <li>
                                         <div data-aos="zoom-out-right">
                                             <div class="timeline-content">
@@ -159,9 +152,8 @@
             <h4 class=" text-center mt-5 mb-5" style="color: #018ee3; font-size: 24px; font-weight: 500;">
                 Another Idea realised into the world...</h4>
 
-                
             <!-- joinNow buttton -->
-            <button class="getStart d-flex justify-content-center m-auto mb-4">Join us now</button>
+            <a href="/register" class="btn getStart d-flex justify-content-center m-auto mb-4">Join us now</a>
         </section>
     </section>
 

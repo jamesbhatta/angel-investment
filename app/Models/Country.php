@@ -16,6 +16,11 @@ class Country extends Model
         'active' => 'boolean'
     ];
 
+    public function imageUrl()
+    {
+        return $this->image ? asset('storage/' . $this->image) : asset('images/no-image.png');
+    }
+
     public function scopeActive($query, $status = true)
     {
         return $query->where('active', $status);

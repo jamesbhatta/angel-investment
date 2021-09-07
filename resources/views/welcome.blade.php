@@ -199,29 +199,22 @@
         <h2> Select your location</h2>
         <p>Our network</p>
     </div>
-    <setion class="flags">
+    <div class="flags">
         <div class="container">
-
             <div class="row">
-                <div class="col-md-12">
-                    <div class="left-country">
-                        <ul>
-                            <li><a href="conntrydetail.html" "> <span class=" overlay"> India</span></a></li>
-                            <li><a href="conntrydetail.html"><span class=" overlay">UAE</span></a></li>
-                            <li><a href="conntrydetail.html"> <span class=" overlay">USA</span></a></li>
-                            <li><a href="conntrydetail.html"> <span class=" overlay">Indoesia</span> </a></li>
-                            <li><a href="conntrydetail.html"> <span class=" overlay"> Qatar</span> </a></li>
-
-                        </ul>
-                    </div>
-
+                @foreach(\App\Models\Country::orderBy('name')->latest()->get() as $country)
+                <div class="col-md-3 mt-4">
+                    <a href="/country/{{ $country->slug }}">
+                        @if($country->image)
+                        <img src="{{ $country->imageUrl() }}" width="100%" alt="{{ $country->name }}">
+                        @endif
+                        <span>{{ $country->name }}</span>
+                    </a>
                 </div>
-
-
+                @endforeach
             </div>
         </div>
-    </setion>
-
+    </div>
 </section>
 <!-- our Newtwork -end -->
 

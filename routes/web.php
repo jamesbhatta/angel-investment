@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PitchController as AdminPitchController;
 use App\Http\Controllers\BusinessProposalController;
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\PitchActionController;
 use App\Http\Controllers\PitchController;
 use App\Http\Controllers\ProfileController;
@@ -65,3 +66,6 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
 
 Route::view('the-process', 'page.the-procecss');
+Route::view('contact-us', 'page.contact-us');
+
+Route::get('country/{country:slug}', [CountryController::class, 'show']);
