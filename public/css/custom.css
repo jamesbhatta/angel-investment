@@ -364,7 +364,7 @@ margin-top: 72px; */
   font-size: 20px;
 }
 
-.hero-bg .hero-content .getStart {
+.getStart {
   background: -webkit-gradient(linear, left top, right top, color-stop(58%, #018ee3), color-stop(200%, rgba(0, 0, 0, 0.8)));
   background: linear-gradient(90deg, #018ee3 58%, rgba(0, 0, 0, 0.8) 200%);
   color: #fff;
