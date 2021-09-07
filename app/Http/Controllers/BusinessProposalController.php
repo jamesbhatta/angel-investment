@@ -22,7 +22,7 @@ class BusinessProposalController extends Controller
             }
         }
 
-        $pitch->load('user');
+        $pitch->load(['user', 'country']);
 
         return view('business-proposal.show', compact(['pitch']));
     }

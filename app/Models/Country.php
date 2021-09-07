@@ -25,4 +25,9 @@ class Country extends Model
     {
         return $query->where('active', $status);
     }
+
+    public function pitches()
+    {
+        return $this->hasMany(Pitch::class);
+    }
 }

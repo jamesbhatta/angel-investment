@@ -17,7 +17,7 @@
                 <div><span class="text-primary">⦿</span> {{ $pitch->industry }}</div>
                 <div>
                     <span class="text-primary me-2"><i class="fa fa-map-marker-alt"></i></span>
-                    <span>{{ $pitch->company_country }}</span>
+                    <span>{{ $pitch->country->name ?? '' }}</span>
                 </div>
             </div>
             <div class="py-3 align-self-center">
