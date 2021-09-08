@@ -21,6 +21,11 @@ class Country extends Model
         return $this->image ? asset('storage/' . $this->image) : asset('images/no-image.png');
     }
 
+    public function coverImageUrl()
+    {
+        return $this->cover_image ? asset('storage' . $this->cover_image) : asset('img/banner.jpg');
+    }
+
     public function scopeActive($query, $status = true)
     {
         return $query->where('active', $status);

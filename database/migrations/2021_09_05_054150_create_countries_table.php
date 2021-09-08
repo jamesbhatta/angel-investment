@@ -19,8 +19,8 @@ class CreateCountriesTable extends Migration
             $table->string('slug')->nullable();
             $table->boolean('active')->default(true);
             $table->string('image')->nullable();
+            $table->string('cover_image')->nullable();
             $table->integer('position')->nullable();
-
             $table->softDeletes();
             $table->timestamps();
         });

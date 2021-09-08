@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="banner"></div>
+{{-- <div class="banner"></div> --}}
+<div style="background-size: cover; height: 300px;">
+<img class="w-100 h-100" src="{{ $country->coverImageUrl() }}" alt="{{ $country->name }}" style="object-fit: cover; object-position: center;">
+</div>
 <div class="container">
     <!-- country-details -->
     <section class="country-details">
         <div class="container-fluid">
             <div class="row">
-
                 <div class="country-inner">
                     <div class="col-xl-12">
                         <div class="section-title">
