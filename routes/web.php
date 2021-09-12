@@ -16,6 +16,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
     // Pitch creation
@@ -67,5 +68,9 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
 Route::view('the-process', 'page.the-procecss');
 Route::view('contact-us', 'page.contact-us');
+Route::view('welcome', 'welcome');
+Route::view('about-us', 'page.about-us');
+Route::view('the-process', 'page.the-process');
+
 
 Route::get('country/{country:slug}', [CountryController::class, 'show']);

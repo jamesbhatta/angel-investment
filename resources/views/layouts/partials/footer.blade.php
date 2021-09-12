@@ -22,9 +22,9 @@
                 <div class="quick-links">
                     <h4>Quicks Link</h4>
                     <ul>
+                        <li><a href="">Home</a></li>
                         <li><a href="">About Us</a></li>
-                        <li><a href="{{ route('business-proposals.index') }}">Investments</a></li>
-                        <li><a href="">Services</a></li>
+                        <li><a href="{{ route('business-proposals.index') }}">The Process</a></li>
                         @guest
                         <li><a href="{{ route('login') }}">Login</a></li>
                         <li><a href="{{ route('register') }}">Sign Up</a></li>
