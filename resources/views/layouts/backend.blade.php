@@ -169,10 +169,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home">
+                            <a class="nav-link" href="/backend/users">
                                 <span class="nav-icon">
                                 </span>
                                 <span>Users</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">
+                                <span class="nav-icon">
+                                </span>
+                                <span>Transactions</span>
                             </a>
                         </li>
                         <li class="nav-item">

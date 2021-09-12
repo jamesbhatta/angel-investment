@@ -36,6 +36,7 @@ class CountryController extends Controller
         $request->validate([
             'name' => 'required',
             'image' => 'nullable',
+            'cover_image' => 'nullable',
         ]);
 
         $country = Country::create([
@@ -45,6 +46,11 @@ class CountryController extends Controller
 
         if($request->hasFile('image')) {
             $country->image = $imageService->storeImage($request->file('image'));
+            $country->save();
+        }
+
+        if($request->hasFile('cover_image')) {
+            $country->cover_image = $imageService->storeImage($request->file('cover_image'));
             $country->save();
         }
 
@@ -64,6 +70,7 @@ class CountryController extends Controller
             'name' => 'required',
             'slug' => 'required',
             'image' => 'nullable',
+            'cover_image' => 'nullable',
         ]);
 
         $country->update([
@@ -73,6 +80,11 @@ class CountryController extends Controller
 
         if($request->hasFile('image')) {
             $country->image = $imageService->swapImage($country->image, $request->file('image'));
+            $country->save();
+        }
+
+        if($request->hasFile('cover_image')) {
+            $country->cover_image = $imageService->swapImage($country->cover_image, $request->file('cover_image'));
             $country->save();
         }
 

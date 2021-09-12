@@ -56,6 +56,8 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::put('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'update'])->name('backend.countries.update');
     Route::delete('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'destroy'])->name('backend.countries.destroy');
 
+    Route::get('backend/users', [\App\Http\Controllers\Backend\UserController::class, 'index'])->name('backend.users.index');
+
     Route::get('backend/settings/general', [\App\Http\Controllers\Backend\Setting\GeneralSettingController::class, 'index'])->name('backend.settings.general.index');
     Route::post('backend/settings/general', [\App\Http\Controllers\Backend\Setting\GeneralSettingController::class, 'store'])->name('backend.settings.general.store');
 
