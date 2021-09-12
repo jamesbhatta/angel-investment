@@ -8,6 +8,7 @@ use App\Http\Controllers\PitchActionController;
 use App\Http\Controllers\PitchController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Stmt\TryCatch;
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,6 +40,20 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('business-proposals/{pitch}', [BusinessProposalController::class, 'show'])->name('business-proposals.show');
 
     Route::get('my-profile', [ProfileController::class, 'index'])->name('my-profile');
+
+    Route::get('payment', function () {
+        return view('payment', [
+            'user' => auth()->user()
+        ]);
+    });
+
+    Route::post('charge', function () {
+        // return request()->paymentMethod['paymentMethod']['id'];
+        $paymentMethodId = request()->paymentMethod['paymentMethod']['id'];
+
+        $stripeCharge = (new \App\Models\User)->charge(100, $paymentMethodId);
+        return $stripeCharge;
+    });
 });
 
 
@@ -74,5 +89,8 @@ Route::view('welcome', 'welcome');
 Route::view('about-us', 'page.about-us');
 Route::view('the-process', 'page.the-process');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec28af5dd3ec9fa8bdd65dfaa6a1724c2f96eebc
 Route::get('country/{country:slug}', [CountryController::class, 'show']);
