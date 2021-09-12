@@ -18,6 +18,7 @@ class PitchController extends Controller
         $this->imageService = $imageService;
     }
 
+    // Step 1
     public function createStepOne()
     {
         $userId = auth()->id();
@@ -78,6 +79,7 @@ class PitchController extends Controller
         return redirect()->route('pitches.create.step-two', $pitchForm);
     }
 
+    // Step 2
     public function createStepTwo(PitchForm $pitchForm)
     {
         $pitch = $pitchForm->getPitchModel();
@@ -109,6 +111,7 @@ class PitchController extends Controller
         return redirect()->route('pitches.create.step-three', $pitchForm);
     }
 
+    // Step 3
     public function createStepThree(PitchForm $pitchForm)
     {
         $pitch = $pitchForm->getPitchModel();
@@ -144,7 +147,38 @@ class PitchController extends Controller
         $pitchForm->delete();
 
         $this->flash()->success('Pitch submitted successfully. It will be soon reviewed for verification.');
-        return redirect()->route('home');
+        
+        return redirect()->route('pitches.create.step-four', $pitch);
+    }
+
+    // Step 4
+    public function createStepFour(Pitch $pitch)
+    {
+        return view('pitch.form-step-four', [
+            'pitch' => $pitch,
+        ]);
+    }
+    
+    public function storeStepFour(Request $request, Pitch $pitch)
+    {
+        $request->validate(['package_id' => 'required']);
+
+        $pitch->update(['package_id' => $request->package_id]);
+
+        return redirect()->route('pitches.payment', $pitch);
+    }
+
+    // Step 5
+    public function createStepFive(Pitch $pitch)
+    {
+        $amount = get_package_price($pitch->package_id);
+        $packageName = get_package_name($pitch->package_id);
+
+        return view('pitch.form-step-five', [
+            'pitch' => $pitch,
+            'packageName' => $packageName,
+            'amount' => $amount,
+        ]);
     }
 
     public function edit(Pitch $pitch)

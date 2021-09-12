@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PitchController as AdminPitchController;
 use App\Http\Controllers\BusinessProposalController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PitchActionController;
 use App\Http\Controllers\PitchController;
 use App\Http\Controllers\ProfileController;
@@ -30,6 +32,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('new-pitch/step-three/{pitchForm}', [PitchController::class, 'createStepThree'])->name('pitches.create.step-three');
     Route::post('new-pitch/step-three/{pitchForm}', [PitchController::class, 'storeStepThree'])->name('pitches.store.step-three');
 
+    Route::get('new-pitch/select-package/{pitch}', [PitchController::class, 'createStepFour'])->name('pitches.create.step-four');
+    Route::post('new-pitch/select-package/{pitch}', [PitchController::class, 'storeStepFour'])->name('pitches.store.step-four');
+
+    Route::get('payment/{pitch}', [PitchController::class, 'createStepFive'])->name('pitches.payment');
+    // Route::post('new-pitch/payment/{pitch}', [PitchController::class, 'storeStepFive'])->name('pitches.store.step-five');
+    Route::post('charge/{pitch}', [PaymentController::class, 'charge'])->name('charge');
+
+
     // Pitch Update
     Route::get('manage-pitch/{pitch}', [PitchController::class, 'edit'])->name('pitches.edit');
     Route::put('pitches/step-one/{pitch}', [PitchController::class, 'updateStepOne'])->name('pitches.update.step-one');
@@ -41,19 +51,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('my-profile', [ProfileController::class, 'index'])->name('my-profile');
 
-    Route::get('payment', function () {
-        return view('payment', [
-            'user' => auth()->user()
-        ]);
-    });
+    Route::get('my-invoices', [InvoiceController::class, 'index'])->name('invoices.index');
 
-    Route::post('charge', function () {
-        // return request()->paymentMethod['paymentMethod']['id'];
-        $paymentMethodId = request()->paymentMethod['paymentMethod']['id'];
-
-        $stripeCharge = (new \App\Models\User)->charge(100, $paymentMethodId);
-        return $stripeCharge;
-    });
 });
 
 
@@ -70,6 +69,8 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('backend/countries/{country}/edit', [\App\Http\Controllers\Backend\CountryController::class, 'edit'])->name('backend.countries.edit');
     Route::put('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'update'])->name('backend.countries.update');
     Route::delete('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'destroy'])->name('backend.countries.destroy');
+
+    Route::get('transactions', [\App\Http\Controllers\Backend\TransactionController::class, 'index'])->name('backend.transactions.index');
 
     Route::get('backend/users', [\App\Http\Controllers\Backend\UserController::class, 'index'])->name('backend.users.index');
 
@@ -89,8 +90,4 @@ Route::view('welcome', 'welcome');
 Route::view('about-us', 'page.about-us');
 Route::view('the-process', 'page.the-process');
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ec28af5dd3ec9fa8bdd65dfaa6a1724c2f96eebc
 Route::get('country/{country:slug}', [CountryController::class, 'show']);

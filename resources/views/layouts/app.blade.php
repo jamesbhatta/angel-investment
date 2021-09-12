@@ -95,9 +95,8 @@
                         <a class="nav-link" href="{{ route('home') }}">My Investors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Newsfeed</a>
+                        <a class="nav-link" href="{{ route('invoices.index') }}">Invoices</a>
                     </li>
-
                 </ul>
                 <!-- Right Side Of Action bar -->
                 <ul class="navbar-nav ml-auto">

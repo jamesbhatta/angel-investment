@@ -20,6 +20,9 @@ class CreatePitchesTable extends Migration
             $table->integer('current_step')->nullable();
             $table->boolean('is_verified')->default(false);
 
+            $table->boolean('payment_completed')->default(false);
+            $table->integer('package_id')->nullable();
+
             $table->string('website')->nullable();
             $table->unsignedBigInteger('company_country_id')->nullable();
             $table->string('mobile')->nullable();
