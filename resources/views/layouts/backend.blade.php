@@ -176,7 +176,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home">
+                            <a class="nav-link" href="/transactions">
                                 <span class="nav-icon">
                                 </span>
                                 <span>Transactions</span>
