@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Country;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -10,7 +11,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use PhpParser\Node\Stmt\TryCatch;
 
 class RegisterController extends Controller
 {
@@ -44,6 +44,13 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+        $countries = Country::active()->orderBy('name')->latest()->get();
+        
+        return view('auth.register', compact('countries'));
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -55,8 +62,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'country_id' => ['required', 'exists:countries,id'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'type' => ['required', Rule::in(['investor', 'entrepreneur']),],
+            'type' => ['required', Rule::in(['investor', 'entrepreneur'])],
         ]);
     }
 
@@ -71,6 +79,7 @@ class RegisterController extends Controller
             $user =  User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
+                'country_id' => $data['country_id'],
                 'password' => Hash::make($data['password']),
                 'type' => $data['type'],
             ]);

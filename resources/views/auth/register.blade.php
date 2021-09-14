@@ -59,6 +59,20 @@
                             </span>
                             @enderror
                         </div>
+                        
+                        <div class="mb-3">
+                            <select name="country_id" class="form-select py-3 @error('country_id') is-invalid @enderror">
+                                <option value="">Select your country</option>
+                                @foreach($countries as $country)
+                                <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('country_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
 
                         <div class="mb-3">
                             <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
