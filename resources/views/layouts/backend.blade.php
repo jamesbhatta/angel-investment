@@ -197,6 +197,20 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {{ setActive('backend.settings.*') }}" href="/backend/settings/general">
+                                <span class="nav-icon">
+                                </span>
+                                <span>Homepage Settings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ setActive('backend.settings.*') }}" href="/backend/settings/general">
+                                <span class="nav-icon">
+                                </span>
+                                <span>API Settings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('system.logs') }}" target="_blank">
                                 <span class="nav-icon"></span>
                                 <span>System Logs</span>

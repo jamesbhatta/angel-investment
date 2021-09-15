@@ -20,10 +20,10 @@
 
                         <br>
                         <div class="left-align">
-                            <a class="btn btn-primary rounded-0 px-4">Secure Capital</a>
+                            <a href="/register" class="btn btn-primary rounded-0 px-4">Secure Capital</a>
                             <br>
                             <br>
-                            <button>Invest</button>
+                            <a href="/register" class="btn btn-primary rounded-0 px-4">Invest</a>
                         </div>
                     </div>
                 </div>
