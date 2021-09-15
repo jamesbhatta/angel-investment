@@ -14,10 +14,26 @@
                 @method('put')
                 @endif
                 <x-box class="shadow-sm p-4">
-                    <input class="form-check-input" type="radio" name="package_id" id="package-1" value="1">
-                    <input class="form-check-input" type="radio" name="package_id" id="package-2" value="2">
-                    <input class="form-check-input" type="radio" name="package_id" id="package-3" value="3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="package_id" id="starter-package-radio" value="1">
+                        <label class="form-check-label" for="starter-package-radio">
+                          Starter Package
+                        </label>
+                      </div>
 
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="package_id" id="medium-package-radio" value="2">
+                        <label class="form-check-label" for="medium-package-radio">
+                          Medium Package
+                        </label>
+                      </div>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="package_id" id="executive-package-radio" value="3">
+                        <label class="form-check-label" for="executive-package-radio">
+                          Executive Package
+                        </label>
+                      </div>
 
                     <x-form-group>
                         <button type="submit" class="btn btn-primary py-3 w-100">Save & Continue</button>

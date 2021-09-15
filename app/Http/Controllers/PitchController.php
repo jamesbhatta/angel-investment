@@ -8,13 +8,12 @@ use App\Service\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-use function Ramsey\Uuid\v1;
-
 class PitchController extends Controller
 {
     protected $imageService;
     public function __construct(ImageService $imageService)
     {
+        $this->middleware('role:entrepreneur');
         $this->imageService = $imageService;
     }
 
@@ -163,7 +162,7 @@ class PitchController extends Controller
     {
         $request->validate(['package_id' => 'required']);
 
-        $pitch->update(['package_id' => $request->package_id]);
+        $pitch->update(['package_id' => $request->package_id, 'visible_country_id' => $request->package_id == 1 ? auth()->user()->country_id : null]);
 
         return redirect()->route('pitches.payment', $pitch);
     }

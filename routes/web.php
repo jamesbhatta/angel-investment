@@ -18,11 +18,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
-    // Pitch creation
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    
+    // Pitch creation only for enterprenuery
     Route::get('new-pitch/step-one', [PitchController::class, 'createStepOne'])->name('pitches.create.step-one');
     Route::post('pitches/step-one/{pitchForm}', [PitchController::class, 'storeStepOne'])->name('pitches.store.step-one');
 
@@ -46,11 +47,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('pitches/step-two/{pitch}', [PitchController::class, 'updateStepTwo'])->name('pitches.update.step-two');
     Route::put('pitches/step-three/{pitch}', [PitchController::class, 'updateStepThree'])->name('pitches.update.step-three');
 
-    Route::get('business-proposals', [BusinessProposalController::class, 'index'])->name('business-proposals.index');
-    Route::get('business-proposals/{pitch}', [BusinessProposalController::class, 'show'])->name('business-proposals.show');
+    // Pitch view
+    Route::get('projects', [BusinessProposalController::class, 'index'])->name('business-proposals.index');
+    Route::get('projects/{pitch}', [BusinessProposalController::class, 'show'])->name('business-proposals.show');
 
     Route::get('my-profile', [ProfileController::class, 'index'])->name('my-profile');
 
+    // Invoices
     Route::get('my-invoices', [InvoiceController::class, 'index'])->name('invoices.index');
 
 });

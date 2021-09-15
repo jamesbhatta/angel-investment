@@ -22,6 +22,7 @@ class CreatePitchesTable extends Migration
 
             $table->boolean('payment_completed')->default(false);
             $table->integer('package_id')->nullable();
+            $table->unsignedBigInteger('visible_country_id')->nullable();
 
             $table->string('website')->nullable();
             $table->unsignedBigInteger('company_country_id')->nullable();

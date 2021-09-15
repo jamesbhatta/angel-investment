@@ -81,22 +81,25 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <ul class="navbar-nav">
-                    @hasrole('investor')
+                    @hasrole('entrepreneur')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">My Home</a>
                     </li>
-                    @endhasrole
-                    @hasrole('entrepreneur')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">My Pitches</a>
-                    </li>
-                    @endhasrole
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">My Investors</a>
+                        <a class="nav-link" href="/my-investors">My Investors</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('invoices.index') }}">Invoices</a>
                     </li>
+                    @endhasrole
+                    @hasrole('investor')
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects">My Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/my-investment">My Investments</a>
+                    </li>
+                    @endhasrole
                 </ul>
                 <!-- Right Side Of Action bar -->
                 <ul class="navbar-nav ml-auto">

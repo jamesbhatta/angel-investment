@@ -35,4 +35,9 @@ class Country extends Model
     {
         return $this->hasMany(Pitch::class);
     }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

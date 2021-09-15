@@ -24,6 +24,7 @@ class User extends Authenticatable
         'email',
         'country_id',
         'password',
+        'country_id',
     ];
 
     /**
@@ -44,4 +45,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class, 'country_id');
+    }
+
+    public function pitches()
+    {
+        return $this->hasMany(Pitch::class);
+    }
 }

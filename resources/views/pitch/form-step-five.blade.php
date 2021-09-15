@@ -77,7 +77,7 @@
 <script>
     $(function() {
 
-        const stripe = Stripe(config('cashier.key'));
+        const stripe = Stripe("{{ config('cashier.key') }}");
 
         const elements = stripe.elements();
         const cardElement = elements.create('card');

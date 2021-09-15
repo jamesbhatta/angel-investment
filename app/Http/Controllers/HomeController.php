@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('role:entrepreneur');
     }
 
     /**
@@ -23,19 +23,6 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        if (auth()->user()->hasrole('investor')) {
-            return $this->investorHome();
-        }
-        return $this->entrepreneurHome();
-    }
-
-    private function investorHome()
-    {
-        return redirect()->route('business-proposals.index');
-    }
-
-    private function entrepreneurHome()
     {
         $pitches = Pitch::where('user_id', auth()->id())->latest()->simplePaginate();
 
