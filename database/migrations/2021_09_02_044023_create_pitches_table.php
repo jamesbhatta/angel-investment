@@ -27,7 +27,8 @@ class CreatePitchesTable extends Migration
             $table->string('website')->nullable();
             $table->unsignedBigInteger('company_country_id')->nullable();
             $table->string('mobile')->nullable();
-            $table->string('industry')->nullable();
+            // $table->string('industry')->nullable();
+            $table->string('industry_id')->nullable();
             $table->string('stage')->nullable();
             $table->string('investor_role')->nullable();
             $table->string('currently_invested')->nullable();

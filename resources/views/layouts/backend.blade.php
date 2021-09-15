@@ -183,6 +183,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {{ setActive('backend.industries.*') }}" href="/backend/industry">
+                                <span class="nav-icon">
+                                </span>
+                                <span>Industries</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {{ setActive('backend.settings.*') }}" href="/backend/settings/general">
                                 <span class="nav-icon">
                                 </span>

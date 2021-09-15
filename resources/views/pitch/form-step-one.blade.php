@@ -43,9 +43,12 @@
 
                     <x-form-group>
                         <label class="form-label">Industry</label>
-                        <select name="industry" class="form-select {{ invalid_class('industry') }}">
+                        <select name="industry_id" class="form-select {{ invalid_class('industry') }}">
                             <option value="">Please select</option>
-                            <option value="Agriculture">Agriculture</option>
+                            @foreach ($industries as $industry)
+                            <option value="{{ $industry->id }}" @if(old('industry_id', $country->industry_id) == $industry->id) selected @endif>{{ $industry->title }}</option>
+                            @endforeach
+                            {{-- <option value="Agriculture">Agriculture</option>
                             <option value="Business Services">Business Services</option>
                             <option value="Education & Training">Education & Training</option>
                             <option value="Energy & Natural Resources">Energy & Natural Resources</option>
@@ -64,7 +67,7 @@
                             <option value="Sales & Marketing">Sales & Marketing</option>
                             <option value="Software">Software</option>
                             <option value="Technology">Technology</option>
-                            <option value="Transportation">Transportation</option>
+                            <option value="Transportation">Transportation</option> --}}
                         </select>
                         <x-invalid-feedback field="industry"></x-invalid-feedback>
                     </x-form-group>

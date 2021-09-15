@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Industry;
 use App\Models\Pitch;
 use App\Models\PitchForm;
 use App\Service\ImageService;
@@ -36,7 +37,9 @@ class PitchController extends Controller
             ]);
         }
 
-        return view('pitch.form-step-one', compact(['pitch', 'pitchForm']));
+        $industries = Industry::active()->orderBy('title')->get();
+
+        return view('pitch.form-step-one', compact(['pitch', 'pitchForm', 'industries']));
     }
 
     public function storeStepOne(Request $request, PitchForm $pitchForm)

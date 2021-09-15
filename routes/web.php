@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PitchController as AdminPitchController;
+use App\Http\Controllers\Backend\IndustryController;
 use App\Http\Controllers\BusinessProposalController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\InvoiceController;
@@ -10,7 +11,6 @@ use App\Http\Controllers\PitchActionController;
 use App\Http\Controllers\PitchController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use PhpParser\Node\Stmt\TryCatch;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    
+
     // Pitch creation only for enterprenuery
     Route::get('new-pitch/step-one', [PitchController::class, 'createStepOne'])->name('pitches.create.step-one');
     Route::post('pitches/step-one/{pitchForm}', [PitchController::class, 'storeStepOne'])->name('pitches.store.step-one');
@@ -55,7 +55,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Invoices
     Route::get('my-invoices', [InvoiceController::class, 'index'])->name('invoices.index');
-
 });
 
 
@@ -72,6 +71,15 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('backend/countries/{country}/edit', [\App\Http\Controllers\Backend\CountryController::class, 'edit'])->name('backend.countries.edit');
     Route::put('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'update'])->name('backend.countries.update');
     Route::delete('backend/countries/{country}', [\App\Http\Controllers\Backend\CountryController::class, 'destroy'])->name('backend.countries.destroy');
+
+    Route::resource('backend/industry', IndustryController::class)->names([
+        'index' => 'backend.industries.index',
+        'create' => 'backend.industries.create',
+        'store' => 'backend.industries.store',
+        'edit' => 'backend.industries.edit',
+        'update' => 'backend.industries.update',
+        'destroy' => 'backend.industries.destroy',
+    ]);
 
     Route::get('transactions', [\App\Http\Controllers\Backend\TransactionController::class, 'index'])->name('backend.transactions.index');
 
