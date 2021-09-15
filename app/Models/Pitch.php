@@ -16,12 +16,12 @@ class Pitch extends Model
 
     public function coverImageUrl()
     {
-        return asset('storage' . $this->cover_image);
+        return asset('storage/' . $this->cover_image);
     }
 
     public function logoUrl()
     {
-        return asset('storage' . $this->logo);
+        return asset('storage/' . $this->logo);
     }
 
     public function scopeVerified($query, $status = true)
