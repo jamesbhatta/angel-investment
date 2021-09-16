@@ -9,8 +9,8 @@
         <a class="{{ $step == 1 ? 'btn-primary' : 'btn-light' }} btn py-3" href="{{ $step > 5 ? route('pitches.create.step-one', ) : '' }}">Company Info</a>
         <a class="{{ $step == 2 ? 'btn-primary' : 'btn-light' }} btn py-3" href="{{ $step > 5 ? route('pitches.create.step-one') : '' }}">Pitch & Deal</a>
         <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3" href="#">Images</a>
-        <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3" href="#">Package</a>
-        <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3" href="#">Payment</a>
+        <a class="{{ $step == 4 ? 'btn-primary' : 'btn-light' }} btn py-3" href="#">Package</a>
+        <a class="{{ $step == 5 ? 'btn-primary' : 'btn-light' }} btn py-3" href="#">Payment</a>
         @endif
     </div>
 </div>
