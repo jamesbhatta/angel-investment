@@ -24,13 +24,13 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="type" id="radio-investor" value="investor">
+                                        <input class="form-check-input" type="radio" name="type" id="radio-investor" value="investor" @if(request('role') == 'investor') checked @endif> 
                                         <label class="form-check-label" for="radio-investor">I'm an Investor</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="type" id="radio-entrepreneur" value="entrepreneur" checked>
+                                        <input class="form-check-input" type="radio" name="type" id="radio-entrepreneur" value="entrepreneur" @if(request('role') == 'entrepreneur') checked @endif>
                                         <label class="form-check-label" for="radio-entrepreneur">I'm an Entrepreneur</label>
                                     </div>
                                 </div>

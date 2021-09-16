@@ -10,22 +10,33 @@
                     <h2>Realising Ideas and implementing solution to global business.</h2>
                     <p>Strengthening the business communities and opening doors to the world of
                         opportunities, networks, skills, resources for both entrepreneurs and funders.</p>
-                    <div class="d-flex justify-content-center align-items-center im"><span class="iam">I'm looking
-                            to...</span>
-                        <div class="dropdown ms-3">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="d-flex justify-content-center align-items-center im">
+                        <span class="iam">I'm looking to...</span>
+                        <div class="dropdown">
+                            <button class="btn iam-text dropdown-toggle text-white" type="button" id="action-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 Fundraise
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#"> Fundraise</a>
-                                <a class="dropdown-item" href="#">Invest</a>
-                            </div>
+                            <ul class="dropdown-menu w-100" aria-labelledby="action-dropdown">
+                                <li><button class="dropdown-item iam-option" data-href="/register?role=entrepreneur" data-text="Fundraise">Fundraise</button></li>
+                                <li><button class="dropdown-item iam-option" data-href="/register?role=investor" data-text="Invest">Invest</button></li>
+                            </ul>
                         </div>
                     </div>
-                    <button class="getStart">Get Started</button>
+                    <a id="get-started-btn" class="d-inline-block btn getStart" href="/register?role=entrepreneur">Get Started</a>
                 </div>
             </div>
         </div>
+        @push('scripts')
+            <script>
+                $(function () {
+                    $('.iam-option').click(function (e) { 
+                        e.preventDefault();
+                        $('#get-started-btn').attr('href', $(this).data('href'));
+                        $('.iam-text').text($(this).data('text'));
+                    });
+                });
+            </script>
+        @endpush
 </section>
 <!-- hero-bg end -->
 
@@ -46,11 +57,10 @@
                             <!-- school -->
                             <h5>Education</h5>
                             <br>
-                            <p">Short courses that equip you with the much needed knowledge.
+                            <p>Short courses that equip you with the much needed knowledge.
                                 what does it take to be a great Entrepreneur, tools of trade, importance of
                                 resources, networking.
-
-                                </p>
+                            </p>
                         </div>
                     </div>
                 </div>
