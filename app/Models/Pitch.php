@@ -43,4 +43,9 @@ class Pitch extends Model
     {
         return $this->belongsTo(Country::class, 'company_country_id');
     }
+
+    public function industry()
+    {
+        return $this->belongsTo(Industry::class);
+    }
 }

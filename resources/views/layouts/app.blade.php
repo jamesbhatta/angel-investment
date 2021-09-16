@@ -97,7 +97,7 @@
                         <a class="nav-link" href="/projects">My Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/my-investment">My Investments</a>
+                        <a class="nav-link" href="/my-investments">My Investments</a>
                     </li>
                     @endhasrole
                 </ul>

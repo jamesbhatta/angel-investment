@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PitchController as AdminPitchController;
 use App\Http\Controllers\Backend\IndustryController;
 use App\Http\Controllers\BusinessProposalController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PitchActionController;
@@ -51,6 +52,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('projects', [BusinessProposalController::class, 'index'])->name('business-proposals.index');
     Route::get('projects/{pitch}', [BusinessProposalController::class, 'show'])->name('business-proposals.show');
 
+    Route::get('my-investments', [InvestmentController::class, 'index'])->name('investments.index');
+    Route::post('invest/{pitch}', [InvestmentController::class, 'store'])->name('investment.store');
+
     Route::get('my-profile', [ProfileController::class, 'index'])->name('my-profile');
 
     // Invoices
@@ -80,6 +84,8 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
         'update' => 'backend.industries.update',
         'destroy' => 'backend.industries.destroy',
     ]);
+
+    Route::get('backend/investments', [\App\Http\Controllers\Backend\InvestmentController::class, 'index'])->name('backend.investments.index');
 
     Route::get('transactions', [\App\Http\Controllers\Backend\TransactionController::class, 'index'])->name('backend.transactions.index');
 

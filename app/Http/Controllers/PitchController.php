@@ -49,7 +49,7 @@ class PitchController extends Controller
             'website' => ['nullable'],
             'company_country_id' => ['required'],
             'mobile' => ['required'],
-            'industry' => ['required'],
+            'industry_id' => ['required'],
             'stage' => ['required'],
             'investor_role' => ['required'],
             'currently_invested' => ['nullable'],
@@ -64,7 +64,7 @@ class PitchController extends Controller
         $pitch->website = $request->website;
         $pitch->company_country_id = $request->company_country_id;
         $pitch->mobile = $request->mobile;
-        $pitch->industry = $request->industry;
+        $pitch->industry_id = $request->industry_id;
         $pitch->stage = $request->stage;
         $pitch->investor_role = $request->investor_role;
         $pitch->currently_invested = $request->currently_invested;

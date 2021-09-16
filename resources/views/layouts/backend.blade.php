@@ -155,6 +155,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {{ setActive('backend.investments.*') }}" href="/backend/investment">
+                                <span class="nav-icon">
+                                </span>
+                                <span>Investments</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {{ setActive('admin.pitches.*') }}" href="/admin/pitches">
                                 <span class="nav-icon">
                                 </span>

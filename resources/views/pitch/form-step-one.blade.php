@@ -43,7 +43,7 @@
 
                     <x-form-group>
                         <label class="form-label">Industry</label>
-                        <select name="industry_id" class="form-select {{ invalid_class('industry') }}">
+                        <select name="industry_id" class="form-select {{ invalid_class('industry_id') }}">
                             <option value="">Please select</option>
                             @foreach ($industries as $industry)
                             <option value="{{ $industry->id }}" @if(old('industry_id', $country->industry_id) == $industry->id) selected @endif>{{ $industry->title }}</option>
@@ -69,7 +69,7 @@
                             <option value="Technology">Technology</option>
                             <option value="Transportation">Transportation</option> --}}
                         </select>
-                        <x-invalid-feedback field="industry"></x-invalid-feedback>
+                        <x-invalid-feedback field="industry_id"></x-invalid-feedback>
                     </x-form-group>
 
                     <x-form-group>

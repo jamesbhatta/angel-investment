@@ -14,14 +14,18 @@
             </div>
             <div class="ms-md-5 py-3 flex-grow-1">
                 <h1 class="fs-4 font-weight-bold"><strong>{{ $pitch->title }}</strong></h1>
-                <div><span class="text-primary">⦿</span> {{ $pitch->industry }}</div>
+                @if($pitch->industry)
+                <div><span class="text-primary">⦿</span> {{ $pitch->industry->title ?? '' }}</div>
+                @endif
                 <div>
                     <span class="text-primary me-2"><i class="fa fa-map-marker-alt"></i></span>
                     <span>{{ $pitch->country->name ?? '' }}</span>
                 </div>
             </div>
             <div class="py-3 align-self-center">
-                <a class="btn btn-primary" href="#">I'm Interested</a>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#investModal">
+                    Invest Now
+                </button>
             </div>
         </div>
 
@@ -119,6 +123,32 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="investModal" tabindex="-1" aria-labelledby="investModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="investModalLabel">Invest on {{ $pitch->title }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('investment.store', $pitch) }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label class="form-label">Your message</label>
+                        <textarea name="message" class="form-control {{ invalid_class('message') }}" cols="30" rows="10">{{ old('message') }}</textarea>
+                        <x-invalid-feedback field="message"></x-invalid-feedback>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 @push('styles')
 <style>
