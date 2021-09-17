@@ -55,9 +55,10 @@
 
     {{-- <script src="{{ asset('js/custom.js') }}" defer></script> --}} --}}
     <script src="/backend/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/backend/vendors/jquery/jquery.min.js"></script>
     <script src="/backend/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
     <script src="/backend/js/main.js"></script>
-    <script src="{{ mix('js/app.js') }}" defer></script>
     @stack('scripts')
 </body>
 </html>
