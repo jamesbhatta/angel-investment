@@ -57,11 +57,17 @@
                 </a>
             </li>
 
-
             <li class="sidebar-item {{ setActive('backend.industries.*') }}">
                 <a href="/backend/industry" class='sidebar-link'>
                     <i class="bi bi-briefcase"></i>
                     <span>Industries</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item {{ setActive('backend.testimonials.*') }}">
+                <a href="/backend/testimonial" class='sidebar-link'>
+                    <i class="bi bi-briefcase"></i>
+                    <span>Testimonials</span>
                 </a>
             </li>
 

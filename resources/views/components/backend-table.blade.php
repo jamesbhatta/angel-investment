@@ -4,7 +4,7 @@
             <div class="table-responsive">
                 <table class="table table-lg">
                     <thead>
-                        <tr>
+                        <tr class="text-uppercase">
                             {{ $thead }}
                         </tr>
                     </thead>

@@ -27,15 +27,16 @@
             </div>
         </div>
         @push('scripts')
-            <script>
-                $(function () {
-                    $('.iam-option').click(function (e) { 
-                        e.preventDefault();
-                        $('#get-started-btn').attr('href', $(this).data('href'));
-                        $('.iam-text').text($(this).data('text'));
-                    });
+        <script>
+            $(function() {
+                $('.iam-option').click(function(e) {
+                    e.preventDefault();
+                    $('#get-started-btn').attr('href', $(this).data('href'));
+                    $('.iam-text').text($(this).data('text'));
                 });
-            </script>
+            });
+
+        </script>
         @endpush
 </section>
 <!-- hero-bg end -->
@@ -489,63 +490,29 @@
             <div class="col">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row justify-content-center">
-                                <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7">
-                                    <div class="card">
-                                        <p class="post"> <span><img class="quote-img" src="./img/i06xx2I.png"></span> <span class="post-txt">I
-                                                upgraded my Dribble account to the Pro version.
-                                                Absolutely loving the super clean look of the Playbook feature
-                                            </span> </p>
-                                    </div>
-                                    <div class="arrow-down"></div>
-                                    <div class="row d-flex justify-content-center align-items-center mt-2">
-                                        <span> <img class="profile-pic fit-image" src="./img/testigirl.jpg">
-                                        </span>
-                                        <p class="profile-name">Anne Snow</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
+                        @foreach($testimonials as $testimonial)
+                        <div class="carousel-item @if($loop->iteration == 1) active @endif">
                             <div class="row justify-content-center">
                                 <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7">
                                     <div class="card">
                                         <p class="post">
-                                            <span><img class="quote-img" src="./img/i06xx2I.png"></span>
+                                            <span><img class="quote-img" src="/img/i06xx2I.png"></span>
                                             <span class="post-txt">
-                                                I upgraded my Dribble account to the Pro version.
-                                                Absolutely loving the super clean look of the Playbook feature 👌
+                                                {{ $testimonial->content }}
                                             </span>
                                         </p>
                                     </div>
                                     <div class="arrow-down"></div>
-                                    <div class="row d-flex justify-content-center">
-                                        <div class=""> <img class="profile-pic fit-image" src="./img/testi-2.png">
-                                        </div>
-                                        <p class="profile-name">Kamal Khan</p>
+                                    <div class="row d-flex justify-content-center align-items-center mt-2">
+                                        <span>
+                                            <img class="profile-pic fit-image" src="{{ $testimonial->clientPhotoUrl() }}" alt="{{ $testimonial->client_name }}">
+                                        </span>
+                                        <p class="profile-name">{{ $testimonial->client_name }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7">
-                                    <div class="card">
-                                        <p class="post"> <span><img class="quote-img" src="./img/i06xx2I.png"></span> <span class="post-txt">I
-                                                upgraded my Dribble account to the Pro version.
-                                                Absolutely loving the super clean look of the Playbook feature 👌
-                                            </span> </p>
-                                    </div>
-                                    <div class="arrow-down"></div>
-                                    <div class="row d-flex justify-content-center">
-                                        <div class=""> <img class="profile-pic fit-image" src="./img/testi-1.png">
-                                        </div>
-                                        <p class="profile-name">Salman Khan</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

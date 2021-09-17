@@ -11,11 +11,10 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PitchActionController;
 use App\Http\Controllers\PitchController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', WelcomeController::class);
 
 Auth::routes();
 
@@ -83,6 +82,15 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
         'edit' => 'backend.industries.edit',
         'update' => 'backend.industries.update',
         'destroy' => 'backend.industries.destroy',
+    ]);
+
+    Route::resource('backend/testimonial', \App\Http\Controllers\Backend\TestimonialController::class)->names([
+        'index' => 'backend.testimonials.index',
+        'create' => 'backend.testimonials.create',
+        'store' => 'backend.testimonials.store',
+        'edit' => 'backend.testimonials.edit',
+        'update' => 'backend.testimonials.update',
+        'destroy' => 'backend.testimonials.destroy',
     ]);
 
     Route::get('backend/investments', [\App\Http\Controllers\Backend\InvestmentController::class, 'index'])->name('backend.investments.index');
