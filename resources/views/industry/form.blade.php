@@ -1,15 +1,19 @@
 @extends('layouts.backend')
 
 @section('content')
-<div class="d-flex mb-4">
-    <h4 class="h4-responsive">Industries</h4>
-    <div class="ms-auto">
-        <a href="/backend/industry/create">Add Industry</a>
-    </div>
-</div>
+<x-backend-heading>
+    <h3>Industries</h3>
+    <x-slot name="navigation">
+        <li class="breadcrumb-item" aria-current="page"><a href="/backend/industry">Industries</a></li>
+        <li class="breadcrumb-item active" aria-current="page">New</li>
+    </x-slot>
+</x-backend-heading>
 
 <section>
-    <div class="card bg-light">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Add New Industry</h4>
+        </div>
         <div class="card-body">
             <form action="{{ $updateMode ? route('backend.industries.update', $industry) : route('backend.industries.store') }}" method="Post" enctype="multipart/form-data">
                 @csrf

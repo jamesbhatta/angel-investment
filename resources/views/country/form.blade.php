@@ -1,15 +1,19 @@
 @extends('layouts.backend')
 
 @section('content')
-<div class="d-flex mb-4">
-    <h4 class="h4-responsive">Countries</h4>
-    <div class="ms-auto">
-        <a href="/backend/countries/create">Add Country</a>
-    </div>
-</div>
+<x-backend-heading>
+    <h3>Countries</h3>
+    <x-slot name="navigation">
+        <li class="breadcrumb-item"><a href="/backend/countries">Countries</a></li>
+        <li class="breadcrumb-item">New Country</li>
+    </x-slot>
+</x-backend-heading>
 
 <section>
-    <div class="card bg-light">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">{{ $updateMode ? 'Edit' : 'Add' }} Country</h4>
+        </div>
         <div class="card-body">
             <form action="{{ $updateMode ? route('backend.countries.update', $country) : route('backend.countries.store') }}" method="Post" enctype="multipart/form-data">
                 @csrf
@@ -30,7 +34,7 @@
                             <input type="file" name="image" class="form-control {{ invalid_class('image') }}">
                             <x-invalid-feedback field="image"></x-invalid-feedback>
                         </x-form-group>
-        
+
                         @if($updateMode && $country->image)
                         <div class="mb-3">
                             <img class="img-thumbnail" src="{{ $country->imageUrl() }}" alt="{{ $country->name }}" style="max-height: 200px;">
@@ -43,7 +47,7 @@
                             <input type="file" name="cover_image" class="form-control {{ invalid_class('cover_image') }}">
                             <x-invalid-feedback field="cover_image"></x-invalid-feedback>
                         </x-form-group>
-        
+
                         @if($updateMode && $country->cover_image)
                         <div class="mb-3">
                             <img class="img-thumbnail" src="{{ $country->coverImageUrl() }}" alt="{{ $country->name }}" style="max-height: 200px;">
