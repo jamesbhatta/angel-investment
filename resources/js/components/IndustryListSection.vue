@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       industries: [],
-      loadCount: 2,
+      loadCount: 6,
     };
   },
 
