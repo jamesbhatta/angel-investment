@@ -21,6 +21,16 @@ class Industry extends Model
         return $query->where('is_active', $status);
     }
 
+    public function imageUrl()
+    {
+        return $this->image ? asset('storage/' . $this->image) : asset('images/no-image.png');
+    }
+
+    public function coverImageUrl()
+    {
+        return $this->cover_image ? asset('storage/' . $this->cover_image) : asset('img/banner.jpg');
+    }
+
     public function canBeDeletedSafely()
     {
         if ($this->pitches()->count()) {
