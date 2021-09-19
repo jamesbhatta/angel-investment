@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <x-form-group>
-                            <label class="form-label">Flag</label>
+                            <label class="form-label">Image</label>
                             <input type="file" name="image" class="form-control {{ invalid_class('image') }}" accept="image/*">
                             <x-invalid-feedback field="image"></x-invalid-feedback>
                         </x-form-group>
