@@ -44,7 +44,7 @@
                                         @hasrole('admin')
                                         <li><a href="{{ route('admin.dashboard') }}"><i class="fas fa-info-circle me-2"></i>Dashboard</a></li>
                                         @endhasrole
-                                        <li><a href="{{url('/welcome')}}"><i class="fas fa-info-circle me-2"></i>Home</a></li>
+                                        <li><a href="{{url('/')}}"><i class="fas fa-info-circle me-2"></i>Home</a></li>
                                         <li><a href="{{url('/about-us')}}"><i class="fas fa-info-circle me-2"></i>About Us</a></li>
                                         {{-- <li><a href="/business-proposals"><i class="fas fa-landmark me-2"></i>Business Proposals</a></li> --}}
                                         <li><a href="{{url('/the-process')}}"><i class="fas fa-landmark me-2"></i>The Process</a></li>
