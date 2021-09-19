@@ -66,6 +66,7 @@
                                 @foreach($countries as $country)
                                 <option value="{{ $country->id }}">{{ $country->name }}</option>
                                 @endforeach
+                                <option value="">Other</option>
                             </select>
                             @error('country_id')
                             <span class="invalid-feedback" role="alert">
