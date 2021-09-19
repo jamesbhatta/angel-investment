@@ -212,7 +212,7 @@
     </div>
     <div class="flags">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 @foreach(\App\Models\Country::orderBy('name')->latest()->get() as $country)
                 <div class="col-md-3 mt-4">
                     <a href="/country/{{ $country->slug }}">
