@@ -46,7 +46,7 @@
                         <select name="industry_id" class="form-select {{ invalid_class('industry_id') }}">
                             <option value="">Please select</option>
                             @foreach ($industries as $industry)
-                            <option value="{{ $industry->id }}" @if(old('industry_id', $country->industry_id) == $industry->id) selected @endif>{{ $industry->title }}</option>
+                            <option value="{{ $industry->id }}" @if(old('industry_id', $pitch->industry_id) == $industry->id) selected @endif>{{ $industry->title }}</option>
                             @endforeach
                             {{-- <option value="Agriculture">Agriculture</option>
                             <option value="Business Services">Business Services</option>

@@ -37,7 +37,7 @@ class PitchController extends Controller
             ]);
         }
 
-        $industries = Industry::active()->orderBy('title')->get();
+        $industries = $this->getIndustries();
 
         return view('pitch.form-step-one', compact(['pitch', 'pitchForm', 'industries']));
     }
@@ -148,8 +148,6 @@ class PitchController extends Controller
         $pitch->save();
         $pitchForm->delete();
 
-        $this->flash()->success('Pitch submitted successfully. It will be soon reviewed for verification.');
-        
         return redirect()->route('pitches.create.step-four', $pitch);
     }
 
@@ -160,7 +158,7 @@ class PitchController extends Controller
             'pitch' => $pitch,
         ]);
     }
-    
+
     public function storeStepFour(Request $request, Pitch $pitch)
     {
         $request->validate(['package_id' => 'required']);
@@ -175,6 +173,8 @@ class PitchController extends Controller
     {
         $amount = get_package_price($pitch->package_id);
         $packageName = get_package_name($pitch->package_id);
+
+        $this->flash()->success('Pitch submitted successfully. It will be soon reviewed for verification.');
 
         return view('pitch.form-step-five', [
             'pitch' => $pitch,
@@ -191,8 +191,9 @@ class PitchController extends Controller
 
         switch ($step) {
             case 1:
+                $industries = $this->getIndustries();
                 return view('pitch.form-step-one', compact([
-                    'pitch', 'pitchForm', 'updateMode'
+                    'pitch', 'pitchForm', 'updateMode', 'industries'
                 ]));
                 break;
             case 2:
@@ -290,5 +291,11 @@ class PitchController extends Controller
 
         $this->flash()->success('Pitch details updated successfully.');
         return redirect()->back();
+    }
+
+    // Get the industries for form
+    private function getIndustries()
+    {
+        return Industry::active()->orderBy('title')->get();
     }
 }
