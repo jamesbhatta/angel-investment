@@ -83,28 +83,28 @@
                 <ul class="navbar-nav">
                     @hasrole('entrepreneur')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">My Home</a>
+                        <a class="nav-link" href="{{ route('home') }}"><span class="me-2 fas fa-home"></span>My Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/my-investors">My Investors</a>
+                        <a class="nav-link" href="/my-investors"><span class="me-2 fas fa-hand-holding-usd"></span>My Investors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('invoices.index') }}">Invoices</a>
+                        <a class="nav-link" href="{{ route('invoices.index') }}"><i class="me-2 fas fa-file-invoice-dollar"></i>Invoices</a>
                     </li>
                     @endhasrole
                     @hasrole('investor')
                     <li class="nav-item">
-                        <a class="nav-link" href="/projects">My Home</a>
+                        <a class="nav-link" href="/projects"><span class="me-2 fas fa-home"></span>My Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/my-investments">My Investments</a>
+                        <a class="nav-link" href="/my-investments"><span class="me-2 fas fa-hand-holding-usd"></span>My Investments</a>
                     </li>
                     @endhasrole
                 </ul>
                 <!-- Right Side Of Action bar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/my-profile">My Profile</a>
+                        <a class="nav-link" href="/my-profile"><i class="me-2 fas fa-user"></i>My Profile</a>
                     </li>
                 </ul>
             </div>
