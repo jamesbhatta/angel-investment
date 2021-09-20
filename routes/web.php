@@ -106,6 +106,34 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     // Route::get('settings/page', 'PageSettingController@index')->name('settings.page.index');
     // Route::post('settings/page', 'PageSettingController@store')->name('settings.page.store');
 
+    Route::get('backend/departments', function () {
+        return view('our-team.department', [
+            'department' => collect([
+                'title' => null,
+                'position' => 1
+            ])
+        ]);
+    });
+
+    Route::resource('backend/departments', \App\Http\Controllers\Backend\TeamDepartmentController::class)->names([
+        'index' => 'backend.departments.index',
+        'create' => 'backend.departments.create',
+        'store' => 'backend.departments.store',
+        'edit' => 'backend.departments.edit',
+        'update' => 'backend.departments.update',
+        'destroy' => 'backend.departments.destroy',
+    ]);
+
+    Route::resource('backend/teams', \App\Http\Controllers\Backend\TeamController::class)->names([
+        'index' => 'backend.teams.index',
+        'create' => 'backend.teams.create',
+        'store' => 'backend.teams.store',
+        'edit' => 'backend.teams.edit',
+        'update' => 'backend.teams.update',
+        'destroy' => 'backend.teams.destroy',
+    ]);
+
+
     Route::get('backend/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('system.logs');
 });
 

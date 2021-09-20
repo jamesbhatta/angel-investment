@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/backend/css/bootstrap.css">
     <link rel="stylesheet" href="/backend/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="/backend/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="/backend/css/app.css">
     {{-- <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> --}}
 
@@ -25,18 +26,18 @@
 </head>
 <body>
     <div id="app">
+        <x-alert></x-alert>
         <div id="sidebar" class="active">
             <x-backend-sidebar></x-backend-sidebar>
         </div>
         <div id="main">
             <div style="min-height: 90vh;">
-                <x-alert></x-alert>
                 <header class="mb-3">
                     <a href="#" class="burger-btn d-block d-xl-none">
                         <i class="bi bi-justify fs-3"></i>
                     </a>
                 </header>
-
+                
                 @yield('content')
             </div>
 

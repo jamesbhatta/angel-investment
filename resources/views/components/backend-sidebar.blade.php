@@ -71,6 +71,27 @@
                 </a>
             </li>
 
+            <li class="sidebar-item {{ setActive('backend.teams.*') }} has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-sliders"></i>
+                    <span>Our Team</span>
+                </a>
+                <ul class="submenu">
+                    <li class="submenu-item {{ setActive('backend.teams.*') }}">
+                        <a href="/backend/teams">Team Members</a>
+                    </li>
+                    <li class="submenu-item {{ setActive('backend.departments.*') }}">
+                        <a href="/backend/departments">Departments</a>
+                    </li>
+                    {{-- <li class="submenu-item ">
+                        <a href="component-badge.html">API</a>
+                    </li>
+                    <li class="submenu-item ">
+                        <a href="component-badge.html">Homepage</a>
+                    </li> --}}
+                </ul>
+            </li>
+
             <li class="sidebar-item {{ setActive('backend.settings.*') }} has-sub">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-sliders"></i>
