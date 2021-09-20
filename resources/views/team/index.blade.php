@@ -15,7 +15,7 @@
         <th>Member Title</th>
         <th>Department</th>
         <th>Position</th>
-        <th>Status</th>
+        {{-- <th>Status</th> --}}
         <th>Action</th>
         </tr>
     </x-slot>
@@ -33,9 +33,9 @@
         <td>{{ $team->title }}</td>
         <td>{{ $team->department->title ?? '-' }}</td>
         <td>{{ $team->position }}</td>
-        <td>
+        {{-- <td>
             <div class="badge {{ $team->is_active ? 'bg-success' : 'bg-danger'; }}">{{ $team->is_active ? 'Active' : 'Inactive' }}</div>
-        </td>
+        </td> --}}
         <td>
             <a href="{{ route('backend.teams.edit', $team) }}">Edit</a>
             <span class="mx-1">|</span>

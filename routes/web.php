@@ -140,7 +140,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
 Route::view('the-process', 'page.the-procecss');
 Route::view('contact-us', 'page.contact-us');
-Route::view('about-us', 'page.about-us');
+Route::get('about-us', [\App\Http\Controllers\PageController::class, 'aboutUs']);
 Route::view('the-process', 'page.the-process');
 
 Route::get('country/{country:slug}', [CountryController::class, 'show']);
