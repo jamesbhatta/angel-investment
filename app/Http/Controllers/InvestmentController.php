@@ -17,9 +17,12 @@ class InvestmentController extends Controller
         return view('investment.index', compact('investments'));
     }
 
+    // API Endpoint: POST /investments/{pitch}
     public function store(Request $request, Pitch $pitch)
     {
         $request->validate([
+            'investor_name' => 'required',
+            'investor_mobile' => 'required',
             'message' => 'required'
         ]);
 
@@ -29,6 +32,8 @@ class InvestmentController extends Controller
             'message' => $request->message,
         ]);
 
-        return redirect()->route('investments.index')->with('invested-sucessfully', 'Invested successfully.');
+        return response(['message' => 'Your investment request has been send successfully.'], 200);
+
+        // return redirect()->route('investments.index')->with('invested-sucessfully', 'Invested successfully.');
     }
 }

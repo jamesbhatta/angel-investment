@@ -133,7 +133,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('investment.store', $pitch) }}" method="POST">
+                <invest-form pitch="{{ $pitch }}" submit-url="/api/invest/{{ $pitch->id }}"></invest-form>
+                {{-- <form action="{{ route('investment.store', $pitch) }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Your message</label>
@@ -143,7 +144,7 @@
                     <div class="mb-3 text-end">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                </form>
+                </form> --}}
             </div>
         </div>
     </div>

@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('projects/{pitch}', [BusinessProposalController::class, 'show'])->name('business-proposals.show');
 
     Route::get('my-investments', [InvestmentController::class, 'index'])->name('investments.index');
-    Route::post('invest/{pitch}', [InvestmentController::class, 'store'])->name('investment.store');
+    // Route::post('invest/{pitch}', [InvestmentController::class, 'store'])->name('investment.store');
 
     Route::get('my-profile', [ProfileController::class, 'index'])->name('my-profile');
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['auth']], function () {
     Route::put('users/{user}', [ProfileController::class, 'update']);
     Route::put('change-password', [ProfileController::class, 'changePassword']);
+
+    Route::post('invest/{pitch}', [InvestmentController::class, 'store'])->name('investment.store');
+
 });
 
 Route::get('/industry/list', function () {
