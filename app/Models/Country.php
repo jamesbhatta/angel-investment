@@ -31,6 +31,16 @@ class Country extends Model
         return $query->where('active', $status);
     }
 
+    public function scopePositioned($query)
+    {
+        return $query->orderByRaw('ISNULL(position), position ASC');
+    }
+
+    public static function getNextPosition()
+    {
+        return Country::max('position') + 1;
+    }
+
     public function pitches()
     {
         return $this->hasMany(Pitch::class);

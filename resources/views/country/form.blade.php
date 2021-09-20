@@ -57,6 +57,12 @@
                 </div>
 
                 <x-form-group>
+                    <label class="form-label">Position</label>
+                    <input type="number" name="position" class="form-control {{ invalid_class('position') }}" value="{{ old('position', $country->position) }}">
+                    <x-invalid-feedback field="position"></x-invalid-feedback>
+                </x-form-group>
+
+                <x-form-group>
                     <button type="submit" class="btn btn-primary py-2 px-5">Save</button>
                 </x-form-group>
             </form>

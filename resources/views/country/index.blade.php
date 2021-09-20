@@ -19,6 +19,7 @@
                             <th>Name</th>
                             <th>Slug</th>
                             <th>Status</th>
+                            <th>Position</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -29,6 +30,7 @@
                             <td>{{ $country->name }}</td>
                             <td>{{ $country->slug }}</td>
                             <td>{{ $country->active ?  'Active' : 'Inactive' }}</td>
+                            <td>{{ $country->position }}</td>
                             <td>
                                 <a href="{{ route('backend.countries.edit', $country) }}">Edit</a>
                                 <span class="mx-1">|</span>
