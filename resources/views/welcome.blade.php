@@ -208,7 +208,7 @@
 <section class="network">
     <div class="section-title">
         <h2> Select your location</h2>
-        <p>Our network</p>
+        <div style="font-size: 2rem; font-weight: 600; color: #b4b2b2;">Our Network</div>
     </div>
     <div class="flags">
         <div class="container">

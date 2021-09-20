@@ -23,6 +23,7 @@
     <style>
         @media (max-width: 768px) {
             .user-navbar {
+                justify-content: end;
                 gap: 10px;
                 overflow-x: scroll;
             }
@@ -92,7 +93,7 @@
         @auth
         {{-- TODO::Not to show in homepage --}}
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="overflow-x: auto;">
-            <div class="container">
+            <div class="container-fluid flex justify-content-end">
                 <ul class="user-navbar navbar-nav flex-row">
                     @hasrole('entrepreneur')
                     <li class="nav-item">
