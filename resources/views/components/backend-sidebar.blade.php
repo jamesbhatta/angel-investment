@@ -80,12 +80,12 @@
                     <li class="submenu-item {{ setActive('backend.settings.general.*') }}">
                         <a href="/backend/settings/general">General</a>
                     </li>
-                    <li class="submenu-item ">
+                    {{-- <li class="submenu-item ">
                         <a href="component-badge.html">API</a>
                     </li>
                     <li class="submenu-item ">
                         <a href="component-badge.html">Homepage</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
 
