@@ -89,7 +89,7 @@
                                             <li class="d-flex"><i class="ion-checkmark"> </i>Pitch Review by Gabriel Angel Investments Team.</li>
                                         </ul>
                                         <div class="text-center my-4">
-                                            <button type="submit" name="package_id" value="1" class="btn-select-plan">Select Plan</button>
+                                            <button type="submit" name="package_id" value="3" class="btn-select-plan">Select Plan</button>
                                         </div>
                                     </div>
                                 </div>
