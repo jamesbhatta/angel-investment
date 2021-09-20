@@ -48,28 +48,26 @@
     </div>
 
     <div class="container">
-
-        <div class="row">
-            <div class="col-md-4 mt-3 col-sm-6">
-                <div data-aos="fade-up" data-aos-duration="3000">
-                    <div class="service-box">
+        <div class="row align-items-stretch">
+            <div class="col-md-4 mt-3 col-sm-6 mb-3">
+                <div class="h-100" data-aos="fade-up" data-aos-duration="3000">
+                    <div class="service-box h-100">
                         <div class="service-box-inner">
                             <span class="material-icons orange600">history_edu</span>
-                            <!-- school -->
                             <h5>Education</h5>
                             <br>
-                            <p>Short courses that equip you with the much needed knowledge.
+                            <p>
+                                Short courses that equip you with the much needed knowledge.
                                 what does it take to be a great Entrepreneur, tools of trade, importance of
                                 resources, networking.
                             </p>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-4 mt-3  col-sm-6">
-                <div data-aos="fade-up" data-aos-duration="2500">
-                    <div class="service-box">
+            <div class="col-md-4 mt-3 col-sm-6 mb-3">
+                <div class="h-100" data-aos="fade-up" data-aos-duration="2500">
+                    <div class="service-box h-100">
                         <div class="service-box-inner">
                             <span class="material-icons orange600">monitor_heart</span>
                             <h5>Mentorship for entrepreneurs</h5>
@@ -79,14 +77,11 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
-            <div class="col-md-4 mt-3  col-sm-6">
-                <div data-aos="fade-up" data-aos-duration="2000">
-                    <div class="service-box">
+            <div class="col-md-4 mt-3 col-sm-6 mb-3">
+                <div class="h-100" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="service-box h-100">
                         <div class="service-box-inner">
-
                             <span class="material-icons orange600">record_voice_over</span>
                             <h5>Presenters</h5>
                             <br>
@@ -97,68 +92,64 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-4 mt-3  col-sm-6">
-                <div data-aos="fade-up" data-aos-duration="3000">
-                    <div class="service-box">
+            <div class="col-md-4 mt-3 col-sm-6 mb-3">
+                <div class="h-100" data-aos="fade-up" data-aos-duration="3000">
+                    <div class="service-box h-100">
                         <div class="service-box-inner">
-
                             <span class="material-icons orange600">note_alt</span>
                             <h5>Professional pitch deck writers</h5>
                             <br>
-                            <p>Not everyone can articulate a eye catching pitch
+                            <p>
+                                Not everyone can articulate a eye catching pitch
                                 that the investors want to see the key points and ideas to be centred and focused.
                             </p>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-4 mt-3  col-sm-6">
-                <div data-aos="fade-up" data-aos-duration="2500">
-                    <div class="service-box">
+            <div class="col-md-4 mt-3 col-sm-6 mb-3">
+                <div class="h-100" data-aos="fade-up" data-aos-duration="2500">
+                    <div class="service-box h-100">
                         <div class="service-box-inner">
-
                             <span class="material-icons orange600">account_balance_wallet</span>
                             <h5>Accountants</h5>
                             <br>
-                            <p>The need for a skilled accountant can never be underestimated when it comes to
+                            <p>
+                                The need for a skilled accountant can never be underestimated when it comes to
                                 structuring of business cross borders, share holding advice, company constitution
                                 advice, international tax advice etc .
-
                             </p>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="col-md-4 mt-3  col-sm-6">
-                <div data-aos="fade-up" data-aos-duration="2000">
-                    <div class="service-box">
+            <div class="col-md-4 mt-3 col-sm-6 mb-3">
+                <div class="h-100" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="service-box h-100">
                         <div class="service-box-inner">
-
                             <span class="material-icons orange600">gavel</span>
                             <h5>Legal professionals</h5>
                             <br>
-                            <p>Structuring the agreements cross borders, ongoing review and changes, applicable
+                            <p>
+                                Structuring the agreements cross borders, ongoing review and changes, applicable
                                 licenses and laws.
-
                             </p>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="col-md-4 mt-3  col-sm-6">
-                <div data-aos="fade-up" data-aos-duration="3000">
-                    <div class="service-box">
+            <div class="col-md-4 mt-3 col-sm-6 mb-3">
+                <div class="h-100" data-aos="fade-up" data-aos-duration="3000">
+                    <div class="service-box h-100">
                         <div class="service-box-inner">
-
                             <span class="material-icons orange600">campaign</span>
                             <h5>Influencers</h5>
                             <br>
-                            <p>You have a great product and need an influencer to create the viral effect?? Let's
+                            <p>
+                                You have a great product and need an influencer to create the viral effect?? Let's
                                 talk .
                             </p>
                         </div>
@@ -166,26 +157,24 @@
                 </div>
 
             </div>
-            <div class="col-md-4 mt-3  col-sm-6">
-                <div data-aos="fade-up" data-aos-duration="2500">
-                    <div class="service-box">
+            <div class="col-md-4 mt-3 col-sm-6 mb-3">
+                <div class="h-100" data-aos="fade-up" data-aos-duration="2500">
+                    <div class="service-box h-100">
                         <div class="service-box-inner">
-
                             <span class="material-icons orange600">developer_mode</span>
                             <h5>Web Development</h5>
                             <br>
                             <p>Website is a business must have in this day and age. Design a professional and
                                 presentable website.
-
                             </p>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="col-md-4 mt-3  col-sm-6">
-                <div data-aos="fade-up" data-aos-duration="2000">
-                    <div class="service-box">
+            <div class="col-md-4 mt-3 col-sm-6 mb-3">
+                <div class="h-100" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="service-box h-100">
                         <div class="service-box-inner">
 
                             <span class="material-icons orange600">devices</span>

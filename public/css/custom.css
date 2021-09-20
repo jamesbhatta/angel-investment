@@ -1538,7 +1538,7 @@ footer .copyright-text:hover {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.8em;
-  text-align: justify !important;
+  text-align: center;
 }
 
 .service .service-box .service-box-inner .phone-number {
