@@ -14,7 +14,7 @@
                     @if($country->image)
                     <div class="col-md-12">
                         <div class="text-center mb-5">
-                            <img class="img-fluid shadow" src="{{ $country->imageUrl() }}" alt="{{ $country->name }}" style="max-height: 300px;">
+                            <img class="img-fluid shadow" src="{{ $country->imageUrl() }}" alt="{{ $country->name }}" style="max-height: 300px; box-shadow: 0 1px 5px #263852 !important">
                         </div>
                     </div>
                     @endif
