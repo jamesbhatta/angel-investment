@@ -7,6 +7,7 @@ use App\Http\Controllers\BusinessProposalController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\MyInvestorsController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PitchActionController;
 use App\Http\Controllers\PitchController;
@@ -53,6 +54,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('my-investments', [InvestmentController::class, 'index'])->name('investments.index');
     // Route::post('invest/{pitch}', [InvestmentController::class, 'store'])->name('investment.store');
+
+    Route::get('my-investors', MyInvestorsController::class)->name('investments.index');
 
     Route::get('my-profile', [ProfileController::class, 'index'])->name('my-profile');
 
