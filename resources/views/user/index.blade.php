@@ -4,7 +4,7 @@
 <x-backend-heading>
     <h3>Users</h3>
     <x-slot name="navigation">
-        <li class="breadcrumb-item active" aria-current="page">Pitches</li>
+        <li class="breadcrumb-item active" aria-current="page">Users</li>
     </x-slot>
 </x-backend-heading>
 
@@ -14,7 +14,8 @@
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
-        <th>Status</th>
+        <th>Type</th>
+        <th>Country</th>
         <th>Action</th>
     </x-slot>
     @foreach ($users as $user)
@@ -23,9 +24,14 @@
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
         <td>{{ $user->mobile ?? '-' }}</td>
-        <td>{{ $user->active ?  'Active' : 'Inactive' }}</td>
         <td>
-            <a href="#">View Details</a>
+            @foreach ($user->roles as $role)
+            <div class="badge bg-primary text-capitalize"> {{ $role->name }}</div>
+            @endforeach
+        </td>
+        <td>{{ $user->country->name ?? '-' }}</td>
+        <td>
+            <a href="{{ route('backend.users.show', $user) }}">View Details</a>
 
             {{-- <a href="{{ route('backend.countries.edit', $user) }}">Edit</a>
             <span class="mx-1">|</span>

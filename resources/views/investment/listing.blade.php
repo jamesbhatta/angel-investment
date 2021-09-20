@@ -25,7 +25,9 @@
                         {{ $investment->pitch->industry->title }}
                     </div>
                     <div class="col-md-6">
+                    <a href="{{ route('backend.users.show', $investment->investor) }}">
                         {{ $investment->investor->name }}
+                    </a>
                     </div>
                 </div>
             </div>

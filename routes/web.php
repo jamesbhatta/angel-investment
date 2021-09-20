@@ -98,6 +98,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('transactions', [\App\Http\Controllers\Backend\TransactionController::class, 'index'])->name('backend.transactions.index');
 
     Route::get('backend/users', [\App\Http\Controllers\Backend\UserController::class, 'index'])->name('backend.users.index');
+    Route::get('backend/users/{user}', [\App\Http\Controllers\Backend\UserController::class, 'show'])->name('backend.users.show');
 
     Route::get('backend/settings/general', [\App\Http\Controllers\Backend\Setting\GeneralSettingController::class, 'index'])->name('backend.settings.general.index');
     Route::post('backend/settings/general', [\App\Http\Controllers\Backend\Setting\GeneralSettingController::class, 'store'])->name('backend.settings.general.store');

@@ -21,7 +21,9 @@
     @foreach ($transactions as $transaction)
     <tr>
         <td>{{ $transaction->title }}</td>
-        <td>{{ $transaction->user->name }}</td>
+        <td>
+            <a href="{{ route('backend.users.show', $transaction->user) }}">{{ $transaction->user->name }}</a>
+        </td>
         <td>{{ $transaction->amount }}</td>
         <td>{{ $transaction->payment_id }}</td>
         <td>{{ $transaction->package_name }}</td>

@@ -39,7 +39,9 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $pitch->title }}</td>
-                            <td>{{ $pitch->user->name }}</td>
+                            <td>
+                                <a href="{{ route('backend.users.show', $pitch->user) }}">{{ $pitch->user->name }}</a>
+                            </td>
                             <td>{{ $pitch->isVerified() ? 'approved' : 'Unapproved' }}</td>
                             <td>
                                 <a href="{{ route('business-proposals.show', $pitch) }}">View Details</a>

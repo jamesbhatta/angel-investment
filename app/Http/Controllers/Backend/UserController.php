@@ -13,4 +13,9 @@ class UserController extends Controller
         $users = User::latest()->get();
         return view('user.index', compact('users'));
     }
+
+    public function show(User $user)
+    {
+        return view('user.show', compact('user'));
+    }
 }
