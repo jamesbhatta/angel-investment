@@ -20,7 +20,7 @@ class TeamController extends Controller
     {
         $teams = Team::positioned()->get();
 
-        return view('Team.index', compact('teams'));
+        return view('team.index', compact('teams'));
     }
 
     public function create()
@@ -110,6 +110,6 @@ class TeamController extends Controller
 
         $departments = TeamDepartment::positioned()->get();
 
-        return view('Team.form', compact('team', 'updateMode', 'departments'));
+        return view('team.form', compact('team', 'updateMode', 'departments'));
     }
 }
