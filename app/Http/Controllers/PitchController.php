@@ -174,7 +174,7 @@ class PitchController extends Controller
         $amount = get_package_price($pitch->package_id);
         $packageName = get_package_name($pitch->package_id);
 
-        $this->flash()->success('Pitch submitted successfully. It will be soon reviewed for verification.');
+        // $this->flash()->success('Pitch submitted successfully. It will be soon reviewed for verification.');
 
         return view('pitch.form-step-five', [
             'pitch' => $pitch,
