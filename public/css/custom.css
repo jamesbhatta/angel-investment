@@ -805,10 +805,6 @@ footer .social-wrap .social-links a:hover::after {
   top: 0;
 }
 
-footer .social-wrap .social-links a:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-}
 
 footer .social-wrap .social-links a:hover .fab {
   color: #fff;

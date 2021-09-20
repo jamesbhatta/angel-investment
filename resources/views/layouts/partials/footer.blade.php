@@ -10,11 +10,10 @@
                     </div>
 
                     <div class="social-links">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-github"></i></a>
-                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a href="{{ appSettings('facebook_url') }}"><i class="fab fa-facebook-f"></i></a>
+                        <a href="{{ appSettings('instagram_url') }}"><i class="fab fa-instagram"></i></a>
+                        <a href="{{ appSettings('twitter_url') }}"><i class="fab fa-twitter"></i></a>
+                        <a href="{{ appSettings('linkedin_url') }}"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
