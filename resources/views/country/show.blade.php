@@ -14,7 +14,7 @@
                     @if($country->image)
                     <div class="col-md-12">
                         <div class="text-center mb-5">
-                            <img src="{{ $country->imageUrl() }}" width="100%" alt="{{ $country->name }}" style="max-height: 300px;">
+                            <img class="img-fluid" src="{{ $country->imageUrl() }}" alt="{{ $country->name }}" style="max-height: 300px;">
                         </div>
                     </div>
                     @endif
