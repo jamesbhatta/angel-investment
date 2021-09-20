@@ -11,11 +11,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="country-inner">
+                    @if($country->image)
                     <div class="col-md-12">
-                        @if($country->image)
-                        <img src="{{ $country->imageUrl() }}" width="100%" alt="{{ $country->name }}">
-                        @endif
+                        <div class="text-center mb-5">
+                            <img src="{{ $country->imageUrl() }}" width="100%" alt="{{ $country->name }}" style="max-height: 300px;">
+                        </div>
                     </div>
+                    @endif
                     <div class="col-xl-12">
                         <div class="section-title">
                             <h2> Gabriel Angel Investment Connecting {{ $country->name }} Entreprenures and Angel Investors.</h2>
