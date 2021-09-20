@@ -20,6 +20,19 @@
     {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     @stack('styles')
+    <style>
+        @media (max-width: 768px) {
+            .user-navbar {
+                gap: 10px;
+                overflow-x: scroll;
+            }
+
+            .user-navbar .nav-item {
+                flex-shrink: 0;
+            }
+        }
+
+    </style>
 
 </head>
 <body>
@@ -78,9 +91,9 @@
 
         @auth
         {{-- TODO::Not to show in homepage --}}
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="overflow-x: auto;">
             <div class="container">
-                <ul class="navbar-nav">
+                <ul class="user-navbar navbar-nav flex-row">
                     @hasrole('entrepreneur')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}"><span class="me-2 fas fa-home"></span>My Home</a>
@@ -100,9 +113,6 @@
                         <a class="nav-link" href="/my-investments"><span class="me-2 fas fa-hand-holding-usd"></span>My Investments</a>
                     </li>
                     @endhasrole
-                </ul>
-                <!-- Right Side Of Action bar -->
-                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/my-profile"><i class="me-2 fas fa-user"></i>My Profile</a>
                     </li>
@@ -127,6 +137,7 @@
         AOS.init({
             once: true
         });
+
     </script>
 
     <script src="{{ asset('js/custom.js') }}" defer></script>
