@@ -74,8 +74,10 @@ body {
 --------------------------------------------------------------*/
 .breadcrumbs {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-8.jpg") fixed center center;
-  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/banner-8.jpg") fixed center center;
+  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/about-banner.webp") fixed center center;
   background-size: cover;
+  background-position-y: 320px;
+  background-position-x: 0%;
   padding: 80px 0;
   color: white;
   /* padding: 15px 0;
@@ -1385,8 +1387,9 @@ footer .copyright-text:hover {
 
 .contact-banner .breadcrumbs {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-3.jpg") fixed center center;
-  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/banner-3.jpg") fixed center center;
+  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/contact-banner.webp") fixed center center;
   background-size: cover;
+  background-position-y: 10px;
   padding: 80px 0;
   color: white;
 }
@@ -1460,8 +1463,10 @@ footer .copyright-text:hover {
 
 .process-banner .breadcrumbs {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-5.jpg") fixed center center;
-  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/banner-5.jpg") fixed center center;
+  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/process-banner.jpg") fixed center center;
   background-size: cover;
+  background-position-y: 400px;
+  background-position-x: 0%;
   padding: 80px 0;
   color: white;
   /* padding: 15px 0;

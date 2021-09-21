@@ -89,8 +89,4 @@ Route::view('welcome', 'welcome');
 Route::view('about-us', 'page.about-us');
 Route::view('the-process', 'page.the-process');
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ec28af5dd3ec9fa8bdd65dfaa6a1724c2f96eebc
 Route::get('country/{country:slug}', [CountryController::class, 'show']);
