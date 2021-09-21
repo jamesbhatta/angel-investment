@@ -16,6 +16,12 @@
       </div>
 
       <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" v-model="user.country_name" class="form-control" disabled />
+      </div>
+
+
+      <div class="mb-3">
         <label class="form-label">Mobile</label>
         <input type="text" v-model="form.mobile" class="form-control" />
         <invalid-feedback :message="form.errors.first('mobile')"></invalid-feedback>

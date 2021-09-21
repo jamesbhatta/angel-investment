@@ -33,13 +33,19 @@
         border-radius: 0;
         animation-duration: .5s;
     }
+
 </style>
-    <script>
-        $(document).ready(function () {
-            setTimeout(() => {
-                $('.alert-floating').addClass('animate__fadeOutUp');
-            }, 3000);
+<script>
+    $(document).ready(function() {
+        setTimeout(() => {
+            $('.alert-floating').addClass('animate__fadeOutUp');
+        }, 3000);
+        $('.alert-floating').click(function(e) {
+            e.preventDefault();
+            $(this).remove();
         });
-    </script>
+    });
+
+</script>
 
 @endpush

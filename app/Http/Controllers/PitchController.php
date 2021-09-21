@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Industry;
 use App\Models\Pitch;
 use App\Models\PitchForm;
 use App\Service\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-use function Ramsey\Uuid\v1;
-
 class PitchController extends Controller
 {
     protected $imageService;
     public function __construct(ImageService $imageService)
     {
+        $this->middleware('role:entrepreneur');
         $this->imageService = $imageService;
     }
 
+    // Step 1
     public function createStepOne()
     {
         $userId = auth()->id();
@@ -36,7 +37,9 @@ class PitchController extends Controller
             ]);
         }
 
-        return view('pitch.form-step-one', compact(['pitch', 'pitchForm']));
+        $industries = $this->getIndustries();
+
+        return view('pitch.form-step-one', compact(['pitch', 'pitchForm', 'industries']));
     }
 
     public function storeStepOne(Request $request, PitchForm $pitchForm)
@@ -46,7 +49,7 @@ class PitchController extends Controller
             'website' => ['nullable'],
             'company_country_id' => ['required'],
             'mobile' => ['required'],
-            'industry' => ['required'],
+            'industry_id' => ['required'],
             'stage' => ['required'],
             'investor_role' => ['required'],
             'currently_invested' => ['nullable'],
@@ -61,7 +64,7 @@ class PitchController extends Controller
         $pitch->website = $request->website;
         $pitch->company_country_id = $request->company_country_id;
         $pitch->mobile = $request->mobile;
-        $pitch->industry = $request->industry;
+        $pitch->industry_id = $request->industry_id;
         $pitch->stage = $request->stage;
         $pitch->investor_role = $request->investor_role;
         $pitch->currently_invested = $request->currently_invested;
@@ -78,6 +81,7 @@ class PitchController extends Controller
         return redirect()->route('pitches.create.step-two', $pitchForm);
     }
 
+    // Step 2
     public function createStepTwo(PitchForm $pitchForm)
     {
         $pitch = $pitchForm->getPitchModel();
@@ -109,6 +113,7 @@ class PitchController extends Controller
         return redirect()->route('pitches.create.step-three', $pitchForm);
     }
 
+    // Step 3
     public function createStepThree(PitchForm $pitchForm)
     {
         $pitch = $pitchForm->getPitchModel();
@@ -143,8 +148,39 @@ class PitchController extends Controller
         $pitch->save();
         $pitchForm->delete();
 
-        $this->flash()->success('Pitch submitted successfully. It will be soon reviewed for verification.');
-        return redirect()->route('home');
+        return redirect()->route('pitches.create.step-four', $pitch);
+    }
+
+    // Step 4
+    public function createStepFour(Pitch $pitch)
+    {
+        return view('pitch.form-step-four', [
+            'pitch' => $pitch,
+        ]);
+    }
+
+    public function storeStepFour(Request $request, Pitch $pitch)
+    {
+        $request->validate(['package_id' => 'required']);
+
+        $pitch->update(['package_id' => $request->package_id, 'visible_country_id' => $request->package_id == 1 ? auth()->user()->country_id : null]);
+
+        return redirect()->route('pitches.payment', $pitch);
+    }
+
+    // Step 5
+    public function createStepFive(Pitch $pitch)
+    {
+        $amount = get_package_price($pitch->package_id);
+        $packageName = get_package_name($pitch->package_id);
+
+        // $this->flash()->success('Pitch submitted successfully. It will be soon reviewed for verification.');
+
+        return view('pitch.form-step-five', [
+            'pitch' => $pitch,
+            'packageName' => $packageName,
+            'amount' => $amount,
+        ]);
     }
 
     public function edit(Pitch $pitch)
@@ -155,8 +191,9 @@ class PitchController extends Controller
 
         switch ($step) {
             case 1:
+                $industries = $this->getIndustries();
                 return view('pitch.form-step-one', compact([
-                    'pitch', 'pitchForm', 'updateMode'
+                    'pitch', 'pitchForm', 'updateMode', 'industries'
                 ]));
                 break;
             case 2:
@@ -254,5 +291,11 @@ class PitchController extends Controller
 
         $this->flash()->success('Pitch details updated successfully.');
         return redirect()->back();
+    }
+
+    // Get the industries for form
+    private function getIndustries()
+    {
+        return Industry::active()->orderBy('title')->get();
     }
 }

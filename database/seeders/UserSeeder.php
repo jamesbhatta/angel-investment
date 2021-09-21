@@ -29,6 +29,7 @@ class UserSeeder extends Seeder
                 'email' => 'superadmin@test.com',
                 // 'mobile' => '9843613596',
                 'role' => 'super-admin',
+                'country_id' => 1,
             ],
 
             [
@@ -36,18 +37,21 @@ class UserSeeder extends Seeder
                 'email' => 'admin@test.com',
                 // 'mobile' => '9843613597',
                 'role' => 'admin',
+                'country_id' => 1,
             ],
             [
                 'name' => 'Richard Roe',
                 'email' => 'investor@test.com',
                 // 'mobile' => '9843613598',
                 'role' => 'investor',
+                'country_id' => 1,
             ],
             [
                 'name' => 'Cali Doe',
                 'email' => 'ent@test.com',
                 // 'mobile' => '98436135999',
                 'role' => 'entrepreneur',
+                'country_id' => 1,
             ],
         ]);
 

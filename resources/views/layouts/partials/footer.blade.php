@@ -10,11 +10,10 @@
                     </div>
 
                     <div class="social-links">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-github"></i></a>
-                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a href="{{ appSettings('facebook_url') }}"><i class="fab fa-facebook-f"></i></a>
+                        <a href="{{ appSettings('instagram_url') }}"><i class="fab fa-instagram"></i></a>
+                        <a href="{{ appSettings('twitter_url') }}"><i class="fab fa-twitter"></i></a>
+                        <a href="{{ appSettings('linkedin_url') }}"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -22,14 +21,14 @@
                 <div class="quick-links">
                     <h4>Quicks Link</h4>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="{{ route('business-proposals.index') }}">The Process</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="/about-us">About Us</a></li>
+                        <li><a href="/the-process">The Process</a></li>
                         @guest
                         <li><a href="{{ route('login') }}">Login</a></li>
                         <li><a href="{{ route('register') }}">Sign Up</a></li>
                         @endguest
-                        <li><a href="">Contact Us</a></li>
+                        <li><a href="/contact-us">Contact Us</a></li>
 
                     </ul>
                 </div>

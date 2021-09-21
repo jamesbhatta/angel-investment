@@ -11,6 +11,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = auth()->user();
+        $user->country_name = $user->country ? $user->country->name : null;
 
         return view('profile.index', compact('user'));
     }

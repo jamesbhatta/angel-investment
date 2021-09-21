@@ -1,14 +1,16 @@
 <div class="mb-4">
     <h4 class="h4-responsive">{{ $updateMode ? 'Manage' : 'New' }} Pitch</h4>
-    <div class="btn-group d-flex  my-3" style=";">
+    <div class="btn-group d-flex flex-nowrap my-3" style="overflow-x: auto;">
         @if($updateMode)
-        <a class="{{ $step == 1 ? 'btn-primary' : 'btn-light' }} btn py-3" href="{{ route('pitches.edit', $pitch) }}?step=1">Company Info</a>
-        <a class="{{ $step == 2 ? 'btn-primary' : 'btn-light' }} btn py-3" href="{{ route('pitches.edit', $pitch) }}?step=2">Pitch & Deal</a>
-        <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3" href="{{ route('pitches.edit', $pitch) }}?step=3">Images</a>
+        <a class="{{ $step == 1 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ route('pitches.edit', $pitch) }}?step=1">Company Info</a>
+        <a class="{{ $step == 2 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ route('pitches.edit', $pitch) }}?step=2">Pitch & Deal</a>
+        <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ route('pitches.edit', $pitch) }}?step=3">Images</a>
         @else
-        <a class="{{ $step == 1 ? 'btn-primary' : 'btn-light' }} btn py-3" href="{{ $step > 5 ? route('pitches.create.step-one', ) : '' }}">Company Info</a>
-        <a class="{{ $step == 2 ? 'btn-primary' : 'btn-light' }} btn py-3" href="{{ $step > 5 ? route('pitches.create.step-one') : '' }}">Pitch & Deal</a>
-        <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3" href="#">Images</a>
+        <a class="{{ $step == 1 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ $step > 5 ? route('pitches.create.step-one', ) : '' }}">Company Info</a>
+        <a class="{{ $step == 2 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ $step > 5 ? route('pitches.create.step-one') : '' }}">Pitch & Deal</a>
+        <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="#">Images</a>
+        <a class="{{ $step == 4 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="#">Package</a>
+        <a class="{{ $step == 5 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="#">Payment</a>
         @endif
     </div>
 </div>

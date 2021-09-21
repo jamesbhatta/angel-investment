@@ -24,13 +24,13 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="type" id="radio-investor" value="investor">
+                                        <input class="form-check-input" type="radio" name="type" id="radio-investor" value="investor" @if(request('role') == 'investor') checked @endif> 
                                         <label class="form-check-label" for="radio-investor">I'm an Investor</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="type" id="radio-entrepreneur" value="entrepreneur" checked>
+                                        <input class="form-check-input" type="radio" name="type" id="radio-entrepreneur" value="entrepreneur" @if(request('role') == 'entrepreneur') checked @endif>
                                         <label class="form-check-label" for="radio-entrepreneur">I'm an Entrepreneur</label>
                                     </div>
                                 </div>
@@ -54,6 +54,21 @@
                         <div class="mb-3">
                             <input id="email" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email Address" required autocomplete="email">
                             @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        
+                        <div class="mb-3">
+                            <select name="country_id" class="form-select py-3 @error('country_id') is-invalid @enderror">
+                                <option value="">Select your country</option>
+                                @foreach($countries as $country)
+                                <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                @endforeach
+                                <option value="">Other</option>
+                            </select>
+                            @error('country_id')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

@@ -23,7 +23,7 @@ class Country extends Model
 
     public function coverImageUrl()
     {
-        return $this->cover_image ? asset('storage' . $this->cover_image) : asset('img/banner.jpg');
+        return $this->cover_image ? asset('storage/' . $this->cover_image) : asset('img/banner.jpg');
     }
 
     public function scopeActive($query, $status = true)
@@ -31,8 +31,23 @@ class Country extends Model
         return $query->where('active', $status);
     }
 
+    public function scopePositioned($query)
+    {
+        return $query->orderByRaw('ISNULL(position), position ASC');
+    }
+
+    public static function getNextPosition()
+    {
+        return Country::max('position') + 1;
+    }
+
     public function pitches()
     {
         return $this->hasMany(Pitch::class);
+    }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
     }
 }

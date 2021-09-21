@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="">
-                        <a href="#" class="btn btn-primary btn-sm py-2">Manage my pitch</a>
+                        <a href="{{ route('pitches.edit', $pitch) }}" class="btn btn-primary btn-sm py-2">Manage my pitch</a>
                         <a href="{{ route('business-proposals.show', $pitch) }}" class="btn btn-primary btn-sm py-2">Find Out More</a>
                     </div>
                 </div>

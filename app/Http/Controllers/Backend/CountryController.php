@@ -12,13 +12,15 @@ class CountryController extends Controller
 {
     public function index()
     {
-        $countries = Country::orderBy('name')->latest()->get();
+        $countries = Country::positioned()->latest()->get();
         return view('country.index', compact('countries'));
     }
 
     public function create()
     {
-        return $this->showForm(new Country());
+        return $this->showForm(new Country([
+            'position' => Country::getNextPosition()
+        ]));
     }
 
     private function showForm(Country $country)
@@ -37,11 +39,13 @@ class CountryController extends Controller
             'name' => 'required',
             'image' => 'nullable',
             'cover_image' => 'nullable',
+            'position' => 'nullable',
         ]);
 
         $country = Country::create([
             'name' => $request->name,
-            'slug' => Str::slug($request->name, '-')
+            'slug' => Str::slug($request->name, '-'),
+            'position' => $request->position,
         ]);
 
         if($request->hasFile('image')) {
@@ -71,11 +75,13 @@ class CountryController extends Controller
             'slug' => 'required',
             'image' => 'nullable',
             'cover_image' => 'nullable',
+            'position' => 'nullable',
         ]);
 
         $country->update([
             'name' => $request->name,
-            'slug' => Str::slug($request->slug, '-')
+            'slug' => Str::slug($request->slug, '-'),
+            'position' => $request->position,
         ]);
 
         if($request->hasFile('image')) {

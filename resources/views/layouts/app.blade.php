@@ -16,10 +16,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Styles -->
     {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     @stack('styles')
+    <style>
+        @media (max-width: 768px) {
+            .user-navbar {
+                justify-content: end;
+                gap: 10px;
+                overflow-x: scroll;
+            }
+
+            .user-navbar .nav-item {
+                flex-shrink: 0;
+            }
+        }
+
+    </style>
 
 </head>
 <body>
@@ -44,7 +60,7 @@
                                         @hasrole('admin')
                                         <li><a href="{{ route('admin.dashboard') }}"><i class="fas fa-info-circle me-2"></i>Dashboard</a></li>
                                         @endhasrole
-                                        <li><a href="{{url('/welcome')}}"><i class="fas fa-info-circle me-2"></i>Home</a></li>
+                                        <li><a href="{{url('/')}}"><i class="fas fa-home me-2"></i>Home</a></li>
                                         <li><a href="{{url('/about-us')}}"><i class="fas fa-info-circle me-2"></i>About Us</a></li>
                                         {{-- <li><a href="/business-proposals"><i class="fas fa-landmark me-2"></i>Business Proposals</a></li> --}}
                                         <li><a href="{{url('/the-process')}}"><i class="fas fa-landmark me-2"></i>The Process</a></li>
@@ -78,31 +94,30 @@
 
         @auth
         {{-- TODO::Not to show in homepage --}}
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <ul class="navbar-nav">
-                    @hasrole('investor')
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">My Home</a>
-                    </li>
-                    @endhasrole
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="overflow-x: auto;">
+            <div class="container-fluid flex justify-content-end">
+                <ul class="user-navbar navbar-nav flex-row">
                     @hasrole('entrepreneur')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">My Pitches</a>
+                        <a class="nav-link" href="{{ route('home') }}"><span class="me-2 fas fa-home"></span>My Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/my-investors"><span class="me-2 fas fa-hand-holding-usd"></span>My Investors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('invoices.index') }}"><i class="me-2 fas fa-file-invoice-dollar"></i>Invoices</a>
+                    </li>
+                    @endhasrole
+                    @hasrole('investor')
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects"><span class="me-2 fas fa-home"></span>My Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/my-investments"><span class="me-2 fas fa-hand-holding-usd"></span>My Investments</a>
                     </li>
                     @endhasrole
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">My Investors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Newsfeed</a>
-                    </li>
-
-                </ul>
-                <!-- Right Side Of Action bar -->
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/my-profile">My Profile</a>
+                        <a class="nav-link" href="/my-profile"><i class="me-2 fas fa-user"></i>My Profile</a>
                     </li>
                 </ul>
             </div>
@@ -120,6 +135,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(document).ready(function () {
+            AOS.init({
+                once: true
+            });
+        });
+    </script>
+
     <script src="{{ asset('js/custom.js') }}" defer></script>
     @stack('scripts')
 </body>

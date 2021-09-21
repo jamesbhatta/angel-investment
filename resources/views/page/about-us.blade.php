@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-   <!-- Main Content -->
-   <section class="main">
+<!-- Main Content -->
+<section class="main">
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
@@ -45,11 +45,35 @@
                 </div>
             </div>
             <div class="row align-items-center">
-                <div class="section-title">
-                    <h2>Our Team</h2>
-
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Our Team</h2>
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-12 ">
+                @foreach ($departments as $department)
+                @continue(!count($department->teams))
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h3 class="h3-responsive mb-3" style="font-weight: 700;">{{ $department->title }}</h3>
+                    </div>
+                    @foreach ($department->teams as $team)
+                    <div class="col-md-4 col-sm-12 ">
+                        <div class="card">
+                            <img src="{{ $team->photoUrl() }}" alt="{{ $team->nam }}" style="width:100%">
+                            <div class="container">
+                                <h4 class="mt-2">{{ $team->name }}</h4>
+                                <p class="title">{{ $team->title }}</p>
+                                <p class="text-secondary">{!! $team->content !!}</p>
+                                {{-- <p class="text-secondary">jane@example.com</p> --}}
+                                {{-- <p><button class="button w-100">Contact</button></p> --}}
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                @endforeach
+
+                {{-- <div class="col-md-3 col-sm-12 ">
                     <div class="card">
                         <img src="./img/testi-1.png" alt="Jane" style="width:100%">
                         <div class="container">
@@ -96,7 +120,7 @@
                             <p><button class="button w-100">Contact</button></p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>

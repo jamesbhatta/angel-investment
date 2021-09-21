@@ -9,7 +9,12 @@ class BusinessProposalController extends Controller
 {
     public function index()
     {
-        $pitches = Pitch::verified()->latest()->paginate(15);
+        $pitches = Pitch::verified()
+            ->where(function ($query) {
+                return $query->where('visible_country_id', auth()->user()->country_id)
+                    ->orWhereIn('package_id', [2, 3]);
+            })
+            ->latest()->paginate(15);
 
         return view('business-proposal.index', compact(['pitches']));
     }

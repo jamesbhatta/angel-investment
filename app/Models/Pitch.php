@@ -16,12 +16,12 @@ class Pitch extends Model
 
     public function coverImageUrl()
     {
-        return asset('storage' . $this->cover_image);
+        return asset('storage/' . $this->cover_image);
     }
 
     public function logoUrl()
     {
-        return asset('storage' . $this->logo);
+        return asset('storage/' . $this->logo);
     }
 
     public function scopeVerified($query, $status = true)
@@ -42,5 +42,10 @@ class Pitch extends Model
     public function country()
     {
         return $this->belongsTo(Country::class, 'company_country_id');
+    }
+
+    public function industry()
+    {
+        return $this->belongsTo(Industry::class);
     }
 }

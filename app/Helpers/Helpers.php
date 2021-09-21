@@ -97,3 +97,37 @@ if (!function_exists('getPageUrlBySlug')) {
         return route('frontend.pages.show', $slug);
     }
 }
+
+// Get the package price with ID
+if (!function_exists('get_package_price')) {
+    function get_package_price($id)
+    {
+        switch ($id) {
+            case 1:
+                return 100;
+                break;
+            case 2:
+                return 200;
+            case 3:
+                return 2000;
+        }
+        return 0;
+    }
+}
+
+// Get the package price with ID
+if (!function_exists('get_package_name')) {
+    function get_package_name($id)
+    {
+        switch ($id) {
+            case 1:
+                return 'Starter';
+                break;
+            case 2:
+                return 'Medium';
+            case 3:
+                return 'Executive';
+        }
+        return false;
+    }
+}
