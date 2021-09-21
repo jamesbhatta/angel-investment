@@ -54,12 +54,12 @@
                 </div>
                 @foreach ($departments as $department)
                 @continue(!count($department->teams))
-                <div class="row mb-4 align-items-stretch ">
-                    <div class="col-12">
+                <div class="row m-0 p-0 mt-4 ">
+                    <div class="col-md-12 col-sm-12">
                         <h3 class="h3-responsive mb-4" style="font-weight: 700;">{{ $department->title }}</h3>
                     </div>
                     @foreach ($department->teams as $team)
-                    <div class="col-md-4 col-sm-12 ">
+                    <div class="col-md-4 col-sm-12 mt-4 ">
                         <div class="card">
                             <img src="{{ $team->photoUrl() }}" alt="{{ $team->nam }}">
                             <div class="container">
