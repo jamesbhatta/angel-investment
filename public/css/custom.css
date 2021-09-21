@@ -105,7 +105,7 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-8.jpg") fixed center center;
   background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/about-banner.webp") fixed center center;
   background-size: cover;
-  background-position-y: 320px;
+  background-position-y: 380px;
   background-position-x: 0%;
   padding: 80px 0;
   color: white;
@@ -1565,7 +1565,7 @@ footer .copyright-text:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-5.jpg") fixed center center;
   background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/process-banner.jpg") fixed center center;
   background-size: cover;
-  background-position-y:650px;
+  background-position-y:550px;
   background-position-x: 0%;
   padding: 80px 0;
   color: white;
