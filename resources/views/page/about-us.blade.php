@@ -15,6 +15,8 @@
 
         </div>
     </section><!-- End Breadcrumbs -->
+
+
     <section class="aboutUs">
 
         <div class="container">
@@ -52,14 +54,14 @@
                 </div>
                 @foreach ($departments as $department)
                 @continue(!count($department->teams))
-                <div class="row mb-4">
+                <div class="row mb-4 align-items-stretch ">
                     <div class="col-12">
-                        <h3 class="h3-responsive mb-3" style="font-weight: 700;">{{ $department->title }}</h3>
+                        <h3 class="h3-responsive mb-4" style="font-weight: 700;">{{ $department->title }}</h3>
                     </div>
                     @foreach ($department->teams as $team)
                     <div class="col-md-4 col-sm-12 ">
                         <div class="card">
-                            <img src="{{ $team->photoUrl() }}" alt="{{ $team->nam }}" style="width:100%">
+                            <img src="{{ $team->photoUrl() }}" alt="{{ $team->nam }}">
                             <div class="container">
                                 <h4 class="mt-2">{{ $team->name }}</h4>
                                 <p class="title">{{ $team->title }}</p>

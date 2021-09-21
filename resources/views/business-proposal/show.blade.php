@@ -24,7 +24,7 @@
             </div>
             <div class="py-3 align-self-center">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#investModal">
-                    Invest Now
+                    Send a message to the project
                 </button>
             </div>
         </div>
