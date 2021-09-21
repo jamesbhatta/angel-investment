@@ -59,7 +59,7 @@
                     @foreach ($department->teams as $team)
                     <div class="col-md-4 col-sm-12 ">
                         <div class="card">
-                            <img src="./img/testi-1.png" alt="Jane" style="width:100%">
+                            <img src="{{ $team->photoUrl }}" alt="{{ $team->nam }}" style="width:100%">
                             <div class="container">
                                 <h4 class="mt-2">{{ $team->name }}</h4>
                                 <p class="title">{{ $team->title }}</p>
