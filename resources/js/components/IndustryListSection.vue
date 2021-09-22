@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row text-center">
+    <div class="row text-center align-items-stretch">
       <div v-for="industry in industries" v-bind:key="industry.id" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 img-show-div mt-4">
         <div class="box-model">
           <img :src="industry.image_url" />
