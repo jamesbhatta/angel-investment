@@ -390,11 +390,6 @@ margin-top: 72px; */
   box-shadow: none !important;
 }
 
-.hero-bg .hero-content .im .dropdown .btn:hover .dropdown-menu {
-  display: block;
-  z-index: 1;
-}
-
 .hero-bg .hero-content h2 {
   font-size: 43px;
   font-family: "Dosis", sans-serif;
