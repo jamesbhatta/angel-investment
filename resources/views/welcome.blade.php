@@ -65,7 +65,7 @@
                             <p>
                                 Short courses that equip you with the much needed knowledge.
                                 what does it take to be a great Entrepreneur, tools of trade, importance of
-                                resources, networking.
+                                resources, and networking.
                             </p>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                             <h5>Professional pitch deck writers</h5>
                             <br>
                             <p>
-                                Not everyone can articulate a eye catching pitch
+                                Not everyone can articulate an eye catching pitch
                                 that the investors want to see the key points and ideas to be centred and focused.
                             </p>
                         </div>
@@ -155,7 +155,7 @@
                             <h5>Influencers</h5>
                             <br>
                             <p>
-                                You have a great product and need an influencer to create the viral effect?? Let's
+                                You have a great product and need an influencer to create the viral effect? Let's
                                 talk .
                             </p>
                         </div>
@@ -171,7 +171,7 @@
                             <h5>Web Development</h5>
                             <br>
                             <p>Website is a business must have in this day and age. Design a professional and
-                                presentable website.
+                                a presentable website.
                             </p>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
                             <span class="material-icons orange600">devices</span>
                             <h5>Graphic Designing and Social Media</h5>
                             <br>
-                            <p>Social Media coverage and Business Branding is key to business success.
+                            <p>Social Media coverage and business branding is key to business success.
                             </p>
                         </div>
                     </div>
