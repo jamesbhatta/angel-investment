@@ -32,5 +32,14 @@ class AppServiceProvider extends ServiceProvider
             'warning' => 'text-white bg-warning',
             'error' => 'text-white bg-danger',
         ]);
+
+        // Braintree setup
+        // \Braintree_Configuration::environment(env(‘BRAINTREE_ENV’));
+        // \Braintree_Configuration::environment(env(‘BRAINTREE_ENV’));
+        // \Braintree_Configuration::merchantId(env(‘BRAINTREE_MERCHANT_ID’));
+        // \Braintree_Configuration::publicKey(env(‘BRAINTREE_PUBLIC_KEY’));
+        // \Braintree_Configuration::privateKey(env(‘BRAINTREE_PRIVATE_KEY’));
+
+        
     }
 }

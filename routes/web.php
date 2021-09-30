@@ -63,7 +63,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('my-invoices', [InvoiceController::class, 'index'])->name('invoices.index');
 });
 
-
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('admin/pitches', [AdminPitchController::class, 'index'])->name('admin.pitches.listing');

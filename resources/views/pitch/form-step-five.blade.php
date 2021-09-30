@@ -9,6 +9,12 @@
                 {{ $message }}
             </div>
             @enderror
+
+            @error('payment_method_nonce')
+            <div class="alert alert-danger">
+                Please fill up the payment information.
+            </div>
+            @enderror
         </div>
         <div class="col-md-5">
             <div class="card">
@@ -45,22 +51,14 @@
 
                     <form id="payment-form" action="/charge/{{ $pitch->id }}" method="POST">
                         @csrf
-                        <input type="hidden" name="package_id" value="{{ $pitch->package_id }}">
-
-                        <div class="mb-3">
-                            <label for="card-holder-name" class="form-label">Card holder's name</label>
-                            <input id="card-holder-name" name="billing_name" type="text" class="form-control py-2" placeholder="Card holder's name" value="{{ old('name', auth()->user()->name) }}">
+                        <div id="dropin-container"></div>
+                        <input type="hidden" id="nonce" name="payment_method_nonce" value="nonce" />
+                        <div class="text-center mt-3">
+                            <button id="submit-btn" type="submit" class="btn btn-dark px-5 d-none">
+                                <span>Pay {{ priceUnit() }}{{ $amount }}</span>
+                                <span class="spinner-border spinner-border-sm text-white ms-2 d-none"></span>
+                            </button>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="card-element" class="form-label">Credit or debit card</label>
-                            <!-- Stripe Elements Placeholder -->
-                            <div id="card-element" class="form-control p-2 py-3"></div>
-                        </div>
-
-                        <button id="card-button" type="submit" class="btn btn-dark">
-                            Pay {{ priceUnit() }}{{ $amount }}
-                        </button>
                     </form>
 
                 </div>
@@ -72,79 +70,41 @@
 
 
 @push('scripts')
-<script src="https://js.stripe.com/v3/"></script>
-
+<script src="https://js.braintreegateway.com/web/dropin/1.31.2/js/dropin.min.js"></script>
 <script>
-    $(function() {
+    window.addEventListener('load', function() {
+        var submitButton = document.getElementById('submit-btn');
+        const form = document.getElementById('payment-form');
 
-        const stripe = Stripe("{{ config('cashier.key') }}");
+        braintree.dropin.create({
+            authorization: '{{ $token }}'
+            , container: '#dropin-container'
+        }).then((dropinInstance) => {
+            submitButton.classList.remove('d-none');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                submitButton.setAttribute('disabled', 'true');
+                submitButton.children[1].classList.remove('d-none');
+                console.log('processing');
 
-        const elements = stripe.elements();
-        const cardElement = elements.create('card');
-
-        var style = {
-            base: {
-                color: '#32325d'
-                , lineHeight: '18px'
-                , fontFamily: '"Roboto", Helvetica Neue", Helvetica, sans-serif'
-                , fontSmoothing: 'antialiased'
-                , fontSize: '16px'
-                , '::placeholder': {
-                    color: '#aab7c4'
-                }
-            }
-            , invalid: {
-                color: '#fa755a'
-                , iconColor: '#fa755a'
-            }
-        };
-
-        cardElement.mount('#card-element', {
-            style: style
-            , hidePostalCode: true
-        });
-        const cardHolderName = document.getElementById('card-holder-name');
-        const cardButton = document.getElementById('card-button');
-
-        $('#card-button').click(function(e) {
-            e.preventDefault();
-            console.log('clicked');
-            stripe.createPaymentMethod(
-                'card', cardElement, {
-                    billing_details: {
-                        name: cardHolderName.value
-                    }
-                }
-            ).then(function(result) {
-                if (result.paymentMethod) {
-                    handlePayment(result);
-                } else {
-                    // TODO::show error to user
-                    console.log('Create Payment Error.');
-                    console.log(result)
-                }
+                dropinInstance.requestPaymentMethod().then((payload) => {
+                    console.log(payload);
+                    document.getElementById('nonce').value = payload.nonce;
+                    form.submit();
+                }).catch((error) => {
+                    bringBackSubmitButton();
+                    throw error;
+                });
             });
+        }).catch((error) => {
+            console.log(error);
+            // handle errors
+            bringBackSubmitButton();
         });
 
-        function handlePayment(paymentMethod) {
-            var form = document.getElementById('payment-form');
-            var hiddenInput = document.createElement('input');
-            hiddenInput.setAttribute('type', 'hidden');
-            hiddenInput.setAttribute('name', 'payment_method');
-            hiddenInput.setAttribute('value', paymentMethod.paymentMethod.id);
-            form.appendChild(hiddenInput);
-            form.submit();
-
-            // axios
-            //     .post("/charge", {
-            //         paymentMethod: paymentMethod
-            //     })
-            //     .then((response) => {
-            //         console.log(response);
-            //     })
-            //     .catch((error) => {
-            //         console.log(error);
-            //     });
+        function bringBackSubmitButton() {
+            submitButton.removeAttribute('disabled');
+            submitButton.children[1].classList.add('d-none');
         }
 
     });

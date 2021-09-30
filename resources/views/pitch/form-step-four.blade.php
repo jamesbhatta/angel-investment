@@ -29,7 +29,7 @@
                                     <div class="plan">
                                         <header>
                                             <h4 class="plan-title">Starter Package</h4>
-                                            <div class="plan-cost"><span class="plan-price">$100</span><span class="plan-type">/month</span>
+                                            <div class="plan-cost"><span class="plan-price">$100</span><span class="plan-type d-none">/month</span>
                                             </div>
                                         </header>
                                         <ul class="plan-features">
@@ -55,7 +55,7 @@
                                     <div class="plan">
                                         <header>
                                             <h4 class="plan-title">Medium Package</h4>
-                                            <div class="plan-cost"><span class="plan-price">$200</span><span class="plan-type">/month</span>
+                                            <div class="plan-cost"><span class="plan-price">$200</span><span class="plan-type d-none">/month</span>
                                             </div>
                                         </header>
                                         <ul class="plan-features">
@@ -76,7 +76,7 @@
                                     <div class="plan featured">
                                         <header>
                                             <h4 class="plan-title">Executive Package</h4>
-                                            <div class="plan-cost"><span class="plan-price">$2000</span><span class="plan-type">/month</span>
+                                            <div class="plan-cost"><span class="plan-price">$2000</span><span class="plan-type d-none">/month</span>
                                             </div>
                                         </header>
                                         <ul class="plan-features">

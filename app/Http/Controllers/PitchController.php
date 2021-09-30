@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Industry;
 use App\Models\Pitch;
 use App\Models\PitchForm;
+use App\Service\BraintreeService;
 use App\Service\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -169,7 +170,7 @@ class PitchController extends Controller
     }
 
     // Step 5
-    public function createStepFive(Pitch $pitch)
+    public function createStepFive(Pitch $pitch, BraintreeService $braintreeService)
     {
         $amount = get_package_price($pitch->package_id);
         $packageName = get_package_name($pitch->package_id);
@@ -180,6 +181,7 @@ class PitchController extends Controller
             'pitch' => $pitch,
             'packageName' => $packageName,
             'amount' => $amount,
+            'token' => $braintreeService->getToken(),
         ]);
     }
 
