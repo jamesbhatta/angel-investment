@@ -1,16 +1,16 @@
 <div class="mb-4">
-    <h4 class="h4-responsive">{{ $updateMode ? 'Manage' : 'New' }} Pitch</h4>
-    <div class="btn-group d-flex flex-nowrap my-3" style="overflow-x: auto;">
+
+    <div class="btn-group d-flex flex-column flex-nowrap my-3" style="overflow-x: auto;">
         @if($updateMode)
-        <a class="{{ $step == 1 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ route('pitches.edit', $pitch) }}?step=1">Company Info</a>
+        <a class="{{ $step == 1 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ route('pitches.edit', $pitch) }}?step=1"><i class="far fa-edit"></i><span>Company Info</span></a>
         <a class="{{ $step == 2 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ route('pitches.edit', $pitch) }}?step=2">Pitch & Deal</a>
         <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ route('pitches.edit', $pitch) }}?step=3">Images</a>
         @else
-        <a class="{{ $step == 1 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ $step > 5 ? route('pitches.create.step-one', ) : '' }}">Company Info</a>
-        <a class="{{ $step == 2 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ $step > 5 ? route('pitches.create.step-one') : '' }}">Pitch & Deal</a>
-        <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="#">Images</a>
-        <a class="{{ $step == 4 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="#">Package</a>
-        <a class="{{ $step == 5 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="#">Payment</a>
+        <a class="{{ $step == 1 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ $step > 5 ? route('pitches.create.step-one', ) : '' }}"><i class="far fa-edit"></i><span class="d-md-block d-none">Company Info</span></a>
+        <a class="{{ $step == 2 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="{{ $step > 5 ? route('pitches.create.step-one') : '' }}"><i class="fas fa-desktop"></i><span class="d-md-block d-none">Pitch & Deal</span></a>
+        <a class="{{ $step == 3 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="#"><i class="fas fa-images"></i><span class="d-md-block d-none">Images</span></a>
+        <a class="{{ $step == 4 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="#"><i class="fas fa-box-open"></i><span class="d-md-block d-none">Package</span></a>
+        <a class="{{ $step == 5 ? 'btn-primary' : 'btn-light' }} btn py-3 flex-shrink-0" href="#"><i class="fas fa-credit-card"></i><span class="d-md-block d-none">Payment</span></a>
         @endif
     </div>
 </div>

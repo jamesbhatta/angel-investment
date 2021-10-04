@@ -545,6 +545,7 @@ margin-top: 72px; */
   font-size: 14px;
   min-width: 150px;
   display: inline-block;
+
 }
 
 .joinCommunity .card-view .avatar-block .label {
@@ -773,6 +774,8 @@ footer {
   background-color: #121824;
   padding: 40px 0px 0 0;
   margin-top: 80px;
+  z-index: 99;
+  position: relative;
 }
 
 footer .social-wrap {
@@ -1494,12 +1497,10 @@ footer .copyright-text:hover {
   font-weight: 700;
   color: grey;
 }
-.aboutUs .card .text-secondary  {  
+.aboutUs .card .text-secondary  {
   font-size:13px;
   text-align: center;
 }
-
-
 
 .service {
   margin: 80px 0;
@@ -1513,6 +1514,7 @@ footer .copyright-text:hover {
   background: #fff;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
+  background: whitesmoke;
 }
 
 .service .service-box:hover {
@@ -1878,3 +1880,121 @@ footer .copyright-text:hover {
   filter: invert(1);
 }
 /*# sourceMappingURL=index.css.map */
+
+.pitchSlideShow{
+    width: 13rem;
+    background: #121824;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 98;
+padding-top: 7rem;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: auto;
+}
+@media(max-width: 450px){
+    .pitchSlideShow{
+        width: 60px;
+    }
+}
+
+@media(min-width: 451px) and (max-width:1024px){
+    .pitchSlideShow{
+        width: 7.5rem;
+    }
+    .pitchSlideShow .btn-group a{
+    justify-content: space-between;
+}
+.pitchSlideShow .btn-group a span{
+    font-size: 12px;
+}
+}
+.closeButton{
+    color: #ddd;
+    float: right;
+    cursor: pointer;
+    width: 25px;
+    text-align: center;
+}
+.pitchSlideShow  .btn-light{
+background: transparent;
+    color: #fff;
+    border: none;
+outline-width: 0;
+padding-left: 0 5rem;
+width: 100%;
+}
+.pitchSlideShow .btn-group a{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap:10px;
+}
+.pitchSlideShow .btn-light:active,.pitchSlideShow .btn-light:focus{
+
+    box-shadow: none;
+}
+.pitchSlideShow .btn-light:hover{
+    opacity: 0.5;
+}
+/* .pitchSlideShow .btn-group{
+    position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+} */
+
+/* ===========october 4======++++ */
+.imagePreview {
+    width: 100%;
+    min-height: 16.5rem;
+    background-position: center center;
+  background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
+  background-color:#fff;
+    background-size: cover;
+  background-repeat:no-repeat;
+    display: inline-block;
+  box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+}
+.btn-primary
+{
+  display:block;
+  border-radius:0px;
+  box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
+  margin-top:-5px;
+}
+.imgUp
+{
+  margin-bottom:15px;
+}
+.del
+{
+  position:absolute;
+  top:0px;
+  right:15px;
+  width:30px;
+  height:30px;
+  text-align:center;
+  line-height:30px;
+  background-color:rgba(255,255,255,0.6);
+  cursor:pointer;
+}
+.imgAdd
+{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background-color:#4bd7ef;
+  color:#fff;
+  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
+  text-align:center;
+  line-height:30px;
+  margin-top:0px;
+  cursor:pointer;
+  font-size:15px;
+}
