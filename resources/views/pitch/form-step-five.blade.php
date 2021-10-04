@@ -78,7 +78,6 @@ $updateMode = isset($updateMode) ? $updateMode : false
 @push('scripts')
 <script src="https://js.braintreegateway.com/web/dropin/1.31.2/js/dropin.min.js"></script>
 <script>
-<<<<<<< HEAD
     window.addEventListener('load', function() {
         var submitButton = document.getElementById('submit-btn');
         const form = document.getElementById('payment-form');
@@ -102,56 +101,6 @@ $updateMode = isset($updateMode) ? $updateMode : false
                     bringBackSubmitButton();
                     throw error;
                 });
-=======
-    $(function() {
-
-        const stripe = Stripe("{{ config('cashier.key') }}");
-
-        const elements = stripe.elements();
-        const cardElement = elements.create('card');
-
-        var style = {
-            base: {
-                color: '#32325d',
-                lineHeight: '18px',
-                fontFamily: '"Roboto", Helvetica Neue", Helvetica, sans-serif',
-                fontSmoothing: 'antialiased',
-                fontSize: '16px',
-                '::placeholder': {
-                    color: '#aab7c4'
-                }
-            },
-            invalid: {
-                color: '#fa755a',
-                iconColor: '#fa755a'
-            }
-        };
-
-        cardElement.mount('#card-element', {
-            style: style,
-            hidePostalCode: true
-        });
-        const cardHolderName = document.getElementById('card-holder-name');
-        const cardButton = document.getElementById('card-button');
-
-        $('#card-button').click(function(e) {
-            e.preventDefault();
-            console.log('clicked');
-            stripe.createPaymentMethod(
-                'card', cardElement, {
-                    billing_details: {
-                        name: cardHolderName.value
-                    }
-                }
-            ).then(function(result) {
-                if (result.paymentMethod) {
-                    handlePayment(result);
-                } else {
-                    // TODO::show error to user
-                    console.log('Create Payment Error.');
-                    console.log(result)
-                }
->>>>>>> 8857c81caa52285a114974706eebaaa1efd683bd
             });
         }).catch((error) => {
             console.log(error);
