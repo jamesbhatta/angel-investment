@@ -1,15 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-
+@php
+$updateMode = isset($updateMode) ? $updateMode : false
+@endphp
+<div class="pitchSlideShow">
+    @include('pitch.wizard-head', ['step' => 1, 'updateMode' => $updateMode])
+</div>
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="col-md-7">
-            @php
-            $updateMode = isset($updateMode) ? $updateMode : false
-            @endphp
+        <div class=" offset-sm-1 offset-2 col-9 ">
+
             {{-- <pitch-form></pitch-form> --}}
-            @include('pitch.wizard-head', ['step' => 1, 'updateMode' => $updateMode])
+            <h4 class="h4-responsive">{{ $updateMode ? 'Manage' : 'New' }} Pitch</h4>
             <form action="{{ $updateMode ? route('pitches.update.step-one', $pitch) :  route('pitches.store.step-one', $pitchForm) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if($updateMode)
@@ -153,7 +156,14 @@
 
             </form>
         </div>
+        <!-- <div class="col-4 d-sm-block d-none"></div> -->
     </div>
 </div>
 
 @endsection
+@push('scripts')
+
+<script>
+    console.log()
+</script>
+@endpush

@@ -1,14 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+$updateMode = isset($updateMode) ? $updateMode : false
+@endphp
+<div class="pitchSlideShow">
+    @include('pitch.wizard-head', ['step' => 2, 'updateMode' => $updateMode])
+</div>
 
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="col-md-7">
-            @php
-            $updateMode = isset($updateMode) ? $updateMode : false
-            @endphp
-            @include('pitch.wizard-head', ['step' => 2, 'updateMode' => $updateMode])
+        <div class="offset-sm-1 offset-2 col-9">
+
+
             <form action="{{ $updateMode ? route('pitches.update.step-two', $pitch) : route('pitches.store.step-two', $pitchForm) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if($updateMode)
