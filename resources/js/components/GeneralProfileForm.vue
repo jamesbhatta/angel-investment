@@ -15,8 +15,8 @@
         <invalid-feedback :message="form.errors.first('name')"></invalid-feedback>
       </div>
 
-      <div class="mb-3">
-        <label class="form-label">Email</label>
+      <div v-show="user.country_name" class="mb-3">
+        <label class="form-label">Country</label>
         <input type="text" v-model="user.country_name" class="form-control" disabled />
       </div>
 
