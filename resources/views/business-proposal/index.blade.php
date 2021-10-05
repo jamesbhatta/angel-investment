@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-@push('styles')
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-@endpush
 @section('content')
 <div class="container py-4">
     <div class="text-center mb-4 md:mb-5">
@@ -34,7 +31,7 @@
 </div>
 @endsection
 @push('scripts')
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+{{-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script> --}}
 <script>
     // var elem = document.querySelector('.grid');
     // var msnry = new Masonry(elem, {
