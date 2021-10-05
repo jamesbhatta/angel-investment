@@ -21,6 +21,7 @@
     <!-- Styles -->
     {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/custom.css') }}?v={{ now() }}" rel="stylesheet">
+    <link href="{{ asset('css/line-clamp.css') }}" rel="stylesheet">
     @stack('styles')
     <style>
         @media (max-width: 768px) {

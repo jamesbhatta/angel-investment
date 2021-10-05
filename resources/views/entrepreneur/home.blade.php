@@ -16,13 +16,18 @@
             <div class="card">
                 <img src="{{ $pitch->cover_image ? $pitch->coverImageUrl() : 'https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg' }}" class="card-img-top" alt="...">
                 <div class="card-body font-arial">
-                    <h5 class="card-title font-arial">{{ $pitch->title }}</h5>
+                    <h5 class="card-title font-arial line-clamp-2" title="{{ $pitch->title }}">{{ $pitch->title }}</h5>
+
                     @if($pitch->isVerified())
                     <div class="badge bg-success">Approved</div>
                     @else
                     <div class="badge bg-danger">Not Approved</div>
                     @endif
-                    <p class="card-text">{{ $pitch->short_summary }}</p>
+
+                    <div class="line-clamp-1">
+                        <p class="card-text line-clamp-2">{{ Illuminate\Support\Str::substr($pitch->short_summary, 0, 150); }}</p>
+                    </div>
+
                     <div class="d-flex justify-content-between my-3">
                         <div>
                             <strong style="font-size: 1.1rem;">${{ $pitch->min_investment }}</strong>
