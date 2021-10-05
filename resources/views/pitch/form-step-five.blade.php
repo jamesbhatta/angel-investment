@@ -4,12 +4,10 @@
 @php
 $updateMode = isset($updateMode) ? $updateMode : false
 @endphp
-<div class="pitchSlideShow">
-    @include('pitch.wizard-head', ['step' => 5])
-</div>
+<x-pitch-form-layout :pitch="$pitch" :updateMode="$updateMode" current-step="5">
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="offset-2 offset-sm-1 col-md-10 col-sm-8">
+        <div class="col-md-12">
             @error('payment')
             <div class="alert alert-danger">
                 {{ $message }}
@@ -22,7 +20,7 @@ $updateMode = isset($updateMode) ? $updateMode : false
             </div>
             @enderror
         </div>
-        <div class="offset-1 offset-md-2 offset-sm-1 col-sm-8 col-9 col-md-5 mb-5">
+        <div class="col-md-5 mb-4 mb-md-0">
             <div class="card">
                 <div class="card-body">
                     <h5 class="h5-responsive"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
@@ -48,7 +46,7 @@ $updateMode = isset($updateMode) ? $updateMode : false
                 </div>
             </div>
         </div>
-        <div class=" offset-1 offset-md-0 offset-sm-1 col-sm-8 col-9 col-md-5">
+        <div class=" col-md-5">
             <div class="card bg-light">
                 <div class="card-body p-md-5">
                     <p>
@@ -72,6 +70,8 @@ $updateMode = isset($updateMode) ? $updateMode : false
         </div>
     </div>
 </div>
+</x-pitch-form-layout>
+
 @endsection
 
 

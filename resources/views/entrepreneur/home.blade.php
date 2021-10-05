@@ -15,8 +15,8 @@
         <div class="col-md-4 mb-4">
             <div class="card">
                 <img src="{{ $pitch->cover_image ? $pitch->coverImageUrl() : 'https://www.angelinvestmentnetwork.co.uk/assets/img/industries/2/landscape/19-min.jpg' }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $pitch->title }}</h5>
+                <div class="card-body font-arial">
+                    <h5 class="card-title font-arial">{{ $pitch->title }}</h5>
                     @if($pitch->isVerified())
                     <div class="badge bg-success">Approved</div>
                     @else
@@ -34,8 +34,8 @@
                         </div>
                     </div>
                     <div class="">
-                        <a href="{{ route('pitches.edit', $pitch) }}" class="btn btn-primary btn-sm py-2">Manage my pitch</a>
-                        <a href="{{ route('business-proposals.show', $pitch) }}" class="btn btn-primary btn-sm py-2">Find Out More</a>
+                        <a href="{{ route('pitches.edit', $pitch) }}" class="btn btn-primary btn-sm font-arial py-2">Manage my pitch</a>
+                        <a href="{{ route('business-proposals.show', $pitch) }}" class="btn btn-primary btn-sm font-arial py-2">Find Out More</a>
                     </div>
                 </div>
             </div>

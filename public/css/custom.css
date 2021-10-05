@@ -21,6 +21,11 @@ body {
   background-color: white;
 }
 
+.font-arial {
+  font-family: arial;
+  letter-spacing: 0.025rem;
+}
+
 .section-title {
   text-align: center;
   padding-bottom: 30px;
@@ -102,8 +107,10 @@ body {
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-8.jpg") fixed center center;
-  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/about-banner.webp") fixed center center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))),
+    url("../img/banner-8.jpg") fixed center center;
+  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)),
+    url("../img/about-banner.webp") fixed center center;
   background-size: cover;
   background-position-y: 380px;
   background-position-x: 0%;
@@ -545,7 +552,6 @@ margin-top: 72px; */
   font-size: 14px;
   min-width: 150px;
   display: inline-block;
-
 }
 
 .joinCommunity .card-view .avatar-block .label {
@@ -1455,8 +1461,10 @@ footer .copyright-text:hover {
 }
 
 .contact-banner .breadcrumbs {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-3.jpg") fixed center center;
-  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/contact-banner.webp") fixed center center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))),
+    url("../img/banner-3.jpg") fixed center center;
+  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)),
+    url("../img/contact-banner.webp") fixed center center;
   background-size: cover;
   background-position-y: 10px;
   padding: 80px 0;
@@ -1474,31 +1482,31 @@ footer .copyright-text:hover {
   font-size: 1rem;
   text-align: center;
 }
-.aboutUs .card{
+.aboutUs .card {
   /* flex-wrap: wrap; */
   height: 100%;
 }
 .aboutUs .card img {
-  width:100%;
+  width: 100%;
   height: 160px;
   object-fit: contain;
   border-radius: 3px;
   text-align: center;
   box-shadow: rgb(1, 142, 227) 0px 2px;
 }
-.aboutUs .card h4{
+.aboutUs .card h4 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 800;
 }
-.aboutUs .card .title{
+.aboutUs .card .title {
   text-transform: capitalize;
   text-align: center;
   font-weight: 700;
   color: grey;
 }
-.aboutUs .card .text-secondary  {
-  font-size:13px;
+.aboutUs .card .text-secondary {
+  font-size: 13px;
   text-align: center;
 }
 
@@ -1559,10 +1567,12 @@ footer .copyright-text:hover {
 }
 
 .process-banner .breadcrumbs {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))), url("../img/banner-5.jpg") fixed center center;
-  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)), url("../img/process-banner.jpg") fixed center center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 58, 90, 0.5)), to(rgba(40, 58, 90, 0.5))),
+    url("../img/banner-5.jpg") fixed center center;
+  background: linear-gradient(rgba(40, 58, 90, 0.5), rgba(40, 58, 90, 0.5)),
+    url("../img/process-banner.jpg") fixed center center;
   background-size: cover;
-  background-position-y:550px;
+  background-position-y: 550px;
   background-position-x: 0%;
   padding: 80px 0;
   color: white;
@@ -1881,120 +1891,60 @@ footer .copyright-text:hover {
 }
 /*# sourceMappingURL=index.css.map */
 
-.pitchSlideShow{
-    width: 13rem;
-    background: #121824;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 98;
-padding-top: 7rem;
-    padding-left: 0;
-    padding-right: 0;
-    overflow: auto;
+/* ===================
+* Pitch Form Wrapper
+** ====================
+*/
+
+* {
+  /* border: 1px solid red; */
 }
-@media(max-width: 450px){
-    .pitchSlideShow{
-        width: 60px;
-    }
+#pitch-form-wrapper {
+  display: flex;
+}
+#pitch-form-wrapper .pitch-form-sidebar {
+  background: #121824;
+  min-height: 100vh;
+  z-index: 98;
+}
+#pitch-form-wrapper .form-content {
+  flex-grow: 1;
+}
+@media screen and (min-width: 768px) {
+  #pitch-form-wrapper .pitch-form-sidebar {
+    margin-top: -60px;
+    padding-top: 60px;
+  }
 }
 
-@media(min-width: 451px) and (max-width:1024px){
-    .pitchSlideShow{
-        width: 7.5rem;
-    }
-    .pitchSlideShow .btn-group a{
-    justify-content: space-between;
-}
-.pitchSlideShow .btn-group a span{
-    font-size: 12px;
-}
-}
-.closeButton{
-    color: #ddd;
-    float: right;
-    cursor: pointer;
-    width: 25px;
-    text-align: center;
-}
-.pitchSlideShow  .btn-light{
-background: transparent;
-    color: #fff;
-    border: none;
-outline-width: 0;
-padding-left: 0 5rem;
-width: 100%;
-}
-.pitchSlideShow .btn-group a{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap:10px;
-}
-.pitchSlideShow .btn-light:active,.pitchSlideShow .btn-light:focus{
-
-    box-shadow: none;
-}
-.pitchSlideShow .btn-light:hover{
-    opacity: 0.5;
-}
-/* .pitchSlideShow .btn-group{
-    position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+#pitch-form-wrapper .pitch-form-sidebar .btn-light {
+  background: transparent;
+  color: #fff;
+  border: none;
+  outline-width: 0;
+  padding-left: 0 5rem;
   width: 100%;
-} */
+}
+#pitch-form-wrapper .pitch-form-sidebar a {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  border-radius: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;
+}
+#pitch-form-wrapper .pitch-form-sidebar a.active {
+  background-color: #0d6efd;
+  color: #fff;
+}
+#pitch-form-wrapper .pitch-form-sidebar .btn-light:active,
+#pitch-form-wrapper .pitch-form-sidebar .btn-light:focus {
+  box-shadow: none;
+}
+#pitch-form-wrapper .pitch-form-sidebar .btn-light:hover {
+  opacity: 0.8;
+}
 
-/* ===========october 4======++++ */
-.imagePreview {
-    width: 100%;
-    min-height: 16.5rem;
-    background-position: center center;
-  background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
-  background-color:#fff;
-    background-size: cover;
-  background-repeat:no-repeat;
-    display: inline-block;
-  box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
-}
-.btn-primary
-{
-  display:block;
-  border-radius:0px;
-  box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
-  margin-top:-5px;
-}
-.imgUp
-{
-  margin-bottom:15px;
-}
-.del
-{
-  position:absolute;
-  top:0px;
-  right:15px;
-  width:30px;
-  height:30px;
-  text-align:center;
-  line-height:30px;
-  background-color:rgba(255,255,255,0.6);
-  cursor:pointer;
-}
-.imgAdd
-{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  background-color:#4bd7ef;
-  color:#fff;
-  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
-  text-align:center;
-  line-height:30px;
-  margin-top:0px;
-  cursor:pointer;
-  font-size:15px;
-}

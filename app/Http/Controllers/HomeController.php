@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pitches = Pitch::where('user_id', auth()->id())->latest()->simplePaginate();
+        $pitches = Pitch::where('user_id', auth()->id())->latest()->simplePaginate(14);
 
         return view('entrepreneur.home', compact(['pitches']));
     }
